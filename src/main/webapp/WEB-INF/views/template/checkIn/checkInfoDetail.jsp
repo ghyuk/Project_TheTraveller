@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-	<style type="text/css">
-		
+
+    <style type="text/css">
 			table, th, tr, td{
 			border: 1px solid black;
 			border-spacing: 0px;}
@@ -23,9 +23,13 @@
 			.boardBtn{
 			text-align: right;
 			}
-			#update, #cancel{
-			width: 49%;
+			#checkInInfoList, #cancel{
+			float: right;
+			margin-left: 10px;
+			width: 80px;
+			text-align: center;
 			display: inline;
+			
 			}
 			.detailTable .table-title{
 			background-color: #f0f0f0;
@@ -33,16 +37,14 @@
 			font-size: 18px;}
 			#b_status{
 			width: 100%;
-			font-size: 22px;
-			background-color:#f0f0f0;
+			font-size: 15px;
 			}
 	</style>
-
-
-<div class="detailTable">
+	
+	<div class="detailTable">
 <div class="row">
         <div class="col-md-6">
-       	<h1>Check - In Detail</h1>
+       	<h1>Check - In Information Detail</h1>
        	<hr>
           <table class="table table-bordered">
           	<colgroup>
@@ -93,10 +95,9 @@
                 		<input type="text" id="u_lname" name="u_lname" value="성" readonly/>
                 		<input type="text" id="u_fname" name="u_fname" value="이름" readonly/>
                 	</td>
-                	<th class="table-title">여권번호</th>
+              	<th class="table-title">여권번호</th>
               	<td><input type="text" id="u_passport" name="u_passport" value="여권번호" readonly/></td>
               </tr>
-              
               <tr>
               	<th class="table-title">생년월일</th>
               	<td><input type="text" id="u_birth" name="u_birth" value="생년월일" readonly/></td>
@@ -125,41 +126,30 @@
               	<th class="table-title">출국 편명</th>
               	<td><input type="text" id="f_code" name="f_code" value="출국편명" readonly/></td>
               	<th class="table-title">출국편 발권 번호</th>
-              	<td><input type="text" id="b_num" name="b_num" value="발권번호" /></td>
+              	<td><input type="text" id="b_num" name="b_num" value="if걸어서 null일 경우 b_status" readonly /></td>
               </tr>
               <tr>
               	<th class="table-title">귀국 편명</th>
               	<td><input type="text" id="f_code" name="f_code" value="귀국편명" readonly/></td>
               	<th class="table-title">귀국편 발권 번호</th>
-              	<td><input type="text" id="b_num" name="b_num" value="발권번호" /></td>
+              	<td><input type="text" id="b_num" name="b_num" value="if걸어서 null일 경우 b_status" readonly /></td>
               </tr>
               <tr>
               	<th class="table-title">호텔 명</th>
               	<td><input type="text" id="h_name" name="h_name" value="호텔명" readonly/></td>
               	<th class="table-title">호텔 발권 번호</th>
-              	<td><input type="text" id="b_num" name="b_num" value="발권번호" /></td>
+              	<td><input type="text" id="b_num" name="b_num" value="if걸어서 null일 경우 b_status" readonly /></td>
               </tr>
               	<tr>
               	<th class="table-title">예약 현황</th>
-              		<!-- 관리자일경우 -->
-              	<td><select id="b_status" name="b_status">
-              				<option value="1" selected>wait</option>		<!-- 결제 완료 단계 -->
-              				<option value="2">operating</option>		<!-- 호텔/항공	예약 후 발권번호 대기중 -->
-              				<option value="3">done</option>			<!-- 호텔/항공 확정예약번호를 받은 후 -->
-              				<option value="4">cancel</option>
-              			</select>
-              	</td>
-              	<td colspan="2">
-              		<input type="button" id="update" name="update" class="btn btn-success" value="update"/>
-              		<input type="button" id="cancel" name="cancel" class="btn btn-danger" value="cancel"/>
-              	</td>
-              	<!-- 고객 예약확인일 경우 -->
-              	<!-- <td><input type="text" id="b_status" name="b_status" value="operating" readonly/></td>
+              	<td><label id="b_status" name="b_status">operating</label></td>
               	<th class="table-title">가격</th>
-              	<td><input type="text" id="total" name="total" value="$price" readonly/></td> -->
+              	<td><input type="text" id="total" name="total" value="$price" readonly/></td>
               </tr>
              </tbody>
              </table>
+              	<input type="button" id="checkInInfoList" name="checkInInfoList" class="btn btn-default" value="List"/>
+              	<input type="button" id="cancel" name="cancel" class="btn btn-default" value="cancel"/>				<!-- 스크립트 if걸어서 operating이나 done일 경우 비활성화 -->
              </div>
              </div>
              </div>
