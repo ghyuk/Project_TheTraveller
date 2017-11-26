@@ -31,7 +31,7 @@ public class TestController {
 	@RequestMapping(value = "/check.do", method = RequestMethod.GET)
 	public String check(){ 
 		logger.info("check.do GET 호출 성공");
-		return "template/admin/ha";
+		return "template/checkIn/selectInfo";
 	}
 	@ResponseBody
 	@RequestMapping(value = "/apitest.do", method = RequestMethod.GET)
