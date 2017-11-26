@@ -1,0 +1,98 @@
+@charset "UTF-8";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+#hero {
+  background: #f4f7ca url("/resources/image/newyork.jpg") center center no-repeat;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+#hero .hero-wrapper {
+  bottom: 40%;
+  font-size: 18px;
+  text-shadow: 1px 1px black;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 50%;
+  z-index: 3;
+  color: white;
+}
+#hero .hero-wrapper h2 {
+  text-transform: uppercase;
+  font-size: 88px;
+  font-weight: bold;
+}
+#services {
+  background-color: #9684A3;
+  color: #fff;
+}
+#services .section-headline:after {
+  border-bottom-color: #fff;
+}
+.services-item {
+  text-align: center;
+}
+.service-title h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.service-icon {
+  font-size: 48px;
+}
+.portfolio-item {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(39, 49, 65, 0.1);
+  box-shadow: 0px 0px 10px 0px rgba(39, 49, 65, 0.1);
+  margin-bottom: 30px;
+}
+.portfolio-item:hover .portfolio-thumb a,
+.portfolio-item:focus .portfolio-thumb a {
+  opacity: .8;
+}
+.portfolio-thumb a {
+  display: block;
+  -webkit-transition: opacity 300ms ease-in-out;
+  -o-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+.portfolio-thumb a:hover,
+.portfolio-thumb a:focus {
+  opacity: .8;
+}
+.portfolio-info {
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.portfolio-info .portfolio-info h3 {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.portfolio-info .portfolio-info a {
+  color: #2c2c2c;
+}
+.portfolio-info .portfolio-info a:hover,
+.portfolio-info .portfolio-info a:focus {
+  color: #337ab7;
+}

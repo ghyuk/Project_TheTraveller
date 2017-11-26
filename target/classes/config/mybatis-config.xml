@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+							
+<!-- 이타입에 alias는 별칭 주는것 별칭으로만 VO에 접근 가능 -->
+<configuration>
+	<typeAliases>								
+			<typeAlias type="com.project.main.main.vo.MainVO" alias="main"/>
+	</typeAliases>
+</configuration>

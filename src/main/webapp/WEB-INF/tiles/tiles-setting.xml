@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="info" template="/WEB-INF/views/template/info/info_layout.jsp">
+		<put-attribute name="title" value="infopage"></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/template/info/header.jsp"></put-attribute>
+		<put-attribute name="main_section" value="/WEB-INF/views/template/info/main_section.jsp"></put-attribute>
+		
+		<put-attribute name="contact"
+			value="/WEB-INF/views/template/info/contact.jsp"></put-attribute>
+		<put-attribute name="footer"
+			value="/WEB-INF/views/template/info/footer.jsp"></put-attribute>
+		<put-attribute name="first_section_lp"
+			value="/WEB-INF/views/template/info/first_section_lp.jsp"></put-attribute>
+		<put-attribute name="second_section_rp"
+			value="/WEB-INF/views/template/info/second_section_rp.jsp"></put-attribute>
+		<put-attribute name="third_section_lp"
+			value="/WEB-INF/views/template/info/third_section_lp.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="content" template="/WEB-INF/views/template/info/content_layout.jsp">
+		<put-attribute name="title" value="infopage"></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/template/info/header.jsp"></put-attribute>
+		<put-attribute name="body" value="" />
+		<put-attribute name="contact"
+			value="/WEB-INF/views/template/info/contact.jsp"></put-attribute>
+		<put-attribute name="footer"
+			value="/WEB-INF/views/template/info/footer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="template/admin/*" extends="content">
+		<put-attribute name="title" value="test" />
+		<put-attribute name="body" value="/WEB-INF/views/template/admin/{1}.jsp" />
+	</definition>
+
+
+
+
+</tiles-definitions>
