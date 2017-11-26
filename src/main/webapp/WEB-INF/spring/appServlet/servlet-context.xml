@@ -41,9 +41,9 @@
 		<beans:property name="suffix" value=".jsp" />
 		<beans:property name="order" value="2"></beans:property>
 	</beans:bean>
-	<beans:bean id="viewResolver2" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- <beans:bean id="viewResolver2" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/resources/" />
 		<beans:property name="suffix" value=".jsp" />
 		<beans:property name="order" value="3"></beans:property>
-	</beans:bean>
+	</beans:bean> -->
 </beans:beans>

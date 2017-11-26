@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="/resources/include/css/bootstrap.min.css">
 	
-	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/resources/include/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/resources/include/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		.navbar{
 		min-width: 100%;
@@ -60,43 +60,6 @@
 			}
 	</style>
 
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">The Traveller</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-       <li><a href="#">About</a></li>
-       <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Citis <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Newyork</a></li>
-            <li><a href="#">Melbourne</a></li>
-            <li><a href="#">Madrid</a></li>
-            <li><a href="#">Osaka</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Place</a></li>
-         <li><a href="#">Food</a></li>
-          <li><a href="#">Play</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#myinfo">My Info</a></li>
-        <li><a href="#" style="color:#c21616">Check-In</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 
 <div class="detailTable">
 <div class="row">

@@ -31,9 +31,9 @@
 			value="/WEB-INF/views/template/info/footer.jsp"></put-attribute>
 	</definition>
 
-	<definition name="template/admin/*" extends="content">
+	<definition name="template/checkIn/*" extends="content">
 		<put-attribute name="title" value="test" />
-		<put-attribute name="body" value="/WEB-INF/views/template/admin/{1}.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/template/checkIn/{1}.jsp" />
 	</definition>
 
 

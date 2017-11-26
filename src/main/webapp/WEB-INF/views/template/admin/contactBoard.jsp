@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="/resources/include/css/bootstrap.min.css">
 	
-	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/resources/include/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/resources/include/js/bootstrap.min.js"></script>
 	<style>
 			table, th, tr, td{
 			border: 1px solid black;
