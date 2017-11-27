@@ -14,6 +14,7 @@
 	height: 55px;
 	font-weight: 700;
 	vertical-align: center;
+	z-index: 100;
 }
 
 .dropdown-menu {
@@ -67,9 +68,13 @@
 		text-shadow: 1px 1px #8b8b8b;}
 		.modal-btn{
 		margin-top: 25px;}
-		
 </style>
-
+<script type="text/javascript">
+	$(function(){
+		/* 관리자 메뉴 숨김 */
+		$(".admin-menu").hide();
+	})
+</script>
 
 <nav class="navbar navbar-inverse">
 	<div class="container-fluid">
@@ -88,8 +93,8 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/">About</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
+				<li class="nav-menu"><a href="/">About</a></li>
+				<li class="dropdown nav-menu"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false">Cities
 						<span class="caret"></span>
 				</a>
@@ -99,12 +104,16 @@
 						<li><a href="main.do?main=madrid">Madrid</a></li>
 						<li><a href="main.do?main=osaka">Osaka</a></li>
 					</ul></li>
-				<li><a href="#place">Place</a></li>
-				<li><a href="#food">Food</a></li>
-				<li><a href="#play">Play</a></li>
-				<li><a href="#contact">Contact</a></li>
-				<li><a href="#myinfo" data-toggle="modal" data-target="#loginModal">My Info</a></li>
-				<li><a href="/test/check.do" style="color: #c21616">Check-In</a></li>
+				<li class="nav-menu"><a href="#place">Place</a></li>
+				<li class="nav-menu"><a href="#food">Food</a></li>
+				<li class="nav-menu"><a href="#play">Play</a></li>
+				<li class="nav-menu"><a href="#contact">Contact</a></li>
+				<li class="nav-menu"><a href="#myinfo" data-toggle="modal" data-target="#loginModal">My Info</a></li>
+				<!-- 관리자 모드 -->
+				<li class="admin-menu"><a href="#checkInList">Check-In List</a></li>
+				<li class="admin-menu"><a href="#contactList">Contact List</a></li>
+				<li class="admin-menu"><a href="#logOut">Log - Out</a></li>
+				<li class="nav-menu"><a href="/test/check.do" style="color: #c21616">Check-In</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

@@ -36,6 +36,8 @@
 			font-size: 22px;
 			background-color:#f0f0f0;
 			}
+			#u_lname, #u_fname{
+			width: 49%;}
 	</style>
 
 

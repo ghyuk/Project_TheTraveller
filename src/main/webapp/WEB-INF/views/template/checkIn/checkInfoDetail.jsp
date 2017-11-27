@@ -39,6 +39,8 @@
 			width: 100%;
 			font-size: 15px;
 			}
+			#u_lname, #u_fname{
+			width: 49%;}
 	</style>
 	
 	<div class="detailTable">
