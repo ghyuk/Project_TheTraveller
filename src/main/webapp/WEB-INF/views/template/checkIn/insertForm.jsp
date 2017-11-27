@@ -4,7 +4,7 @@
 <style type="text/css">
 			
 		#main_section {
-		 background-image: url("../image/osaka.jsp") no repeat;
+		 background-image: url("/resources/image/osaka.jsp") no repeat;
 		  background-size: cover;
 		  
 		  position: absolute;
