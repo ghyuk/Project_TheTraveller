@@ -8,7 +8,7 @@
 		<!-- DataSource -->
 		<bean id="dataSource"
 			class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="java:comp/env/jdbc/traveller"/>
+		<property name="jndiName" value="java:comp/env/jdbc/Oracle11g"/>
 		<!-- <property name="jndiName" value="java:comp/env/jdbc/Oracle11g"/> -->
 		</bean>
 		
@@ -32,7 +32,7 @@
 		<bean
 			class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage">
-			<value>com.spring.**.**.dao</value>
+			<value>com.project.**.**.dao</value>
 		</property>
 		</bean>
 </beans>
