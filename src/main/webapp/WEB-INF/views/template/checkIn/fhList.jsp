@@ -72,7 +72,7 @@ thead {
 <script type="text/javascript"
 	src="/resources/include/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
-var f_form ,H_form,f_ck=0,h_ck;
+var f_form ,H_form,f_ck=0,h_ck=0;
 $(function(){
 	console.log("${code}");
 	flight();
@@ -95,6 +95,23 @@ $(function(){
 		console.log(f_form.html());
 	});
 	
+	$(document).on("click",".hchoice",function(){
+		if(h_ck==0){
+			h_ck=1;
+			$(this).parents("tbody").css("background","yellow");
+		}else{
+			h_ck=0;
+			$(this).parents("tbody").css("background","white");
+		}
+		var form = $(this).parents("form");
+		h_form = form;
+		h_form.attr({
+			"method":"post",
+			"action":"/checkIn/book.do"
+		});
+		h_form.submit();
+		console.log(h_form.html());
+	});
 	
 	
 	
@@ -172,7 +189,7 @@ $(function(){
 
 						$("#flight").append(body);
 						body.append(f+s+t);
-				 } z
+				 } 
 			}).fail(function(){
 				alert("목록부르기에 실패하였습니다.");
 			});
@@ -201,20 +218,15 @@ $(function(){
 		for(var n=0; n<i; n++){
 			$(data).each(function(){
 		     	var price = results[n].total_price.amount.split(".");
-		     	var str ="<tr><td class='h_image'>호텔사진<input type='hidden' id='hdata' /> <input type='hidden' id='h_code' value='1' /></td> <td colspan='2' align='left'><span class='h_name'>"+results[n].property_name+"</span><span class='h_info'><strong>info</strong></span><span class='departure'>주소 : "+results[n].address.line1+"<br />전화번호 : "+results[n].contacts[0].detail+"</span></td> <td>1박 요금<span class='h_price'><strong>"+price[0]+"원</strong></span><span class='findRoom'><input type='button' class='btn btn-default' id='selectHotel' name='selectHotel' value='선택'></span></td> </tr>"
-		 
-				$("#hotel").append(str);
-		     	$("#").val();
-		     	$("#").val();
-		     	$("#").val();
-		     	$("#").val();
-		     	$("#").val();
-		     	$("#").val();
-		     	$("#").val();
-		     	$("#").val();
+		     	var str ="<tr><td class='h_image'>호텔사진</td> <td colspan='2' align='left'><span class='h_name'>"+results[n].property_name+"</span><span class='h_info'><strong>info</strong></span><span class='departure'>주소 : "+results[n].address.line1+"<br />전화번호 : "+results[n].contacts[0].detail+"</span></td> <td>1박 요금<span class='h_price'><strong>"+price[0]+"원</strong></span><span class='findRoom'><form class='hform'><input type='hidden' id='h_name' name='h_name' value='"+results[n].property_name+"'/><input type='hidden' id='h_info' name='h_info' value='info'/><input type='hidden' id='h_address' name='h_address' value='"+results[n].address.line1+"'/><input type='hidden' id='h_tel' name='h_tel' value='"+results[n].contacts[0].detail+"'/><input type='hidden' id='h_price' name='h_price' value='"+price[0]+"'/><input type='hidden' id='h_image' name='h_image' value='image'/><input type='button' class='btn btn-default hchoice'  value='선택'></form></span></td> </tr>"
 		     	
-		     	$("#").val();
-		     	$("#").val();
+		     	var body = $("<tbody>");
+				body.attr({
+					"data-num":n
+				});
+				body.addClass("hbody");
+				$("#hotel").append(body);
+				body.append(str);
 			});
 		} 
 			
@@ -235,7 +247,6 @@ function addlist(gohome_airline){
 	
 }
 </script>
-
 <form id="formapiurl">
 	<input type="hidden" id="apiurl" name="apiurl">
 </form>
@@ -259,7 +270,7 @@ function addlist(gohome_airline){
 				
 				
 			</table>
-			<table class="table table-bordered table-hover">
+			<table class="table table-bordered table-hover" id="hotel">
 				<colgroup>
 					<col width="25%">
 					<col width="20%">
@@ -271,11 +282,8 @@ function addlist(gohome_airline){
 						<th colspan="4">호텔 검색 결과</th>
 					</tr>
 				</thead>
-				<tbody id="hotel">
-				
-				</tbody>
 			</table>
-			<input type="submit" id="submit" value="완료" />
+			<input type="button" id="nextBtn" value="다음" />
 	
 	</div>
 </div>
