@@ -3,14 +3,12 @@ package com.project.main.checkIn.controller;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,8 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.main.checkIn.service.CheckInServiceImpl;
-import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckInVO;
+import com.project.main.checkIn.vo.FlightVO;
 @Controller
 @RequestMapping(value = "/checkIn")
 public class CheckInController {
@@ -123,7 +121,7 @@ public class CheckInController {
 		return output.toString();
 	}
 	@RequestMapping(value="book.do",method=RequestMethod.POST)
-	public String book(@ModelAttribute BookVO bvo){
+	public String book(@ModelAttribute FlightVO bvo){
 		System.out.println(bvo.toString());
 		
 		return "";

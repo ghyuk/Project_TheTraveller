@@ -1,6 +1,6 @@
 package com.project.main.checkIn.vo;
 
-public class BookVO {
+public class FlightVO {
 	private String airline;
 	private String out_day;
 	private String out_time;
@@ -123,7 +123,7 @@ public class BookVO {
 	}
 	@Override
 	public String toString() {
-		return "BookVO [airline=" + airline + ", out_day=" + out_day + ", out_time=" + out_time + ", out_airport="
+		return "FlightVO [airline=" + airline + ", out_day=" + out_day + ", out_time=" + out_time + ", out_airport="
 				+ out_airport + ", in_day=" + in_day + ", in_time=" + in_time + ", in_airport=" + in_airport
 				+ ", hout_day=" + hout_day + ", hout_time=" + hout_time + ", hout_airport=" + hout_airport
 				+ ", hin_day=" + hin_day + ", hin_time=" + hin_time + ", hin_airport=" + hin_airport + ", cnt=" + cnt

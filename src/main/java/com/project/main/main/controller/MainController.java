@@ -29,12 +29,6 @@ public class MainController {
 		
 		return "template/main/main";
 	}
-	
-	
-	
-	
-	
-	
 	@RequestMapping(value="/intro.do")
 	public ModelAndView intro(@RequestParam("intro") String intro){
 		logger.info("introSelect 호출 성공");
