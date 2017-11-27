@@ -69,6 +69,8 @@ thead {
 	margin-left: 80%;
 }
 </style>
+<script type="text/javascript"
+	src="/resources/include/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 var f_form ,H_form,f_ck=0,h_ck;
 $(function(){

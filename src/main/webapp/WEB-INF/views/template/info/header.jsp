@@ -99,10 +99,10 @@
 						<span class="caret"></span>
 				</a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="/main.do?main=newyork">Newyork</a></li>
-						<li><a href="/main.do?main=melbourne">Melbourne</a></li>
-						<li><a href="/main.do?main=madrid">Madrid</a></li>
-						<li><a href="/main.do?main=osaka">Osaka</a></li>
+						<li><a href="/intro.do?intro=newyork">Newyork</a></li>
+						<li><a href="/intro.do?intro=melbourne">Melbourne</a></li>
+						<li><a href="/intro.do?intro=madrid">Madrid</a></li>
+						<li><a href="/intro.do?intro=osaka">Osaka</a></li>
 					</ul></li>
 				<li class="nav-menu"><a href="#place">Place</a></li>
 				<li class="nav-menu"><a href="#food">Food</a></li>
