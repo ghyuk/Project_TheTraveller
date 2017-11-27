@@ -127,6 +127,13 @@ col-md-5 p {
 body {
 	background-color: white;
 }
+.carousel-indicators li{
+		width: 25px;
+		height: 8px;}
+		.carousel-indicators .active{
+		width: 25px;
+		height: 8px;
+		}
 </style>
 
 <div class="main">
