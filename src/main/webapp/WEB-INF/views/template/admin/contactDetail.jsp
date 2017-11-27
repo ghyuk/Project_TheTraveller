@@ -47,9 +47,9 @@
             <thead>
               <tr>
                 <th class="table-title">상담번호</th>
-                <td><input type="text" id="b_code" name="b_code" value="예약번호" readonly/></td>
+                <td><input type="text" id="contactnum" name="contactnum" value="상담번호" readonly/></td>
                 <th class="table-title">상담일</th>
-                	<td><input type="text" id="b_date" name="b_date" value="예약일" readonly/></td>
+                	<td><input type="text" id="contactdate" name="contactdate" value="상담신청일" readonly/></td>
               </tr>
             </thead>
             <tbody>
@@ -57,18 +57,18 @@
               <tr>
                 <th class="table-title">상담신청자 명</th>
                 <td>
-                		<input type="text" id="u_fname" name="u_fname" value="이름" readonly/>
+                		<input type="text" id="contactname" name="contactname" value="이름" readonly/>
                 	</td>
                 	<th class="table-title">이메일</th>
-              	<td><input type="text" id="u_email" name="u_email"	 value="aaa@aaa.com" readonly/></td>
+              	<td><input type="text" id="contactemail" name="contactemail"	 value="aaa@aaa.com" readonly/></td>
               </tr>
               <tr>
               	<th class="table-title">내용</th>
-              	<td colspan="3"><textarea class="form-control" rows="5"></textarea></td>
+              	<td colspan="3"><textarea id="contactcontent" name="contactcontent" class="form-control" rows="5"></textarea></td>
               </tr>
                <tr>
               	<th class="table-title">답변</th>
-              	<td colspan="3"><textarea class="form-control" rows="5"></textarea></td>
+              	<td colspan="3"><textarea id="contactreply" name="contactreply" class="form-control" rows="5"></textarea></td>
               </tr>
               	<tr>
               	<th class="table-title">답변 현황</th>
