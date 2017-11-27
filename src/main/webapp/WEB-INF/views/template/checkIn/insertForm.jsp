@@ -4,7 +4,7 @@
 <style type="text/css">
 			
 		#main_section {
-		 background-image: url("../image/osaka.jsp") no repeat;
+		 background-image: url("/resources/image/osaka.jsp") no repeat;
 		  background-size: cover;
 		  
 		  position: absolute;
@@ -78,7 +78,7 @@
 		    			<td>
 			    			<div class="form-group">
 						      <label for="u_lname">영문 성</label>
-						      <input type="text" class="form-control" id="u_lname" placeholder="여권상의 정보와 동일해야 합니다.">
+						      <input type="text" class="form-control" id="u_lname" name="u_lname" placeholder="여권상의 정보와 동일해야 합니다.">
 						    </div>
 						</td>
 					</tr>
@@ -86,7 +86,7 @@
 			    		<td>
 			    			<div class="form-group">
 						      <label for="u_fname">영문 이름</label>
-						      <input type="text" class="form-control" id="u_fname" placeholder="여권상의 정보와 동일해야 합니다.">
+						      <input type="text" class="form-control" id="u_fname" name="u_fname" placeholder="여권상의 정보와 동일해야 합니다.">
 						    </div>
 						</td>
 					</tr>
@@ -94,7 +94,7 @@
 			    		<td>
 			    			<div class="form-group">
 						      <label for="birth">생년월일</label>
-						      <input type="text" class="form-control" id="birth" placeholder="YYYY-MM-DD 형식으로 입력해주세요">
+						      <input type="text" class="form-control" id="birth" name="birth" placeholder="YYYY-MM-DD 형식으로 입력해주세요">
 						    </div>
 						</td>
 					</tr>
@@ -102,7 +102,7 @@
 			    		<td>
 			    			<div class="form-group">
 						      <label for="u_edate">여권 만료일</label>
-						      <input type="text" class="form-control" id="u_edate" placeholder="여권상의 정보와 동일해야 합니다.">
+						      <input type="text" class="form-control" id="u_edate" name="u_edate" placeholder="여권상의 정보와 동일해야 합니다.">
 						    </div>
 						</td>
 					</tr>
@@ -110,7 +110,7 @@
 			    		<td>
 			    			<div class="form-group">
 						      <label for="u_phone">전화번호</label>
-						      <input type="text" class="form-control" id="u_phone" placeholder="010-0000-0000  형식으로 입력해주세요">
+						      <input type="text" class="form-control" id="u_phone" name="u_phone" placeholder="010-0000-0000  형식으로 입력해주세요">
 						    </div>
 						</td>
 					</tr>
@@ -118,13 +118,13 @@
 			    		<td>
 			    			<div class="form-group">
 						      <label for="u_email">E-Mail</label>
-						      <input type="text" class="form-control" id="u_phone" placeholder="E-Ticket 등의 예약관련 정보가 발송이됩니다.">
+						      <input type="text" class="form-control" id="u_email" name="u_email" placeholder="E-Ticket 등의 예약관련 정보가 발송이됩니다.">
 						    </div>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2" align="right">
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#payModal" id="payBtn">결제</button>
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#payModal" >결제</button>
 						</td>
 					</tr>
 			    </table>	
@@ -158,7 +158,7 @@
 						    			<th colspan="2" class="table-title">카드번호</th>
 						    		</tr>
 						    		<tr>
-						    			<td colspan="2"><input type="text" class="form-control" id="cardNum" name="cardNum" placeholder="카드번호를 입력하세요"></td>
+						    			<td colspan="2"><input type="text" class="form-control" id="cardnum" name="cardnum" placeholder="카드번호를 입력하세요"></td>
 						    		</tr>
 						    		<tr>
 						    			<th colspan="2" class="table-title">유효기간<span id="securityCode-label">보안코드(3자리)</span></th>
@@ -167,18 +167,18 @@
 						    		<tr>
 						    			<td colspan="2"><input type="text" class="form-control" id="cardDateMonth" name="cardDateMonth" placeholder="MM">&nbsp;&nbsp;/&nbsp;&nbsp;
 						    					 <input type="text" class="form-control" id="cardDateYear" name="cardDateYear" placeholder="YY">
-						    					 	 <input type="text" class="form-control" id="securityCode" name="securityCode" >
+						    					 	 <input type="text" class="form-control" id="securitycode" name="securitycode" >
 						    					<img id="codeImage" src="/resources/image/securitycode.png">
 						    			</td>
 						    			
 						    		</tr>
 						    		<tr>
-						    			<th colspan="2" class="table-title">이름</th>
+						    			<th colspan="2" class="table-title">카드 소유자 명</th>
 						    		</tr>
 						    		<tr>
 						    			<td colspan="2">
-						    				 <input type="text" class="form-control fName" id="fName" name="fName" placeholder="이름">
-						    				<input type="text" class="form-control lName" id="lName" name="lName" placeholder="성">
+						    				 <input type="text" class="form-control fName" id="cardfname" name="cardfname" placeholder="영문 이름">
+						    				<input type="text" class="form-control lName" id="cardlname" name="cardlname" placeholder="영문 성">
 						    			</td>
 						    			
 						    		</tr>	
@@ -206,15 +206,15 @@
 						    			<th class="table-title">성</th>
 						    		</tr>
 						    		<tr>
-						    			<td><input type="text" class="form-control" id="fName" name="fName" placeholder="이름"></td>
-						    			<td><input type="text" class="form-control" id="lName" name="lName" placeholder="성"></td>
+						    			<td><input type="text" class="form-control" id="billfname" name="billfname" placeholder="이름"></td>
+						    			<td><input type="text" class="form-control" id="billlname" name="billlname" placeholder="성"></td>
 						    		</tr>
 						    		<tr>
 						    			<th colspan="2" class="table-title">회사명</th>
 						    		</tr>
 						    		<tr>
 						    			<td colspan="2">
-						    				<input type="text" class="form-control" id="comName" name="comName">
+						    				<input type="text" class="form-control" id="comname" name="comname">
 						    			</td>
 						    		</tr>
 						    		<tr>
@@ -223,10 +223,10 @@
 						    		</tr>
 						    		<tr>
 						    			<td>
-						    				 <input type="text" class="form-control" id="email" name="email">
+						    				 <input type="text" class="form-control" id="billemail" name="billemail">
 						    			</td>
 						    			<td>
-						    				 <input type="text" class="form-control" id="phone" name="phone">
+						    				 <input type="text" class="form-control" id="billphone" name="billphone">
 						    			</td>
 						    		</tr>	
 						    		<tr>
@@ -249,7 +249,7 @@
 						  </div>
 				      </div>
 				      <div class="modal-btn">
-							<button type="button" class="btn btn-primary btn-block">결제</button>
+							<button type="button" class="btn btn-primary btn-block" id="payBtn" name="payBtn">결제</button>
 				        		<button type="button" class="btn btn-default btn-block" data-dismiss="modal">취소</button>
 				        </div>
 				        </form>
