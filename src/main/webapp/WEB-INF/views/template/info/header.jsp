@@ -69,12 +69,7 @@
 		.modal-btn{
 		margin-top: 25px;}
 </style>
-<script type="text/javascript">
-	$(function(){
-		/* 관리자 메뉴 숨김 */
-		$(".admin-menu").hide();
-	})
-</script>
+
 
 <nav class="navbar navbar-inverse">
 	<div class="container-fluid">
@@ -109,11 +104,11 @@
 				<li class="nav-menu"><a href="#play">Play</a></li>
 				<li class="nav-menu"><a href="#contact">Contact</a></li>
 				<li class="nav-menu"><a href="#myinfo" data-toggle="modal" data-target="#loginModal">My Info</a></li>
-				<!-- 관리자 모드 -->
-				<li class="admin-menu"><a href="#checkInList">Check-In List</a></li>
-				<li class="admin-menu"><a href="#contactList">Contact List</a></li>
-				<li class="admin-menu"><a href="#logOut">Log - Out</a></li>
 				<li class="nav-menu"><a href="/test/check.do" style="color: #c21616">Check-In</a></li>
+				<!-- 관리자 모드 -->
+				<!-- <li class="admin-menu"><a href="#checkInList">Check-In List</a></li>
+				<li class="admin-menu"><a href="#contactList">Contact List</a></li>
+				<li class="admin-menu"><a href="#logOut">Log - Out</a></li> -->
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

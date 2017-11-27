@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <script type="text/javascript" src="js/ie10-viewport-bug-workaround.js"></script>
 <style type="text/css">
 			
@@ -124,10 +124,139 @@
 					</tr>
 					<tr>
 						<td colspan="2" align="right">
-							<button type="button" class="btn btn-primary" id="next">NEXT</button>
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#payModal" id="payBtn">결제</button>
 						</td>
 					</tr>
-			    </table>			  
+			    </table>	
+			    <!-- Modal -->
+				<div class="modal fade" id="payModal" tabindex="-1" role="dialog" aria-labelledby="payModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				     	<form id="f_checkOut">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h3 class="modal-title" id="payModalLabel">Payment</h3>
+				      </div>
+				
+				      <div class="modal-body">
+				       
+				        		<div class="form-group">
+						    <label class="payment-label" for="cardBrand">사용가능 카드사 : </label>
+						    <img class="cardBrand" src="../image/unionpay.png">
+						    <img class="cardBrand" src="../image/master.png">
+						    <img class="cardBrand" src="../image/visa.png">
+						    <img class="cardBrand" src="../image/bccard.png">
+						  </div>
+						  <div class="form-group">
+						    <table class="table">
+						    		<colgroup>
+						    			<col width="33%">
+						    			<col width="33%">
+						    			<col width="33%">
+						    		</colgroup>
+						    		<tr>
+						    			<th colspan="2" class="table-title">카드번호</th>
+						    		</tr>
+						    		<tr>
+						    			<td colspan="2"><input type="text" class="form-control" id="cardNum" name="cardNum" placeholder="카드번호를 입력하세요"></td>
+						    		</tr>
+						    		<tr>
+						    			<th colspan="2" class="table-title">유효기간<span id="securityCode-label">보안코드(3자리)</span></th>
+						    			
+						    		</tr>
+						    		<tr>
+						    			<td colspan="2"><input type="text" class="form-control" id="cardDateMonth" name="cardDateMonth" placeholder="MM">&nbsp;&nbsp;/&nbsp;&nbsp;
+						    					 <input type="text" class="form-control" id="cardDateYear" name="cardDateYear" placeholder="YY">
+						    					 	 <input type="text" class="form-control" id="securityCode" name="securityCode" >
+						    					<img id="codeImage" src="../image/securitycode.png">
+						    			</td>
+						    			
+						    		</tr>
+						    		<tr>
+						    			<th colspan="2" class="table-title">이름</th>
+						    		</tr>
+						    		<tr>
+						    			<td colspan="2">
+						    				 <input type="text" class="form-control fName" id="fName" name="fName" placeholder="이름">
+						    				<input type="text" class="form-control lName" id="lName" name="lName" placeholder="성">
+						    			</td>
+						    			
+						    		</tr>	
+						    		
+						    </table>
+						  </div>
+						
+						
+				      </div>
+				      <!-- <div class="modal-footer">
+				        
+				      </div> -->
+				      
+				      <div class="modal-header">
+				        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+				        <h3 class="modal-title" id="loginModalLabel">Billing Details</h3>
+				      </div>
+				      
+				      <div class="modal-body">
+				        
+						  <div class="form-group">
+						    <table class="table">
+						    		<tr>
+						    			<th class="table-title">이름</th>
+						    			<th class="table-title">성</th>
+						    		</tr>
+						    		<tr>
+						    			<td><input type="text" class="form-control" id="fName" name="fName" placeholder="이름"></td>
+						    			<td><input type="text" class="form-control" id="lName" name="lName" placeholder="성"></td>
+						    		</tr>
+						    		<tr>
+						    			<th colspan="2" class="table-title">회사명</th>
+						    		</tr>
+						    		<tr>
+						    			<td colspan="2">
+						    				<input type="text" class="form-control" id="comName" name="comName">
+						    			</td>
+						    		</tr>
+						    		<tr>
+						    			<th class="table-title">E-Mail</th>
+						    			<th class="table-title">전화번호</th>
+						    		</tr>
+						    		<tr>
+						    			<td>
+						    				 <input type="text" class="form-control" id="email" name="email">
+						    			</td>
+						    			<td>
+						    				 <input type="text" class="form-control" id="phone" name="phone">
+						    			</td>
+						    		</tr>	
+						    		<tr>
+						    			<th colspan="2" class="table-title">주소</th>
+						    		</tr>
+						    		<tr>
+						    			<td colspan="2">
+						    				<input type="text" class="form-control" id="address" name="address" placeholder="주소를 입력해주세요">
+						    			</td>
+						    		</tr>
+						    		<tr>
+						    			<th class="table-title">우편번호</th>
+						    			<th></th>
+						    		</tr>
+						    		<tr>
+						    			<td><input type="text" class="form-control" id="postcode" name="postcode"></td>
+						    			<th></th>
+						    		</tr>
+						    </table>
+						  </div>
+				      </div>
+				      <div class="modal-btn">
+							<button type="button" class="btn btn-primary btn-block">결제</button>
+				        		<button type="button" class="btn btn-default btn-block" data-dismiss="modal">취소</button>
+				        </div>
+				        </form>
+				    </div>
+				  </div>
+				</div>
+					<!-- end Modal -->		  
 			  </fieldset>
 			</form>
 		</div>
@@ -181,7 +310,7 @@
            </div>
        </div>
      <div class="panel panel-default"> <a title="Tab 2" aria-controls="collapse2" aria-expanded="false" href="#collapse2" data-parent="#accordion" data-toggle="collapse" id="heading2" role="tab" class="panel-heading collapsed">
-        <span class="panel-title">[ The Traveller 개인정보 처리방침 ]</span></a>
+        <span class="panel-title">[ The Traveller 개인정보 처리 방침 ]</span></a>
          <div aria-labelledby="heading2" role="tabpanel" class="panel-collapse collapse" id="collapse2" aria-expanded="false">
              <div class="panel-body">
    <pre>
