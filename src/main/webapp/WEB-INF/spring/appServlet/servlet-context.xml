@@ -33,13 +33,13 @@
 	<!-- 우선순위 첫번째 -->
 	<beans:bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
-		<beans:property name="order" value="1"></beans:property>
+		<beans:property name="order" value="2"></beans:property>
 	</beans:bean>
 	<!-- 우선순위 두번째, 첫번째가 실행되지 않을 시 이곳으로 와서 찾아 매칭한다. -->
 	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
-		<beans:property name="order" value="2"></beans:property>
+		<beans:property name="order" value="1"></beans:property>
 	</beans:bean>
 	<!-- <beans:bean id="viewResolver2" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/resources/" />

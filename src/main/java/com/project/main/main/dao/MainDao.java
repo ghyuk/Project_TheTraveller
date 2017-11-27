@@ -6,7 +6,7 @@ import com.project.main.main.vo.MainVO;
 
 public interface MainDao {
 
-	public List<MainVO> main(String main);
+	public List<MainVO> introSelect(String introSelect);
 	
 
 }

@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="/resources/include/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css"
 	type="text/css" />
-
-<!--  jQuery UI 라이브러리 js파일 -->
-<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+<!-- jQuery 기본 js파일 -->
 <style>
 #main_section {
 	background: black;
@@ -56,6 +54,11 @@
 	font-weight: 600;
 }
 </style>
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--  jQuery UI 라이브러리 js파일 -->
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$("#d_date").datepicker({
@@ -81,8 +84,13 @@
 			console.log($("#arrival").val());
 			console.log($("#d_date").val());
 			console.log($("#a_date").val());
-			console.log($("#class").val());
-
+			console.log($("#sitclass").val());
+			$("#f_check").attr({
+				"method":"post",
+				"action":"/checkIn/fhList.do"
+			});
+			$("#f_check").submit();
+			
 		})
 	});
 </script>
@@ -98,18 +106,19 @@
 					<tr>
 						<td>
 							<div class="form-group">
-								<label for="departure">출발 도시</label> <input type="text"
-									class="form-control" id="departure" value="서울(인천)">
+								<label for="departure">출발 도시</label> <input type="text" readonly="readonly"
+									class="form-control" id="departure" name="departure" value="대한민국(인천),SEL">
 							</div>
 						</td>
 						<td>
 							<div class="form-group">
-								<label for="arrival">도착 도시</label> <select class="form-control"
-									id="arrival">
-									<option value="newyork">NewYork</option>
-									<option value="Melbourne">Melbourne</option>
-									<option value="Madrid">Madrid</option>
-									<option value="Osaka">Osaka</option>
+								<label for="arrival">도착 도시</label> 
+								<select class="form-control"
+									id="arrival" name="arrival">
+									<option value="뉴욕,JFK">NewYork</option>
+									<option value="멜버른,MEL">Melbourne</option>
+									<option value="마드리드,MAD">Madrid</option>
+									<option value="오사카,KIX">Osaka</option>
 								</select>
 							</div>
 						</td>
@@ -118,13 +127,13 @@
 						<td>
 							<div class="form-group">
 								<label for="d_date">출국일</label> <input type="text"
-									class="form-control" id="d_date" placeholder="출국일을 선택해주세요">
+									class="form-control" id="d_date" name="d_date" placeholder="출국일을 선택해주세요">
 							</div>
 						</td>
 						<td>
 							<div class="form-group">
 								<label for="a_date">귀국일</label> <input type="text"
-									class="form-control" id="a_date" placeholder="귀국일을 선택해주세요">
+									class="form-control" id="a_date" name="a_date" placeholder="귀국일을 선택해주세요">
 							</div>
 						</td>
 					</tr>
@@ -132,7 +141,7 @@
 						<td>
 							<div class="form-group">
 								<label for="class">좌석 등급</label> <select class="form-control"
-									id="class">
+									id="sitclass" name="sitclass">
 									<option value="economy" selected>일반석</option>
 									<option value="business">비즈니스</option>
 									<option value="first">퍼스트</option>
@@ -142,7 +151,7 @@
 						<td>
 							<div class="form-group">
 								<label for="people">인원</label> <select class="form-control"
-									id="people">
+									id="people" name="people">
 									<option value="1" selected>1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>

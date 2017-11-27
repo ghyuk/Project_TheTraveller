@@ -22,6 +22,10 @@
 <link rel="stylesheet" href="/resources/include/css/info.css">
 <!-- 없어도 되는듯 -->
 <title><tiles:getAsString name="title" /></title>
+<script type="text/javascript"
+	src="/resources/include/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript"
+	src="/resources/include/js/bootstrap.min.js"></script>
 <style type="text/css">
 html, body {
 	height: 100%;
@@ -58,15 +62,7 @@ body {
 	background-color: #c21616;
 }
 </style>
-<script type="text/javascript"
-	src="/resources/include/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript"
-	src="/resources/include/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-	$(function(){
-		$(".dropdown-toggle").dropdown();
-	});
-</script>
+
 
 
 </head>

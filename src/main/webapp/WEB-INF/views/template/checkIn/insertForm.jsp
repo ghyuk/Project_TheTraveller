@@ -142,10 +142,10 @@
 				       
 				        		<div class="form-group">
 						    <label class="payment-label" for="cardBrand">사용가능 카드사 : </label>
-						    <img class="cardBrand" src="../image/unionpay.png">
-						    <img class="cardBrand" src="../image/master.png">
-						    <img class="cardBrand" src="../image/visa.png">
-						    <img class="cardBrand" src="../image/bccard.png">
+						    <img class="cardBrand" src="/resources/image/unionpay.png">
+						    <img class="cardBrand" src="/resources/image/master.png">
+						    <img class="cardBrand" src="/resources/image/visa.png">
+						    <img class="cardBrand" src="/resources/image/bccard.png">
 						  </div>
 						  <div class="form-group">
 						    <table class="table">
@@ -168,7 +168,7 @@
 						    			<td colspan="2"><input type="text" class="form-control" id="cardDateMonth" name="cardDateMonth" placeholder="MM">&nbsp;&nbsp;/&nbsp;&nbsp;
 						    					 <input type="text" class="form-control" id="cardDateYear" name="cardDateYear" placeholder="YY">
 						    					 	 <input type="text" class="form-control" id="securityCode" name="securityCode" >
-						    					<img id="codeImage" src="../image/securitycode.png">
+						    					<img id="codeImage" src="/resources/image/securitycode.png">
 						    			</td>
 						    			
 						    		</tr>

@@ -20,7 +20,7 @@ public class MainDaoImpl implements MainDao{
 	private SqlSession session;
 	
 	@Override
-	public List<MainVO> main(String main) {
-		return session.selectList("main",main);
+	public List<MainVO> introSelect(String introSelect) {
+		return session.selectList("introSelect",introSelect);
 	}
 }

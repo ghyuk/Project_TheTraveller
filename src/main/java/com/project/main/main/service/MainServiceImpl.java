@@ -20,9 +20,9 @@ public class MainServiceImpl implements MainService{
 	private MainDao mainDao;
 
 	@Override
-	public List<MainVO> main(String main) {
+	public List<MainVO> introSelect(String introSelect) {
 		List<MainVO> list = null;
-		list = mainDao.main(main);
+		list = mainDao.introSelect(introSelect);
 		return list;
 	}
 	
