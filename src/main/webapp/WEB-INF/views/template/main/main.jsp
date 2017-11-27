@@ -25,9 +25,9 @@
   </div>
   <div class="sidebar-real">
     <div data-page="1" class="nav-elem nav-1 active"><span id="nav-text">main</span></div>
-    <div data-page="2" class="nav-elem nav-2"><span id="nav-text">NEWYORK</span></div>
-    <div data-page="3" class="nav-elem nav-3"><span id="nav-text">Austraillia</span></div>
-    <div data-page="4" class="nav-elem nav-4"><span id="nav-text">Japan</span></div>
+    <div data-page="2" class="nav-elem nav-2"><span id="nav-text">Newyork</span></div>
+    <div data-page="3" class="nav-elem nav-3"><span id="nav-text">Melbourne</span></div>
+    <div data-page="4" class="nav-elem nav-4"><span id="nav-text">Osaka</span></div>
     <div data-page="5" class="nav-elem nav-5"><span id="nav-text">Madrid</span></div>
   </div>
   <div class="sections">
@@ -58,7 +58,7 @@
         <div class="bg-part"></div>
         <div class="bg-part"></div>
         <div class="bg-part"></div>
-        <h2 class="section-heading"><span id="newyork" >뉴욕</span></h2>
+        <h2 class="section-heading"><span id="newyork" ><a href="/intro.do?intro=newyork">뉴욕</a></span></h2>
         <p class="additional-text"></p>
       </div>
     </div>
@@ -73,7 +73,7 @@
         <div class="bg-part"></div>
         <div class="bg-part"></div>
         <div class="bg-part"></div>
-        <h2 class="section-heading"><span id="aus">호주</span></h2>
+        <h2 class="section-heading"><span id="melbourne"><a href="/intro.do?intro=melbourne">멜버른</a></span></h2>
         <p class="additional-text"></p>
       </div>
     </div>
@@ -88,7 +88,7 @@
         <div class="bg-part"></div>
         <div class="bg-part"></div>
         <div class="bg-part"></div>
-        <h2 class="section-heading"><span id="japan">일본</span></h2>
+        <h2 class="section-heading"><span id="osaka"><a href="/intro.do?intro=osaka">오사카</a></span></h2>
         <p class="additional-text"></p>
       </div>
     </div>
@@ -103,7 +103,7 @@
         <div class="bg-part"></div>
         <div class="bg-part"></div>
         <div class="bg-part"></div>
-        <h2 class="section-heading"><span id="madrid">마드리드</span></h2>
+        <h2 class="section-heading"><span id="madrid"><a href="/intro.do?intro=madrid">마드리드</a></span></h2>
         <p class="additional-text"></p>
       </div>
   <h2 class="scroll-down"></h2>
