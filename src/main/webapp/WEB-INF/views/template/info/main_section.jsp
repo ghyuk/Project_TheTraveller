@@ -34,7 +34,7 @@
 		<script type="text/javascript">
 			$(function() {
 				$("#main_section").css({
-					"background":"#f4f7ca url('/resources/image/${main}.jpg') center center no-repeat",
+					"background":"#f4f7ca url('/resources/image/${intro}.jpg') center center no-repeat",
 					"background-size": "cover"
 				});
 				
@@ -42,7 +42,7 @@
 		</script>
 	<div id="main_section">
 		<div class="main_wrapper">
-			<h2>${main }</h2>
+			<h2>${intro }</h2>
 			<p>The Travel Maker</p>
 		</div>
 	</div>
