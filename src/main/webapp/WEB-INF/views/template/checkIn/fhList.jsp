@@ -88,10 +88,6 @@ $(function(){
 		}
 		var form = $(this).parents("form");
 		f_form = form;
-		f_form.attr({
-			"method":"post",
-			"action":"/checkIn/book.do"
-		});
 		console.log(f_form.html());
 	});
 	
@@ -107,12 +103,30 @@ $(function(){
 		h_form = form;
 		h_form.attr({
 			"method":"post",
-			"action":"/checkIn/book.do"
+			"action":"/checkIn/hotel.do"
 		});
-		h_form.submit();
 		console.log(h_form.html());
 	});
-	
+	$("#nextBtn").click(function(){$
+		
+		$.ajax({
+			url : "/checkIn/flight.do",
+			type : "POST",
+			data : f_form.serialize(),
+			error : function(){
+				alert("오류");
+			},
+			success : function(result){
+				console.log(f_form.html());
+				console.log("${session.airline}");
+				console.log("${model.airline}");
+				
+			}
+		});
+
+		
+		
+	});
 	
 	
 });
@@ -239,14 +253,11 @@ $(function(){
 	
 	
 	
-
-function addlist(gohome_airline){
-	
-	
-	
-	
-}
 </script>
+<form id="nextForm" >
+	<input type="hidden" id="flightdata" />
+	<input type="hidden" id="hoteldata" />
+</form>
 <form id="formapiurl">
 	<input type="hidden" id="apiurl" name="apiurl">
 </form>

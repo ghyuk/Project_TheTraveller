@@ -6,9 +6,12 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.project.main.checkIn.service.CheckInServiceImpl;
 import com.project.main.checkIn.vo.CheckInVO;
 import com.project.main.checkIn.vo.FlightVO;
+import com.project.main.checkIn.vo.HotelVO;
 @Controller
 @RequestMapping(value = "/checkIn")
 public class CheckInController {
@@ -120,11 +124,20 @@ public class CheckInController {
 
 		return output.toString();
 	}
-	@RequestMapping(value="book.do",method=RequestMethod.POST)
-	public String book(@ModelAttribute FlightVO bvo){
-		System.out.println(bvo.toString());
+	@ResponseBody
+	@RequestMapping(value="flight.do",method=RequestMethod.POST)
+	public FlightVO flight(@ModelAttribute FlightVO fvo,Model model,HttpSession session){
+		System.out.println(fvo.toString());
+		model.addAttribute("model",fvo);
+		session.setAttribute("session", fvo);
+
+		return fvo;
+	}
+	@RequestMapping(value="hotel.do",method=RequestMethod.POST)
+	public String hotel(@ModelAttribute HotelVO hvo){
+		System.out.println(hvo.toString());
 		
-		return "";
+		return "regedit:"+hvo;
 	}
 	
 
