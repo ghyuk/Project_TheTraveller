@@ -34,7 +34,7 @@
 	font-size: 15px;
 }
 /* modal css */
-.modal-content{
+.login-modal-content{
 		width: 300px;
  		 height: 500px;
 		background-image: url("/resources/image/loginbg.png") ;
@@ -124,7 +124,7 @@
 <!--Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog  modal-sm">
-    <div class="modal-content">
+    <div class="login-modal-content">
       <!-- <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h3 class="modal-title" id="loginModalLabel">Log - In</h3>

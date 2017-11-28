@@ -92,6 +92,36 @@
 .panel-title {
 	width: 100%;
 }
+.cardBrand{
+		width: 30px;
+		}
+		table, th, tr, td, .nbsp{
+			border-spacing: 0px;
+			border: 2px solid white;}
+
+			.col-md-6{
+			min-width: 80%;
+			margin: auto 10%;}
+			#cardDateYear, #cardDateMonth{
+			width: 10%;
+			display: inline;}
+			#securityCode-label{
+			padding-left: 18%;}
+			#securitycode{
+			margin-left: 3%;
+			width: 20%;
+			display: inline;}
+			#codeImage{
+			width:45px;
+			margin-left: 2%;}
+			#cardnum{
+			width: 60%;}
+			.fName, .lName{
+			width: 30%;
+			display: inline;}
+		
+			.modal-btn{
+			padding:0 20px 20px 20px;}
 </style>
 
 
@@ -202,8 +232,9 @@
 												<th colspan="2" class="table-title">카드번호</th>
 											</tr>
 											<tr>
-												<td colspan="2"><input type="text" class="form-control"
-													id="cardnum" name="cardnum" placeholder="카드번호를 입력하세요"></td>
+												<td colspan="2">
+													<input type="text" class="form-control" id="cardnum" name="cardnum" placeholder="카드번호를 입력하세요">
+												</td>
 											</tr>
 											<tr>
 												<th colspan="2" class="table-title">유효기간<span
@@ -211,25 +242,23 @@
 
 											</tr>
 											<tr>
-												<td colspan="2"><input type="text" class="form-control"
-													id="cardDateMonth" name="cardDateMonth" placeholder="MM">&nbsp;&nbsp;/&nbsp;&nbsp;
-													<input type="text" class="form-control" id="cardDateYear"
-													name="cardDateYear" placeholder="YY"> <input
-													type="text" class="form-control" id="securitycode"
-													name="securitycode"> <img id="codeImage"
-													src="/resources/image/securitycode.png"></td>
+												<td colspan="2">
+													<input type="text" class="form-control" id="cardDateMonth" name="cardDateMonth" placeholder="MM">
+													&nbsp;&nbsp;/&nbsp;&nbsp;
+													<input type="text" class="form-control" id="cardDateYear" name="cardDateYear" placeholder="YY"> 
+													<input type="text" class="form-control" id="securitycode" name="securitycode"> 
+													<img id="codeImage" src="/resources/image/securitycode.png">
+												</td>
 
 											</tr>
 											<tr>
 												<th colspan="2" class="table-title">카드 소유자 명</th>
 											</tr>
 											<tr>
-												<td colspan="2"><input type="text"
-													class="form-control fName" id="cardfname" name="cardfname"
-													placeholder="영문 이름"> <input type="text"
-													class="form-control lName" id="cardlname" name="cardlname"
-													placeholder="영문 성"></td>
-
+												<td colspan="2">
+													<input type="text" class="form-control fName" id="cardfname" name="cardfname" placeholder="영문 이름"> 
+													<input type="text" class="form-control lName" id="cardlname" name="cardlname" placeholder="영문 성">
+												</td>
 											</tr>
 
 										</table>
