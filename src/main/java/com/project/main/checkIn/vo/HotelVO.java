@@ -1,12 +1,22 @@
 package com.project.main.checkIn.vo;
 
 public class HotelVO {
+	private HotelVO hoteldata;
 	private String h_name;
 	private String h_info;
 	private String h_address;
 	private String h_tel;
 	private String h_price;
 	private String h_image;
+	
+	
+	
+	public HotelVO getHoteldata() {
+		return hoteldata;
+	}
+	public void setHoteldata(HotelVO hoteldata) {
+		this.hoteldata = hoteldata;
+	}
 	public String getH_name() {
 		return h_name;
 	}

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
-<%@ page trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,13 +18,11 @@
 <!--[if lt IE 9]>
     	 	<script src="/resources/include/js/html5shiv.js"></script>
 		<![endif]-->
+
+
 <link rel="stylesheet" href="/resources/include/css/info.css">
 <!-- 없어도 되는듯 -->
 <title><tiles:getAsString name="title" /></title>
-<script type="text/javascript"
-	src="/resources/include/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript"
-	src="/resources/include/js/bootstrap.min.js"></script>
 <style type="text/css">
 html, body {
 	height: 100%;
@@ -45,7 +42,7 @@ body {
 
 .header {
 	position: relative;
-	/*  height: 100%; */
+	height: 100%;
 }
 
 .blank {
@@ -62,7 +59,10 @@ body {
 	background-color: #c21616;
 }
 </style>
-
+<script type="text/javascript"
+	src="/resources/include/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript"
+	src="/resources/include/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -70,11 +70,47 @@ body {
 	<header class="header" id="header">
 		<tiles:insertAttribute name="header" />
 	</header>
+	<section>
+		<tiles:insertAttribute name="main_section" />
+	</section>
 
+	<div class="blank" id="place"></div>
+	<div class="blank"></div>
 	<section class="section">
-		<tiles:insertAttribute name="body" />
+		<tiles:insertAttribute name="first_section_lp" />
+	</section>
+	<div class="blank"></div>
+	<div class="second_sec">
+		<div id="food"></div>
+		<div class="blank"></div>
+		<section class="section">
+			<tiles:insertAttribute name="second_section_rp" />
+		</section>
+		<div class="blank"></div>
+
+		<div id="play"></div>
+	</div>
+	<div class="blank"></div>
+	<section class="section">
+		<tiles:insertAttribute name="third_section_lp" />
+	</section>
+
+	<div class="blank"></div>
+	<div class="blank"></div>
+	<div class="col-sm-4 col-sm-offset-4 text-center-xs" align="right">
+		<button type="submit" id="checkInNow" class="btn btn-submit-line">CHECK
+			- IN</button>
+	</div>
+	<div class="blank"></div>
+
+	<div class="blank"></div>
+	<section class="section" id="contact">
+		<tiles:insertAttribute name="contact" />
 	</section>
 
 
+	<footer class="footer" id="footer">
+		<tiles:insertAttribute name="footer" />
+	</footer>
 </body>
 </html>
