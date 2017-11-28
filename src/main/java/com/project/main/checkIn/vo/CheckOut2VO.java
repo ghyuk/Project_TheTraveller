@@ -1,14 +1,6 @@
 package com.project.main.checkIn.vo;
 
-public class CheckOutVO {
-
-	private String u_lname;
-	private String u_fname;
-	private String birth;
-	private String u_edate;
-	private String u_phone;
-	private String u_email;
-	
+public class CheckOut2VO {
 	private String cardnum;
 	private String cardDateYear;
 	private String cardDateMonth;
@@ -24,43 +16,6 @@ public class CheckOutVO {
 	private String billphone;
 	private String address;
 	private String postcode;
-	
-	public String getU_lname() {
-		return u_lname;
-	}
-	public void setU_lname(String u_lname) {
-		this.u_lname = u_lname;
-	}
-	public String getU_fname() {
-		return u_fname;
-	}
-	public void setU_fname(String u_fname) {
-		this.u_fname = u_fname;
-	}
-	public String getBirth() {
-		return birth;
-	}
-	public void setBirth(String birth) {
-		this.birth = birth;
-	}
-	public String getU_edate() {
-		return u_edate;
-	}
-	public void setU_edate(String u_edate) {
-		this.u_edate = u_edate;
-	}
-	public String getU_phone() {
-		return u_phone;
-	}
-	public void setU_phone(String u_phone) {
-		this.u_phone = u_phone;
-	}
-	public String getU_email() {
-		return u_email;
-	}
-	public void setU_email(String u_email) {
-		this.u_email = u_email;
-	}
 	public String getCardnum() {
 		return cardnum;
 	}
@@ -139,6 +94,14 @@ public class CheckOutVO {
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
+	@Override
+	public String toString() {
+		return "CheckOut2VO [cardnum=" + cardnum + ", cardDateYear=" + cardDateYear + ", cardDateMonth=" + cardDateMonth
+				+ ", securitycode=" + securitycode + ", cardfname=" + cardfname + ", cardlname=" + cardlname
+				+ ", billfname=" + billfname + ", billlname=" + billlname + ", comname=" + comname + ", billemail="
+				+ billemail + ", billphone=" + billphone + ", address=" + address + ", postcode=" + postcode + "]";
+	}
+	
 	
 	
 	
