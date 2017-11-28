@@ -1,6 +1,7 @@
 package com.project.main.checkIn.vo;
 
 public class FlightVO {
+	private FlightVO flightdata;
 	private String airline;
 	private String out_day;
 	private String out_time;
@@ -19,6 +20,13 @@ public class FlightVO {
 	private String price;
 	private String readtime;
 	
+	
+	public FlightVO getFlightdata() {
+		return flightdata;
+	}
+	public void setFlightdata(FlightVO flightdata) {
+		this.flightdata = flightdata;
+	}
 	public String getReadtime() {
 		return readtime;
 	}

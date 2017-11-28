@@ -6,9 +6,12 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,7 +21,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.project.main.checkIn.service.CheckInServiceImpl;
 import com.project.main.checkIn.vo.CheckInVO;
+import com.project.main.checkIn.vo.CheckInVO2;
+import com.project.main.checkIn.vo.CheckOutVO;
 import com.project.main.checkIn.vo.FlightVO;
+import com.project.main.checkIn.vo.HotelVO;
+import com.project.main.common.vo.FHVO;
 @Controller
 @RequestMapping(value = "/checkIn")
 public class CheckInController {
@@ -34,7 +41,7 @@ public class CheckInController {
 	}
 	
 	@RequestMapping(value="/fhList.do",method=RequestMethod.POST)
-	public ModelAndView fhList(@ModelAttribute CheckInVO cvo){ 
+	public ModelAndView fhList(@ModelAttribute CheckInVO2 cvo){ 
 		logger.info("fhList 호출 성공");
 		
 		ModelAndView mav = new ModelAndView();
@@ -70,8 +77,7 @@ public class CheckInController {
 			int resCode = conn.getResponseCode();
 			System.out.println(resCode);
 			
-			BufferedReader in = new BufferedReader(new InputStreamReader(
-					conn.getInputStream()));
+			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			String inputLine;
 			
 	
@@ -88,44 +94,48 @@ public class CheckInController {
 		return output.toString();
 	}
 	
-	@ResponseBody
-	@RequestMapping(value = "/apitest.do", method = RequestMethod.GET)
-	public String requestResult(@RequestParam("test") String test) {
-		logger.info("api요청,test:" + test);
-		StringBuffer output = new StringBuffer();
-		try {
-			String site = test;
-
-			URL url = new URL(site);
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-			// 여기서 실제로 웹서버로 데이터가 전송된다.
-			conn.setRequestMethod("GET");
-			/* conn.setRequestProperty("keyword_str", "자바"); */
-
-			int resCode = conn.getResponseCode();
-			System.out.println(resCode);
-
-			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			String inputLine;
-
-			while ((inputLine = in.readLine()) != null) {
-				output.append(inputLine);
-				output.append("\n");
-			}
-			in.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return output.toString();
-	}
-	@RequestMapping(value="book.do",method=RequestMethod.POST)
-	public String book(@ModelAttribute FlightVO bvo){
-		System.out.println(bvo.toString());
-		
-		return "";
-	}
 	
+	@ResponseBody
+	@RequestMapping(value="/flight.do",method=RequestMethod.POST)
+	public FlightVO flight(@ModelAttribute FlightVO vo,HttpSession session){
+		session.setAttribute("sfvo", vo);
+		return vo;
+	}
+	@ResponseBody
+	@RequestMapping(value="/hotel.do",method=RequestMethod.POST)
+	public HotelVO hotel(@ModelAttribute HotelVO vo,HttpSession session){
+		session.setAttribute("shvo", vo);
+		return vo;
+	}
+
+	@RequestMapping(value="/book.do",method=RequestMethod.POST)
+	public ModelAndView voSession(HttpSession session){
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("template/checkIn/insertForm");
+
+		return mav;
+	}
+	@RequestMapping(value="/test.do",method=RequestMethod.GET)
+	public ModelAndView test(HttpSession session){
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("template/checkIn/insertForm");
+
+		return mav;
+	}
+	@ResponseBody
+	@RequestMapping(value="/fbook.do",method=RequestMethod.POST)
+	public CheckOutVO fbook(@ModelAttribute CheckOutVO vo,HttpSession session){
+		session.setAttribute("spvo", vo);
+		return vo;
+	}
+	@RequestMapping(value="/sbook.do",method=RequestMethod.POST)
+	public ModelAndView sbook(@ModelAttribute CheckOutVO vo,HttpSession session){
+		ModelAndView mav = new ModelAndView();
+		session.setAttribute("scvo", vo);
+		
+		mav.setViewName("template/checkIn/checkInfoList");
+
+		return mav;
+	}
 
 }

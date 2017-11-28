@@ -1,332 +1,257 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<script type="text/javascript" src="js/ie10-viewport-bug-workaround.js"></script>
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Signin</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/resources/include/css/bootstrap.min.css" >
+
+    <!-- Custom styles for this template -->
+   <!--  <link  rel="stylesheet" href="css/signin.css"> -->
+   <script type="text/javascript" src="/resources/include/js/jquery-1.12.4.min.js"></script>
+   <script type="text/javascript" src="/resources/include/js/bootstrap.min.js"></script>
+   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+   <!--  <script src="/js/ie10-viewport-bug-workaround.js"></script> -->
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+   <!--  <script src="/js/ie-emulation-modes-warning.js"></script> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style type="text/css">
+      .container-fluid{
+      }
+      .navbar{
+         z-index: 100;
+         position: fixed;
+         min-width:100%;
+         text-transform:uppercase;
+         height: 55px;
+         font-weight: 700;
+         vertical-align: center;}
+      .dropdown-menu{
+         background-color: black;
+         }
+      .dropdown-menu > li > a{
+         color: #8b8b8b;}
+      .navbar-brand{
+         padding-left: 50px;
+         font-size: 20px;
+         }
+      .navbar-nav > li > a{
+         font-size: 15px;}         
+      #main_section {
+       background-image: url("../image/osaka.jsp") no repeat;
+        background-size: cover;
+        
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0%;
+        left: 0; 
+         }
+         /* #check_title {
+         position:absolute;
+         top: 28%;
+         left:10%;
+           font-size:730%;
+           font-weight: 800;
+           text-shadow: 2px 2px black;
+            color: white;
+         } */
+         #form_wrapper{
+         /* position: absolute;
+         top:10%;
+         right: 5%;
+         left: 45%; 
+         bottom: 0%;*/
+         background-color: #fff;
+         width: 100%;
+         /* z-index: 100; */
+         overflow: auto;
+         margin: 80px 20% 10px 20%;
+         padding: 10px 3% 10px 3%;
+         }
+         #form_wrapper table{
+         width: 100%;}
+         #form_wrapper table,td,tr{
+            padding: 3px 10px;
+         }
+         #form_wrapper legend{
+         padding: 10px 10px;
+         font-size: 40px;
+         font-weight: 600;}
+         
+         .accodion{
+         margin-left:8%;
+         padding-top: 80px;  
+         margin-botton: 500px;
+          width: 55%;
+         }
+         .panel-body pre{
+         min-width:100%;
+         max-height: 440px;
+         overflow: scroll;
+         }
+         
+         .panel-title{
+         width: 100%;
+         }
+   </style>
+   
+   
+   </head>
+   
+<body>
+<!-- <!-- 
+Tocplus 15.1
 <script type="text/javascript">
-	$(function() {
-		console.log("${sfvo}");
-		console.log("${shvo}");
-		$("#f_payBtn").click(function() {
-			$.ajax({
-				url : "/checkIn/fbook.do",
-				type : "POST",
-				data : $("#f_form").serialize(),
-				error : function(){
-					alert("오류f");
-				},
-				success : function(result){
-					console.log(result);
-					$("#s_payBtn").click(function() {
-						$("#s_form").attr({
-							"method":"post",
-							"action":"/checkIn/sbook.do"
-						});
-						$("#s_form").submit();
-					});
-				}
-			});
-			
-		});
-		
-	});
+tocplusTop=1150;
+tocplusLeft=5;
+tocplusMinimizedImage='http://kr03.tocplus007.com/img/minimized_ko.gif';
+tocplusHAlign='right';
+tocplusWidth=180;
+tocplusHeight=220;
+tocplusUserName='손님';
+tocplusFrameColor='#808080';
+tocplusFloatingWindow=true;
+var tocplusHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%"+"3Cscript src='" + tocplusHost + "kr03.tocplus007.com/chatLoader.do?userId=sister1208' type='text/javascript'"+"%"+"3E"+"%"+"3C/script"+"%"+"3E"));
 </script>
-<style type="text/css">
-#main_section {
-	background-image: url("/resources/image/osaka.jsp") no repeat;
-	background-size: cover;
-	position: absolute;
-	right: 0;
-	top: 0;
-	bottom: 0%;
-	left: 0;
-}
-/* #check_title {
-			position:absolute;
-			top: 28%;
-			left:10%;
-			  font-size:730%;
-			  font-weight: 800;
-			  text-shadow: 2px 2px black;
-				color: white;
-			} */
-#form_wrapper {
-	/* position: absolute;
-			top:10%;
-			right: 5%;
-			left: 45%; 
-			bottom: 0%;*/
-	background-color: #fff;
-	width: 100%;
-	/* z-index: 100; */
-	overflow: auto;
-	margin: 80px 20% 10px 20%;
-	padding: 10px 3% 10px 3%;
-}
+End of Tocplus --> 
 
-#form_wrapper table {
-	width: 100%;
-}
+<header id="header">
 
-#form_wrapper table, td, tr {
-	padding: 3px 10px;
-}
+   
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">The Traveller</a>
+    </div>
 
-#form_wrapper legend {
-	padding: 10px 10px;
-	font-size: 40px;
-	font-weight: 600;
-}
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+       <li><a href="#">About</a></li>
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Citis <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Newyork</a></li>
+            <li><a href="#">Melbourne</a></li>
+            <li><a href="#">Madrid</a></li>
+            <li><a href="#">Osaka</a></li>
+          </ul>
+        </li>
+        <li><a href="#place">Place</a></li>
+         <li><a href="#food">Food</a></li>
+          <li><a href="#play">Play</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#myinfo">My Info</a></li>
+        <li><a href="#" style="color:#c21616">Check-In</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
 
-.accodion {
-	margin-left: 8%;
-	padding-top: 80px;
-	margin-botton: 500px;
-	width: 55%;
-}
-
-.panel-body pre {
-	min-width: 100%;
-	max-height: 440px;
-	overflow: scroll;
-}
-
-.panel-title {
-	width: 100%;
-}
-</style>
-
-
-<div id="main_section" class="row">
-	<!-- <div id="check_title">
-			Check<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;In
-		</div> -->
-	<div class="col-md-4">
-		<div id="form_wrapper">
-			<fieldset>
-				<legend>Booking</legend>
-				<form id="f_form">
-					<table>
-						<tr>
-							<td>
-								<div class="form-group">
-									<label for="u_lname">영문 성</label> <input type="text"
-										class="form-control" id="u_lname" name="u_lname"
-										placeholder="여권상의 정보와 동일해야 합니다.">
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="form-group">
-									<label for="u_fname">영문 이름</label> <input type="text"
-										class="form-control" id="u_fname" name="u_fname"
-										placeholder="여권상의 정보와 동일해야 합니다.">
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="form-group">
-									<label for="birth">생년월일</label> <input type="text"
-										class="form-control" id="birth" name="birth"
-										placeholder="YYYY-MM-DD 형식으로 입력해주세요">
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="form-group">
-									<label for="u_edate">여권 만료일</label> <input type="text"
-										class="form-control" id="u_edate" name="u_edate"
-										placeholder="여권상의 정보와 동일해야 합니다.">
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="form-group">
-									<label for="u_phone">전화번호</label> <input type="text"
-										class="form-control" id="u_phone" name="u_phone"
-										placeholder="010-0000-0000  형식으로 입력해주세요">
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="form-group">
-									<label for="u_email">E-Mail</label> <input type="text"
-										class="form-control" id="u_email" name="u_email"
-										placeholder="E-Ticket 등의 예약관련 정보가 발송이됩니다.">
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2" align="right">
-								<button type="button" class="btn btn-primary"
-									data-toggle="modal" data-target="#payModal" id="f_payBtn">결제</button>
-							</td>
-						</tr>
-					</table>
-				</form>
-				<!-- Modal -->
-				<form id="s_form">
-					<div class="modal fade" id="payModal" tabindex="-1" role="dialog"
-						aria-labelledby="payModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal"
-										aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-									<h3 class="modal-title" id="payModalLabel">Payment</h3>
-								</div>
-
-								<div class="modal-body">
-
-									<div class="form-group">
-										<label class="payment-label" for="cardBrand">사용가능 카드사
-											: </label> <img class="cardBrand" src="/resources/image/unionpay.png">
-										<img class="cardBrand" src="/resources/image/master.png">
-										<img class="cardBrand" src="/resources/image/visa.png">
-										<img class="cardBrand" src="/resources/image/bccard.png">
-									</div>
-									<div class="form-group">
-										<table class="table">
-											<colgroup>
-												<col width="33%">
-												<col width="33%">
-												<col width="33%">
-											</colgroup>
-											<tr>
-												<th colspan="2" class="table-title">카드번호</th>
-											</tr>
-											<tr>
-												<td colspan="2"><input type="text" class="form-control"
-													id="cardnum" name="cardnum" placeholder="카드번호를 입력하세요"></td>
-											</tr>
-											<tr>
-												<th colspan="2" class="table-title">유효기간<span
-													id="securityCode-label">보안코드(3자리)</span></th>
-
-											</tr>
-											<tr>
-												<td colspan="2"><input type="text" class="form-control"
-													id="cardDateMonth" name="cardDateMonth" placeholder="MM">&nbsp;&nbsp;/&nbsp;&nbsp;
-													<input type="text" class="form-control" id="cardDateYear"
-													name="cardDateYear" placeholder="YY"> <input
-													type="text" class="form-control" id="securitycode"
-													name="securitycode"> <img id="codeImage"
-													src="/resources/image/securitycode.png"></td>
-
-											</tr>
-											<tr>
-												<th colspan="2" class="table-title">카드 소유자 명</th>
-											</tr>
-											<tr>
-												<td colspan="2"><input type="text"
-													class="form-control fName" id="cardfname" name="cardfname"
-													placeholder="영문 이름"> <input type="text"
-													class="form-control lName" id="cardlname" name="cardlname"
-													placeholder="영문 성"></td>
-
-											</tr>
-
-										</table>
-									</div>
-
-
-								</div>
-								<!-- <div class="modal-footer">
-				        
-				      </div> -->
-
-								<div class="modal-header">
-									<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
-									<h3 class="modal-title" id="loginModalLabel">Billing
-										Details</h3>
-								</div>
-
-								<div class="modal-body">
-
-									<div class="form-group">
-										<table class="table">
-											<tr>
-												<th class="table-title">이름</th>
-												<th class="table-title">성</th>
-											</tr>
-											<tr>
-												<td><input type="text" class="form-control"
-													id="billfname" name="billfname" placeholder="이름"></td>
-												<td><input type="text" class="form-control"
-													id="billlname" name="billlname" placeholder="성"></td>
-											</tr>
-											<tr>
-												<th colspan="2" class="table-title">회사명</th>
-											</tr>
-											<tr>
-												<td colspan="2"><input type="text" class="form-control"
-													id="comname" name="comname"></td>
-											</tr>
-											<tr>
-												<th class="table-title">E-Mail</th>
-												<th class="table-title">전화번호</th>
-											</tr>
-											<tr>
-												<td><input type="text" class="form-control"
-													id="billemail" name="billemail"></td>
-												<td><input type="text" class="form-control"
-													id="billphone" name="billphone"></td>
-											</tr>
-											<tr>
-												<th colspan="2" class="table-title">주소</th>
-											</tr>
-											<tr>
-												<td colspan="2"><input type="text" class="form-control"
-													id="address" name="address" placeholder="주소를 입력해주세요">
-												</td>
-											</tr>
-											<tr>
-												<th class="table-title">우편번호</th>
-												<th></th>
-											</tr>
-											<tr>
-												<td><input type="text" class="form-control"
-													id="postcode" name="postcode"></td>
-												<th></th>
-											</tr>
-										</table>
-									</div>
-								</div>
-								<div class="modal-btn">
-									<button type="button" class="btn btn-primary btn-block"
-										id="s_payBtn" name="s_payBtn">결제</button>
-									<button type="button" class="btn btn-default btn-block"
-										data-dismiss="modal">취소</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- end Modal -->
-				</form>
-			</fieldset>
-		</div>
-	</div>
-	<div class="accodion col-md-4">
-		<form name="accodion">
-			<div aria-multiselectable="true" role="tablist" id="accordion"
-				class="panel-group">
-				<!-- 아코디언 영역  -->
-				<div class="panel panel-default ">
-					<a title="Tab 1" aria-controls="collapse1" aria-expanded="true"
-						href="#collapse1" data-parent="#accordion" data-toggle="collapse"
-						id="heading1" role="tab" class="panel-heading collapsed"> <span
-						class="panel-title"> [ The Traveller 여행약관 ]</span></a>
-					<div aria-labelledby="heading1" role="tabpanel"
-						class="panel-collapse collapse in" id="collapse1"
-						aria-expanded="true">
-						<div class="panel-body">
-							<pre> 
+   <div id="main_section" class="row">
+      <!-- <div id="check_title">
+         Check<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;In
+      </div> -->
+      <div class="col-md-4">
+      <div id="form_wrapper">
+         <form>
+           <fieldset>
+             <legend>Information of you</legend>
+             <table>
+                   <tr>
+                      <td>
+                      <div class="form-group">
+                        <label for="u_lname">영문 성</label>
+                        <input type="text" class="form-control" id="u_lname" placeholder="여권상의 정보와 동일해야 합니다.">
+                      </div>
+                  </td>
+               </tr>
+               <tr>
+                   <td>
+                      <div class="form-group">
+                        <label for="u_fname">영문 이름</label>
+                        <input type="text" class="form-control" id="u_fname" placeholder="여권상의 정보와 동일해야 합니다.">
+                      </div>
+                  </td>
+               </tr>
+               <tr>
+                   <td>
+                      <div class="form-group">
+                        <label for="birth">생년월일</label>
+                        <input type="text" class="form-control" id="birth" placeholder="YYYY-MM-DD 형식으로 입력해주세요">
+                      </div>
+                  </td>
+               </tr>
+               <tr>
+                   <td>
+                      <div class="form-group">
+                        <label for="u_edate">여권 만료일</label>
+                        <input type="text" class="form-control" id="u_edate" placeholder="여권상의 정보와 동일해야 합니다.">
+                      </div>
+                  </td>
+               </tr>
+               <tr>
+                   <td>
+                      <div class="form-group">
+                        <label for="u_phone">전화번호</label>
+                        <input type="text" class="form-control" id="u_phone" placeholder="010-0000-0000  형식으로 입력해주세요">
+                      </div>
+                  </td>
+               </tr>
+               <tr>
+                   <td>
+                      <div class="form-group">
+                        <label for="u_email">E-Mail</label>
+                        <input type="text" class="form-control" id="u_phone" placeholder="E-Ticket 등의 예약관련 정보가 발송이됩니다.">
+                      </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2" align="right">
+                     <button type="button" class="btn btn-primary" id="next">NEXT</button>
+                  </td>
+               </tr>
+             </table>           
+           </fieldset>
+         </form>
+      </div>
+      </div>
+      <div class="accodion col-md-4">    
+    <form name="accodion">
+   <div aria-multiselectable="true" role="tablist" id="accordion" class="panel-group" >
+   <!-- 아코디언 영역  -->
+       <div class="panel panel-default ">
+          <a title="Tab 1" aria-controls="collapse1" aria-expanded="true" href="#collapse1" data-parent="#accordion" data-toggle="collapse" id="heading1" role="tab" class="panel-heading collapsed">
+            <span class="panel-title"> [ The Traveller 여행약관 ]</span></a>
+           <div aria-labelledby="heading1" role="tabpanel" class="panel-collapse collapse in" id="collapse1" aria-expanded="true">
+               <div class="panel-body">
+        <pre> 
         제1 장 여행시 항공 규정
         
    제 1조
@@ -359,22 +284,17 @@
    ② 항공권 유효기간:편도,왕복티켓은 금액,항공사에 따라 유효기간이 다르므로 사전 예약 시 확인 바랍니다.
    ③ 날짜변경 : 발권 후 각 항공사에 따라 변경수수료가 다릅니다.
    ④ 발권 후 환불 시 항공사 페널티 및 수수료가 발생합니다.</pre>
-
-							<input type="checkbox" id="check" name="check1" /> <label
-								for=check1>여행약관 동의 시 체크(필수)</label>
-						</div>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<a title="Tab 2" aria-controls="collapse2" aria-expanded="false"
-						href="#collapse2" data-parent="#accordion" data-toggle="collapse"
-						id="heading2" role="tab" class="panel-heading collapsed"> <span
-						class="panel-title">[ The Traveller 개인정보 처리 방침 ]</span></a>
-					<div aria-labelledby="heading2" role="tabpanel"
-						class="panel-collapse collapse" id="collapse2"
-						aria-expanded="false">
-						<div class="panel-body">
-							<pre>
+   
+         <input type="checkbox" id="check" name="check1" />
+           <label for=check1>여행약관 동의 시 체크(필수)</label>
+               </div>
+           </div>
+       </div>
+       <div class="panel panel-default"> <a title="Tab 2" aria-controls="collapse2" aria-expanded="false" href="#collapse2" data-parent="#accordion" data-toggle="collapse" id="heading2" role="tab" class="panel-heading collapsed">
+          <span class="panel-title">[ The Traveller 개인정보 처리방침 ]</span></a>
+           <div aria-labelledby="heading2" role="tabpanel" class="panel-collapse collapse" id="collapse2" aria-expanded="false">
+               <div class="panel-body">
+   <pre>
         제 1장 개인정보보호정책
         
    제 1조 (개인정보보호)
@@ -425,22 +345,17 @@
    마. 기타 정보수집에 관한 동의를 받을 때 또는 고객이 명시적으로 그 보유기간을 정한 경우(다만 법률상 의무보존기간은 초과하지 아니합니다.)에는 그 보유기간까지 회원 정보를 보관합니다
    
    * 위의 약관을 이해하며 이에 동의함을 확인합니다.</pre>
-							<input type="checkbox" id="check" name="check2" /> <label
-								for=check2>개인정보 보호정책 동의 시 체크(필수)</label>
-						</div>
-
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<a title="Tab 3" aria-controls="collapse3" aria-expanded="false"
-						href="#collapse3" data-parent="#accordion" data-toggle="collapse"
-						id="heading3" role="tab" class="panel-heading collapsed"> <span
-						class="panel-title">[ The Traveller 환불 규정 ]</span></a>
-					<div aria-labelledby="heading3" role="tabpanel"
-						class="panel-collapse collapse" id="collapse3"
-						aria-expanded="false">
-						<div class="panel-body">
-							<pre>
+         <input type="checkbox" id="check" name="check2" />
+           <label for=check2>개인정보 보호정책 동의 시 체크(필수)</label>
+               </div>
+               
+           </div>
+       </div>
+       <div class="panel panel-default"> <a title="Tab 3" aria-controls="collapse3" aria-expanded="false" href="#collapse3" data-parent="#accordion" data-toggle="collapse" id="heading3" role="tab" class="panel-heading collapsed">
+      <span class="panel-title">[ The Traveller 환불 규정 ]</span></a>
+           <div aria-labelledby="heading3" role="tabpanel" class="panel-collapse collapse" id="collapse3" aria-expanded="false">
+               <div class="panel-body">
+   <pre>
         제 1장 환불 및 취소 규정 
         
    제 1조 
@@ -472,22 +387,17 @@
       만약 여행자와 결제자가 일치 하지 않을 경우, 카드 소지자 본인의 신분증 사본과 결제승인요청서가 요구 됩니다.
    4.  여행자는 여행출발 후 본인의 사정으로 항공, 숙박 
    </pre>
-
-							<input type="checkbox" id="check" name="check3" /> <label
-								for=check3>환불 및 취소규정 동의 시 체크(필수)</label>
-						</div>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<a title="Tab 4" aria-controls="collapse4" aria-expanded="false"
-						href="#collapse4" data-parent="#accordion" data-toggle="collapse"
-						id="heading4" role="tab" class="panel-heading collapsed"> <span
-						class="panel-title">[ The Traveller 유의사항 ]</span></a>
-					<div aria-labelledby="heading4" role="tabpanel"
-						class="panel-collapse collapse" id="collapse4"
-						aria-expanded="false">
-						<div class="panel-body">
-							<pre>
+   
+   <input type="checkbox" id="check" name="check3" />
+   <label for=check3>환불 및 취소규정 동의 시 체크(필수)</label>
+               </div>
+           </div>
+       </div>
+       <div class="panel panel-default"> <a title="Tab 4" aria-controls="collapse4" aria-expanded="false" href="#collapse4" data-parent="#accordion" data-toggle="collapse" id="heading4" role="tab" class="panel-heading collapsed">
+          <span class="panel-title">[ The Traveller 유의사항 ]</span></a>
+           <div aria-labelledby="heading4" role="tabpanel" class="panel-collapse collapse" id="collapse4" aria-expanded="false">
+               <div class="panel-body">
+   <pre>
         제 1장 (항공 이용 시 유의사항)
    ① 항공 탑승 수속은 최소 2시간 전까지 공항에서 마치셔야 하며, 수속시간이 늦을 경우 탑승이 거절 될 수 있습니다.
    ② 항공 좌석 배정은 해당 항공사 고유의 권한으로 임의적 배정이 불가하며, 개별적으로 탑승 수속 창구에서 좌석배정을 받으셔야 합니다.
@@ -526,13 +436,14 @@
    ② 현지 사정에 의한 버스 및 기차 취소는 환불 규정에 따라 환불 됩니다.
    ③ 버스 및 기차의 일정 변경은 불가하며 짐 20kg 소지자에 한해 추가비용이 발생됩니다.
    </pre>
-							<input type="checkbox" id="check" name="check4" /> <label
-								for=check4>환불 및 취소규정 동의 시 체크(필수)</label>
-						</div>
-					</div>
-				</div>
-			</div>
-		</form>
-	</div>
+      <input type="checkbox" id="check" name="check4" />
+      <label for=check4>환불 및 취소규정 동의 시 체크(필수)</label>
+               </div>
+           </div>
+       </div>
+   </div>
+   </form>
+   </div>
 </div>
-
+</body>
+</html>
