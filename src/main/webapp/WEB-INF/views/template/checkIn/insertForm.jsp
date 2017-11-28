@@ -93,35 +93,42 @@
 	width: 100%;
 }
 .cardBrand{
-		width: 30px;
-		}
-		table, th, tr, td, .nbsp{
-			border-spacing: 0px;
-			border: 2px solid white;}
-
-			.col-md-6{
-			min-width: 80%;
-			margin: auto 10%;}
-			#cardDateYear, #cardDateMonth{
-			width: 10%;
-			display: inline;}
-			#securityCode-label{
-			padding-left: 18%;}
-			#securitycode{
-			margin-left: 3%;
-			width: 20%;
-			display: inline;}
-			#codeImage{
-			width:45px;
-			margin-left: 2%;}
-			#cardnum{
-			width: 60%;}
-			.fName, .lName{
-			width: 30%;
-			display: inline;}
-		
-			.modal-btn{
-			padding:0 20px 20px 20px;}
+	width: 30px;
+}
+table, th, tr, td, .nbsp{
+	border-spacing: 0px;
+	border: 2px solid white;
+}
+.col-md-6{
+	min-width: 80%;
+	margin: auto 10%;
+}
+#cardDateYear, #cardDateMonth{
+	width: 10%;
+	display: inline;
+}
+#securityCode-label{
+	padding-left: 18%;
+}
+#securitycode{
+	margin-left: 3%;
+	width: 20%;
+	display: inline;
+}
+#codeImage{
+	width:45px;
+	margin-left: 2%;
+}
+#cardnum{
+	width: 60%;
+}
+.fName, .lName{
+	width: 30%;
+	display: inline;
+}
+.modal-btn{
+	padding:0 20px 20px 20px;
+}
 </style>
 
 
