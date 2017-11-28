@@ -1,7 +1,6 @@
 package com.project.main.checkIn.vo;
 
 public class HotelVO {
-	private HotelVO hoteldata;
 	private String h_name;
 	private String h_info;
 	private String h_address;
@@ -11,12 +10,6 @@ public class HotelVO {
 	
 	
 	
-	public HotelVO getHoteldata() {
-		return hoteldata;
-	}
-	public void setHoteldata(HotelVO hoteldata) {
-		this.hoteldata = hoteldata;
-	}
 	public String getH_name() {
 		return h_name;
 	}
@@ -55,8 +48,8 @@ public class HotelVO {
 	}
 	@Override
 	public String toString() {
-		return "HotelVO [h_name=" + h_name + ", h_info=" + h_info + ", h_address=" + h_address + ", h_tel=" + h_tel
-				+ ", h_price=" + h_price + ", h_image=" + h_image + "]";
+		return h_name + "^" + h_info + "^" + h_address + "^" + h_tel
+				 + "^" + h_price + "^" + h_image;
 	}
 	
 	

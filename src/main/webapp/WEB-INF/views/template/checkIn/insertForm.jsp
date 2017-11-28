@@ -10,23 +10,23 @@
 				url : "/checkIn/fbook.do",
 				type : "POST",
 				data : $("#f_form").serialize(),
-				error : function(){
+				error : function() {
 					alert("오류f");
 				},
-				success : function(result){
+				success : function(result) {
 					console.log(result);
 					$("#s_payBtn").click(function() {
 						$("#s_form").attr({
-							"method":"post",
-							"action":"/checkIn/pay.do"
+							"method" : "post",
+							"action" : "/checkIn/pay.do"
 						});
 						$("#s_form").submit();
 					});
 				}
 			});
-			
+
 		});
-		
+
 	});
 </script>
 <style type="text/css">
@@ -92,42 +92,52 @@
 .panel-title {
 	width: 100%;
 }
-.cardBrand{
+
+.cardBrand {
 	width: 30px;
 }
-table, th, tr, td, .nbsp{
+
+table, th, tr, td, .nbsp {
 	border-spacing: 0px;
 	border: 2px solid white;
 }
-.col-md-6{
+
+.col-md-6 {
 	min-width: 80%;
 	margin: auto 10%;
 }
-#cardDateYear, #cardDateMonth{
+
+#cardDateYear, #cardDateMonth {
 	width: 10%;
 	display: inline;
 }
-#securityCode-label{
+
+#securityCode-label {
 	padding-left: 18%;
 }
-#securitycode{
+
+#securitycode {
 	margin-left: 3%;
 	width: 20%;
 	display: inline;
 }
-#codeImage{
-	width:45px;
+
+#codeImage {
+	width: 45px;
 	margin-left: 2%;
 }
-#cardnum{
+
+#cardnum {
 	width: 60%;
 }
-.fName, .lName{
+
+.fName, .lName {
 	width: 30%;
 	display: inline;
 }
-.modal-btn{
-	padding:0 20px 20px 20px;
+
+.modal-btn {
+	padding: 0 20px 20px 20px;
 }
 </style>
 
@@ -164,8 +174,8 @@ table, th, tr, td, .nbsp{
 						<tr>
 							<td>
 								<div class="form-group">
-									<label for="birth">생년월일</label> <input type="text"
-										class="form-control" id="birth" name="birth"
+									<label for="u_birth">생년월일</label> <input type="date"
+										class="form-control" id="u_birth" name="u_birth"
 										placeholder="YYYY-MM-DD 형식으로 입력해주세요">
 								</div>
 							</td>
@@ -173,7 +183,16 @@ table, th, tr, td, .nbsp{
 						<tr>
 							<td>
 								<div class="form-group">
-									<label for="u_edate">여권 만료일</label> <input type="text"
+									<label for="u_passport">여권 번호</label> <input type="text"
+										class="form-control" id="u_passport" name="u_passport"
+										placeholder="여권상의 정보와 동일해야 합니다.">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="form-group">
+									<label for="u_edate">여권 만료일</label> <input type="date"
 										class="form-control" id="u_edate" name="u_edate"
 										placeholder="여권상의 정보와 동일해야 합니다.">
 								</div>
@@ -239,8 +258,8 @@ table, th, tr, td, .nbsp{
 												<th colspan="2" class="table-title">카드번호</th>
 											</tr>
 											<tr>
-												<td colspan="2">
-													<input type="text" class="form-control" id="cardnum" name="cardnum" placeholder="카드번호를 입력하세요">
+												<td colspan="2"><input type="text" class="form-control"
+													id="cardnum" name="cardnum" placeholder="카드번호를 입력하세요">
 												</td>
 											</tr>
 											<tr>
@@ -249,11 +268,12 @@ table, th, tr, td, .nbsp{
 
 											</tr>
 											<tr>
-												<td colspan="2">
-													<input type="text" class="form-control" id="cardDateMonth" name="cardDateMonth" placeholder="MM">
-													&nbsp;&nbsp;/&nbsp;&nbsp;
-													<input type="text" class="form-control" id="cardDateYear" name="cardDateYear" placeholder="YY"> 
-													<input type="text" class="form-control" id="securitycode" name="securitycode"> 
+												<td colspan="2"><input type="text" class="form-control"
+													id="cardDateMonth" name="cardDateMonth" placeholder="MM">
+													&nbsp;&nbsp;/&nbsp;&nbsp; <input type="text"
+													class="form-control" id="cardDateYear" name="cardDateYear"
+													placeholder="YY"> <input type="text"
+													class="form-control" id="securitycode" name="securitycode">
 													<img id="codeImage" src="/resources/image/securitycode.png">
 												</td>
 
@@ -262,10 +282,11 @@ table, th, tr, td, .nbsp{
 												<th colspan="2" class="table-title">카드 소유자 명</th>
 											</tr>
 											<tr>
-												<td colspan="2">
-													<input type="text" class="form-control fName" id="cardfname" name="cardfname" placeholder="영문 이름"> 
-													<input type="text" class="form-control lName" id="cardlname" name="cardlname" placeholder="영문 성">
-												</td>
+												<td colspan="2"><input type="text"
+													class="form-control fName" id="cardfname" name="cardfname"
+													placeholder="영문 이름"> <input type="text"
+													class="form-control lName" id="cardlname" name="cardlname"
+													placeholder="영문 성"></td>
 											</tr>
 
 										</table>

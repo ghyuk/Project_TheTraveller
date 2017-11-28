@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.main.checkIn.dao.CheckInDao">
+	<resultMap type="com.project.main.checkIn.vo.CheckOut1VO" id="cvo1" >
+		<!-- 프로퍼티 = "VO의 필드" // 컬럼 = "DB 테이블의 컬럼" -->
+		<result property="u_code" column="U_CODE" />
+		<result property="u_lname" column="U_LNAME" />
+		<result property="u_fname" column="U_FNAME" />
+		<result property="u_birth" column="U_BIRTH" />
+		<result property="u_edate" column="U_EDATE" />
+		<result property="u_phone" column="U_PHONE" />
+		<result property="u_email" column="U_EMAIL" />
+		<result property="u_passport" column="U_PASSPORT" />
+		<result property="u_agreement" column="U_AGREEMENT" />
+	</resultMap>
+	
+	
+	
+	
+	
+	
+</mapper>

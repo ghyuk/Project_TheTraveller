@@ -18,18 +18,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.project.main.checkIn.service.CheckInServiceImpl;
+import com.project.main.checkIn.service.CheckInService;
+import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckInVO2;
 import com.project.main.checkIn.vo.CheckOut1VO;
 import com.project.main.checkIn.vo.CheckOut2VO;
 import com.project.main.checkIn.vo.FlightVO;
 import com.project.main.checkIn.vo.HotelVO;
+import com.project.main.common.vo.PayVO;
 @Controller
 @RequestMapping(value = "/checkIn")
 public class CheckInController {
 	Logger logger = Logger.getLogger(CheckInController.class);
 	@Autowired
-	private CheckInServiceImpl checkInService;
+	private CheckInService checkInService;
 	
 	
 	@RequestMapping(value = "/check.do", method = RequestMethod.GET)
@@ -129,21 +131,35 @@ public class CheckInController {
 	@RequestMapping(value="/pay.do",method=RequestMethod.POST)
 	public ModelAndView pay(@ModelAttribute CheckOut2VO vo,HttpSession session){
 		ModelAndView mav = new ModelAndView();
+		int result = 0;
 		session.setAttribute("scvo", vo);
 
 		FlightVO fvo = (FlightVO)session.getAttribute("sfvo");
-		System.out.println(fvo);
-
 		HotelVO hvo = (HotelVO)session.getAttribute("shvo");
-		System.out.println(hvo);
-
-		CheckOut1VO pvo = (CheckOut1VO)session.getAttribute("spvo");
-		System.out.println(pvo);
-
-		CheckOut2VO cvo = (CheckOut2VO)session.getAttribute("scvo");
-		System.out.println(cvo);
+		CheckOut1VO cvo1 = (CheckOut1VO)session.getAttribute("spvo");
+		CheckOut2VO cvo2 = (CheckOut2VO)session.getAttribute("scvo");
+		
+		PayVO pvo = new PayVO();
+		pvo.setCvo1(cvo1);
+		pvo.setCvo2(cvo2);
+		pvo.setHvo(hvo);
+		pvo.setFvo(fvo);
+		
+		result = checkInService.iuInsert(cvo1);
 		
 		
+		
+		
+		
+		BookVO fbvo = new BookVO();
+		fbvo.setB_code("book_");
+		fbvo.setU_code(cvo1.getU_code());
+		fbvo.setB_price(Integer.parseInt(fvo.getPrice().trim())+"");
+		fbvo.setB_date(fvo.getOut_day()+","+fvo.getIn_day());
+		fbvo.setB_state("결제완료");
+		fbvo.setFinfo(fvo.toString());
+		fbvo.setHinfo(hvo.toString());
+		//result = checkInService.bookInsert(fbvo);
 		
 		
 		

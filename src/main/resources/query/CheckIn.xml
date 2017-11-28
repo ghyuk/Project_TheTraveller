@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.main.checkIn.dao.CheckInDao">
+
+	<insert id="bookInsert" parameterType="bvo">
+		insert into book
 	
-	<select id="CheckIn" resultType="main" parameterType="String">
-		select * from 
-			(SELECT i.i_code,i.t_code,i.c_code,c.c_name,i.i_name,i.i_content,i.i_image,i.i_index 
-															FROM item i , city c where c.c_code = i.c_code) 
-			where c_name=#{main}
-	</select>
+	</insert>
 	
-	
-	
+	<insert id="iuInsert" parameterType="cvo1">
+		INSERT INTO instant_user (
+    u_code,
+    u_lname,
+    u_fname,
+    u_birth,
+    u_edate,
+    u_phone,
+    u_email,
+    u_passport,
+    u_agreement) VALUES (
+    iu_seq.nextval,#{u_lname,jdbcType=VARCHAR },#{u_fname,jdbcType=VARCHAR },#{u_birth,jdbcType=DATE },#{u_edate,jdbcType=DATE },
+    #{u_phone,jdbcType=VARCHAR },#{u_email,jdbcType=VARCHAR },#{u_passport,jdbcType=VARCHAR },#{u_agreement,jdbcType=VARCHAR }
+	)
+	</insert>
 	
 	
 </mapper>

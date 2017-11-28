@@ -1,12 +1,11 @@
 package com.project.main.checkIn.dao;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.project.main.checkIn.vo.CheckInVO;
+import com.project.main.checkIn.vo.BookVO;
+import com.project.main.checkIn.vo.CheckOut1VO;
 
 @Repository 
 public class CheckInDaoImpl implements CheckInDao{
@@ -18,9 +17,16 @@ public class CheckInDaoImpl implements CheckInDao{
 	SqlSessionFactoryBean를 통해서만 얻을 수 있다.*/
 	@Autowired //mybatis는 SqlSession인터페이스를 구현
 	private SqlSession session;
-	
+
 	@Override
-	public List<CheckInVO> CheckIn(String main) {
-		return session.selectList("CheckIn",main);
+	public int bookInsert(BookVO bvo) {
+		return session.insert("bookInsert",bvo);
 	}
+
+	@Override
+	public int iuInsert(CheckOut1VO cvo1) {
+		return session.insert("iuInsert",cvo1);
+	}
+	
+	
 }
