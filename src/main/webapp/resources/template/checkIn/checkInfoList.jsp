@@ -8,12 +8,6 @@
     		console.log("${scvo}");
     		
     	});
-    	
-    
-    
-    
-    
-    
     </script>
     <style type="text/css">
 			table, th, tr, td{

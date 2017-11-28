@@ -11,7 +11,6 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,12 +19,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.main.checkIn.service.CheckInServiceImpl;
-import com.project.main.checkIn.vo.CheckInVO;
 import com.project.main.checkIn.vo.CheckInVO2;
-import com.project.main.checkIn.vo.CheckOutVO;
+import com.project.main.checkIn.vo.CheckOut1VO;
+import com.project.main.checkIn.vo.CheckOut2VO;
 import com.project.main.checkIn.vo.FlightVO;
 import com.project.main.checkIn.vo.HotelVO;
-import com.project.main.common.vo.FHVO;
 @Controller
 @RequestMapping(value = "/checkIn")
 public class CheckInController {
@@ -124,17 +122,35 @@ public class CheckInController {
 	}
 	@ResponseBody
 	@RequestMapping(value="/fbook.do",method=RequestMethod.POST)
-	public CheckOutVO fbook(@ModelAttribute CheckOutVO vo,HttpSession session){
+	public CheckOut1VO fbook(@ModelAttribute CheckOut1VO vo,HttpSession session){
 		session.setAttribute("spvo", vo);
 		return vo;
 	}
-	@RequestMapping(value="/sbook.do",method=RequestMethod.POST)
-	public ModelAndView sbook(@ModelAttribute CheckOutVO vo,HttpSession session){
+	@RequestMapping(value="/pay.do",method=RequestMethod.POST)
+	public ModelAndView pay(@ModelAttribute CheckOut2VO vo,HttpSession session){
 		ModelAndView mav = new ModelAndView();
 		session.setAttribute("scvo", vo);
+
+		FlightVO fvo = (FlightVO)session.getAttribute("sfvo");
+		System.out.println(fvo);
+
+		HotelVO hvo = (HotelVO)session.getAttribute("shvo");
+		System.out.println(hvo);
+
+		CheckOut1VO pvo = (CheckOut1VO)session.getAttribute("spvo");
+		System.out.println(pvo);
+
+		CheckOut2VO cvo = (CheckOut2VO)session.getAttribute("scvo");
+		System.out.println(cvo);
+		
+		
+		
+		
+		
+		
+		
 		
 		mav.setViewName("template/checkIn/checkInfoList");
-
 		return mav;
 	}
 

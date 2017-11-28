@@ -18,7 +18,7 @@
 					$("#s_payBtn").click(function() {
 						$("#s_form").attr({
 							"method":"post",
-							"action":"/checkIn/sbook.do"
+							"action":"/checkIn/pay.do"
 						});
 						$("#s_form").submit();
 					});

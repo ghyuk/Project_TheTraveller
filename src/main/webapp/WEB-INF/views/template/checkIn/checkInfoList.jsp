@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+    <script type="text/javascript">
+    	$(function(){
+    		console.log("${sfvo}");
+    		console.log("${shvo}");
+    		console.log("${spvo}");
+    		console.log("${scvo}");
+    		
+    	});
+    </script>
     <style type="text/css">
 			table, th, tr, td{
 			border: 1px solid black;
