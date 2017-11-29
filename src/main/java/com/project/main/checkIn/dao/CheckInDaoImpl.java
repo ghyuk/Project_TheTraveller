@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckOut1VO;
+import com.project.main.checkIn.vo.DetailVO;
 import com.project.main.checkIn.vo.PayVO;
 
 @Repository 
@@ -53,6 +54,11 @@ public class CheckInDaoImpl implements CheckInDao{
 	public List<BookVO> checkList(CheckOut1VO cvo1) {
 		return session.selectList("checkList",cvo1);
 		
+	}
+
+	@Override
+	public DetailVO checkDetail(String u_code) {
+		return (DetailVO)session.selectOne("checkDetail",u_code);
 	}
 	
 	

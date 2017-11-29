@@ -68,5 +68,28 @@
 		    book
 		where u_code in (select u_code from INSTANT_USER where u_passport=#{u_passport} and u_phone=#{u_phone})
 	</select>
+	<select id="checkDetail" parameterType="String" resultType="dvo">
+		SELECT
+		    b_code,
+		    b.u_code,
+		    b_price,
+		    b_state,
+		    b_date,
+		    b_num,
+		    finfo,
+		    hinfo,
+		    i.u_code,
+		    u_lname,
+		    u_fname,
+		    to_char(u_birth,'yyyy-MM-dd') as u_birth,
+		    to_char(u_edate,'yyyy-MM-dd') as u_edate,
+		    u_phone,
+		    u_email,
+		    u_passport,
+		    u_agreement
+		FROM
+		    book b , INSTANT_USER i
+		    where b.u_code = i.u_code and b.u_code=#{u_code}
+	</select>
 	
 </mapper>

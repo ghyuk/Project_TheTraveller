@@ -3,7 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script type="text/javascript">
 	$(function() {
-		
+		$(".trBtn").click(function(){
+			console.log($(this).attr("data-num"));
+			location.href="/checkIn/checkDetail.do?data="+$(this).attr("data-num");
+		});
 
 	});
 </script>
@@ -65,7 +68,7 @@ table, th, tr, td {
 					<c:choose>
 						<c:when test="${not empty list }" >		
 							<c:forEach var="list" items="${list }" varStatus="status">
-								<tr data-num="${list.b_code }">
+								<tr data-num="${list.u_code }" class="trBtn">
 									<td>${list.b_code }</td>
 									<td>${passport }</td>
 									<td>${list.b_date }</td>

@@ -9,10 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.project.main.checkIn.dao.CheckInDao;
 import com.project.main.checkIn.vo.BookVO;
-import com.project.main.checkIn.vo.CheckInVO;
 import com.project.main.checkIn.vo.CheckOut1VO;
+import com.project.main.checkIn.vo.DetailVO;
 import com.project.main.checkIn.vo.PayVO;
-import com.project.main.main.vo.MainVO;
 
 
 @Service
@@ -51,6 +50,11 @@ public class CheckInServiceImpl implements CheckInService{
 	@Override
 	public List<BookVO> checkList(CheckOut1VO cvo) {
 		return checkInDao.checkList(cvo);
+	}
+
+	@Override
+	public DetailVO checkDetail(String u_code) {
+		return checkInDao.checkDetail(u_code);
 	}
 
 	
