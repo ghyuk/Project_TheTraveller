@@ -96,10 +96,10 @@ public class CheckOut2VO {
 	}
 	@Override
 	public String toString() {
-		return "CheckOut2VO [cardnum=" + cardnum + ", cardDateYear=" + cardDateYear + ", cardDateMonth=" + cardDateMonth
-				+ ", securitycode=" + securitycode + ", cardfname=" + cardfname + ", cardlname=" + cardlname
-				+ ", billfname=" + billfname + ", billlname=" + billlname + ", comname=" + comname + ", billemail="
-				+ billemail + ", billphone=" + billphone + ", address=" + address + ", postcode=" + postcode + "]";
+		return cardnum+"^"+cardDateYear+"^"+cardDateMonth
+				+"^"+securitycode+"^"+cardfname+"^"+cardlname
+				+"^"+billfname+"^"+billlname+"^"+comname+"^"+
+				billemail+"^"+billphone+"^"+address+"^"+postcode;
 	}
 	
 	

@@ -6,7 +6,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.project.main.checkIn.vo.CheckInVO;
+import com.project.main.checkIn.vo.BookVO;
+import com.project.main.checkIn.vo.CheckOut1VO;
+import com.project.main.checkIn.vo.PayVO;
 
 @Repository 
 public class CheckInDaoImpl implements CheckInDao{
@@ -18,9 +20,40 @@ public class CheckInDaoImpl implements CheckInDao{
 	SqlSessionFactoryBean를 통해서만 얻을 수 있다.*/
 	@Autowired //mybatis는 SqlSession인터페이스를 구현
 	private SqlSession session;
-	
+
 	@Override
-	public List<CheckInVO> CheckIn(String main) {
-		return session.selectList("CheckIn",main);
+	public int bookInsert(BookVO bvo) {
+		return session.insert("bookInsert",bvo);
 	}
+
+	@Override
+	public int iuInsert(CheckOut1VO cvo1) {
+		return session.insert("iuInsert",cvo1);
+	}
+
+	@Override
+	public int makeSeq(int seq) {
+		return session.update("makeSeq",seq);
+		
+	}
+
+	@Override
+	public int selectSeq() {
+		int seq = session.selectOne("selectSeq");
+		
+		return seq;
+	}
+
+	@Override
+	public int payInsert(PayVO pvo) {
+		return session.insert("payInsert",pvo);
+	}
+
+	@Override
+	public List<BookVO> checkList(CheckOut1VO cvo1) {
+		return session.selectList("checkList",cvo1);
+		
+	}
+	
+	
 }

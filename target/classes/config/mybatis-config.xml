@@ -6,5 +6,10 @@
 <configuration>
 	<typeAliases>								
 			<typeAlias type="com.project.main.main.vo.MainVO" alias="main"/>
+			<typeAlias type="com.project.main.checkIn.vo.CheckOut1VO" alias="cvo1"/>
+			<typeAlias type="com.project.main.checkIn.vo.CheckOut2VO" alias="cvo2"/>
+			<typeAlias type="com.project.main.checkIn.vo.FlightVO" alias="fvo"/>
+			<typeAlias type="com.project.main.checkIn.vo.HotelVO" alias="hvo"/>
+			<typeAlias type="com.project.main.checkIn.vo.BookVO" alias="bvo"/>
 	</typeAliases>
 </configuration>

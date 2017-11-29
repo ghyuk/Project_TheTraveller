@@ -1,7 +1,6 @@
 package com.project.main.checkIn.vo;
 
 public class FlightVO {
-	private FlightVO flightdata;
 	private String airline;
 	private String out_day;
 	private String out_time;
@@ -19,20 +18,6 @@ public class FlightVO {
 	private String sittype;
 	private String price;
 	private String readtime;
-	
-	
-	public FlightVO getFlightdata() {
-		return flightdata;
-	}
-	public void setFlightdata(FlightVO flightdata) {
-		this.flightdata = flightdata;
-	}
-	public String getReadtime() {
-		return readtime;
-	}
-	public void setReadtime(String readtime) {
-		this.readtime = readtime;
-	}
 	public String getAirline() {
 		return airline;
 	}
@@ -129,23 +114,25 @@ public class FlightVO {
 	public void setPrice(String price) {
 		this.price = price;
 	}
+	public String getReadtime() {
+		return readtime;
+	}
+	public void setReadtime(String readtime) {
+		this.readtime = readtime;
+	}
 	@Override
 	public String toString() {
-		return "FlightVO [airline=" + airline + ", out_day=" + out_day + ", out_time=" + out_time + ", out_airport="
-				+ out_airport + ", in_day=" + in_day + ", in_time=" + in_time + ", in_airport=" + in_airport
-				+ ", hout_day=" + hout_day + ", hout_time=" + hout_time + ", hout_airport=" + hout_airport
-				+ ", hin_day=" + hin_day + ", hin_time=" + hin_time + ", hin_airport=" + hin_airport + ", cnt=" + cnt
-				+ ", sittype=" + sittype + ", price=" + price + ", readtime=" + readtime + ", getReadtime()="
-				+ getReadtime() + ", getAirline()=" + getAirline() + ", getOut_day()=" + getOut_day()
-				+ ", getOut_time()=" + getOut_time() + ", getOut_airport()=" + getOut_airport() + ", getIn_day()="
-				+ getIn_day() + ", getIn_time()=" + getIn_time() + ", getIn_airport()=" + getIn_airport()
-				+ ", getHout_day()=" + getHout_day() + ", getHout_time()=" + getHout_time() + ", getHout_airport()="
-				+ getHout_airport() + ", getHin_day()=" + getHin_day() + ", getHin_time()=" + getHin_time()
-				+ ", getHin_airport()=" + getHin_airport() + ", getCnt()=" + getCnt() + ", getSittype()=" + getSittype()
-				+ ", getPrice()=" + getPrice() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+		return airline + "^" + out_day + "^" + out_time  + "^" +  out_airport + "^" +  in_day + "^" + in_time  + "^" + in_airport
+				 + "^" + hout_day + "^" + hout_time  + "^" + hout_airport
+				 + "^" + hin_day  + "^" + hin_time + "^" + hin_airport + "^" +  cnt
+				 + "^" + sittype + "^" + price  + "^" + readtime;
 	}
-
+	
+	
+	
+	
+	
+	
 	
 	
 }

@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,18 +20,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.project.main.checkIn.service.CheckInServiceImpl;
+import com.project.main.checkIn.service.CheckInService;
+import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckInVO2;
 import com.project.main.checkIn.vo.CheckOut1VO;
 import com.project.main.checkIn.vo.CheckOut2VO;
 import com.project.main.checkIn.vo.FlightVO;
 import com.project.main.checkIn.vo.HotelVO;
+import com.project.main.checkIn.vo.PayVO;
 @Controller
 @RequestMapping(value = "/checkIn")
 public class CheckInController {
 	Logger logger = Logger.getLogger(CheckInController.class);
 	@Autowired
-	private CheckInServiceImpl checkInService;
+	private CheckInService checkInService;
 	
 	
 	@RequestMapping(value = "/check.do", method = RequestMethod.GET)
@@ -113,13 +117,6 @@ public class CheckInController {
 
 		return mav;
 	}
-	@RequestMapping(value="/test.do",method=RequestMethod.GET)
-	public ModelAndView test(HttpSession session){
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("template/checkIn/insertForm");
-
-		return mav;
-	}
 	@ResponseBody
 	@RequestMapping(value="/fbook.do",method=RequestMethod.POST)
 	public CheckOut1VO fbook(@ModelAttribute CheckOut1VO vo,HttpSession session){
@@ -129,29 +126,70 @@ public class CheckInController {
 	@RequestMapping(value="/pay.do",method=RequestMethod.POST)
 	public ModelAndView pay(@ModelAttribute CheckOut2VO vo,HttpSession session){
 		ModelAndView mav = new ModelAndView();
+		int result = 0;
 		session.setAttribute("scvo", vo);
-
+		int seq = checkInService.selectSeq();
+		checkInService.makeSeq(seq);
 		FlightVO fvo = (FlightVO)session.getAttribute("sfvo");
-		System.out.println(fvo);
-
 		HotelVO hvo = (HotelVO)session.getAttribute("shvo");
-		System.out.println(hvo);
-
-		CheckOut1VO pvo = (CheckOut1VO)session.getAttribute("spvo");
-		System.out.println(pvo);
-
-		CheckOut2VO cvo = (CheckOut2VO)session.getAttribute("scvo");
-		System.out.println(cvo);
+		CheckOut1VO cvo1 = (CheckOut1VO)session.getAttribute("spvo");
+		CheckOut2VO cvo2 = (CheckOut2VO)session.getAttribute("scvo");
+	
+		//비회원 입력
+		cvo1.setU_code("iu_"+seq);
+		result = checkInService.iuInsert(cvo1);
+		//예약 입력
+		BookVO fbvo = new BookVO();
+		fbvo.setB_code("book_"+seq);
+		fbvo.setU_code(cvo1.getU_code());
+		fbvo.setB_price(fvo.getPrice().trim()+"^"+hvo.getH_price().trim());
+		fbvo.setB_state("결제완료");
+		fbvo.setFinfo(fvo.toString());
+		fbvo.setHinfo(hvo.toString());
+		result = checkInService.bookInsert(fbvo);
 		
+		//결제입력
+		PayVO pvo = new PayVO();
+		pvo.setP_code("pay_"+seq);
+		pvo.setU_code(cvo1.getU_code());
+		pvo.setP_amount(""+(Integer.parseInt(fvo.getPrice().trim())+Integer.parseInt(hvo.getH_price().trim())));
+		pvo.setP_card(cvo2.toString());
 		
-		
-		
-		
-		
-		
-		
-		mav.setViewName("template/checkIn/checkInfoList");
+		result = checkInService.payInsert(pvo);
+		session.invalidate();
+		mav.addObject("passport",cvo1.getU_passport());
+		mav.addObject("phone",cvo1.getU_phone());
+		mav.setViewName("redirect:checkList.do");
 		return mav;
 	}
 
+	@RequestMapping(value="/checkList.do",method=RequestMethod.GET)
+	public ModelAndView checkList(@RequestParam("passport") String passport,@RequestParam("phone") String phone){
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("template/checkIn/checkInfoList");
+		CheckOut1VO cvo = new CheckOut1VO();
+		cvo.setU_passport(passport);
+		cvo.setU_phone(phone);
+		List<BookVO> list = checkInService.checkList(cvo);
+		mav.addObject("list",list);
+		mav.addObject("passport",passport);
+		
+		return mav;
+	}
+	@RequestMapping(value="/test.do",method=RequestMethod.GET)
+	public ModelAndView test(){
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("template/checkIn/checkInfoList");
+		
+		String passport="1",phone="1";
+		CheckOut1VO cvo = new CheckOut1VO();
+		cvo.setU_passport(passport);
+		cvo.setU_phone(phone);
+		List<BookVO> list = checkInService.checkList(cvo);
+		mav.addObject("list",list);
+		mav.addObject("passport",passport);
+		
+		return mav;
+	}
+	
 }

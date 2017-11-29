@@ -1,16 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.main.checkIn.dao.CheckInDao">
+
+	<insert id="bookInsert" parameterType="bvo">
+		INSERT INTO book (
+    b_code,
+    u_code,
+    b_price,
+    b_state,
+    b_date,
+    b_num,
+    finfo,
+    hinfo ) VALUES (
+    #{b_code,jdbcType=VARCHAR },#{u_code,jdbcType=VARCHAR },#{b_price,jdbcType=VARCHAR },#{b_state,jdbcType=VARCHAR },sysdate,
+    #{b_num,jdbcType=VARCHAR },#{finfo,jdbcType=VARCHAR },#{hinfo,jdbcType=VARCHAR }
+    )
 	
-	<select id="CheckIn" resultType="main" parameterType="String">
-		select * from 
-			(SELECT i.i_code,i.t_code,i.c_code,c.c_name,i.i_name,i.i_content,i.i_image,i.i_index 
-															FROM item i , city c where c.c_code = i.c_code) 
-			where c_name=#{main}
+	</insert>
+	
+	<insert id="iuInsert" parameterType="cvo1">
+		INSERT INTO instant_user (
+    u_code,
+    u_lname,
+    u_fname,
+    u_birth,
+    u_edate,
+    u_phone,
+    u_email,
+    u_passport,
+    u_agreement) VALUES (
+    #{u_code},#{u_lname,jdbcType=VARCHAR },#{u_fname,jdbcType=VARCHAR },#{u_birth,jdbcType=DATE },#{u_edate,jdbcType=DATE },
+    #{u_phone,jdbcType=VARCHAR },#{u_email,jdbcType=VARCHAR },#{u_passport,jdbcType=VARCHAR },#{u_agreement,jdbcType=VARCHAR }
+	)
+	</insert>
+	
+	<select id="selectSeq" resultType="Integer">
+		select no from common_seq
 	</select>
+	<update id="makeSeq" parameterType="Integer">
+		update common_seq
+		set no = (#{seq}+1) where no = #{seq}
+	</update>
 	
+	<insert id="payInsert" >
+		INSERT INTO payment (
+		    p_code,
+		    u_code,
+		    p_amount,
+		    p_date,
+		    p_card
+		) VALUES (
+			#{p_code},#{u_code},#{p_amount},sysdate,#{p_card}
+		)
+	</insert>
 	
-	
-	
+	<select id="checkList" parameterType="cvo1" resultType="bvo">
+		SELECT
+		    b_code,
+		    u_code,
+		    b_price,
+		    b_state,
+		    b_date,
+		    b_num,
+		    finfo,
+		    hinfo
+		FROM
+		    book
+		where u_code in (select u_code from INSTANT_USER where u_passport=#{u_passport} and u_phone=#{u_phone})
+	</select>
 	
 </mapper>
