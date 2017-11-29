@@ -27,7 +27,7 @@ import com.project.main.checkIn.vo.CheckOut1VO;
 import com.project.main.checkIn.vo.CheckOut2VO;
 import com.project.main.checkIn.vo.FlightVO;
 import com.project.main.checkIn.vo.HotelVO;
-import com.project.main.common.vo.PayVO;
+import com.project.main.checkIn.vo.PayVO;
 @Controller
 @RequestMapping(value = "/checkIn")
 public class CheckInController {
@@ -127,7 +127,6 @@ public class CheckInController {
 	public ModelAndView pay(@ModelAttribute CheckOut2VO vo,HttpSession session){
 		ModelAndView mav = new ModelAndView();
 		int result = 0;
-		List<Object> list = new ArrayList<>();
 		session.setAttribute("scvo", vo);
 		int seq = checkInService.selectSeq();
 		checkInService.makeSeq(seq);
@@ -135,11 +134,7 @@ public class CheckInController {
 		HotelVO hvo = (HotelVO)session.getAttribute("shvo");
 		CheckOut1VO cvo1 = (CheckOut1VO)session.getAttribute("spvo");
 		CheckOut2VO cvo2 = (CheckOut2VO)session.getAttribute("scvo");
-		/*PayVO pvo = new PayVO();
-		pvo.setCvo1(cvo1);
-		pvo.setCvo2(cvo2);
-		pvo.setHvo(hvo);
-		pvo.setFvo(fvo);*/
+	
 		//비회원 입력
 		cvo1.setU_code("iu_"+seq);
 		result = checkInService.iuInsert(cvo1);
@@ -148,14 +143,20 @@ public class CheckInController {
 		fbvo.setB_code("book_"+seq);
 		fbvo.setU_code(cvo1.getU_code());
 		fbvo.setB_price(fvo.getPrice().trim()+"^"+hvo.getH_price().trim());
-		fbvo.setB_date(fvo.getOut_day()+"^"+fvo.getIn_day());
+		fbvo.setB_date(fvo.getOut_day()+"^"+fvo.getHout_day());
 		fbvo.setB_state("결제완료");
 		fbvo.setFinfo(fvo.toString());
 		fbvo.setHinfo(hvo.toString());
 		result = checkInService.bookInsert(fbvo);
 		
+		//결제입력
+		PayVO pvo = new PayVO();
+		pvo.setP_code("pay_"+seq);
+		pvo.setU_code(cvo1.getU_code());
+		pvo.setP_amount(""+(Integer.parseInt(fvo.getPrice().trim())+Integer.parseInt(hvo.getH_price().trim())));
+		pvo.setP_card(cvo2.toString());
 		
-		
+		result = checkInService.payInsert(pvo);
 		
 		
 		

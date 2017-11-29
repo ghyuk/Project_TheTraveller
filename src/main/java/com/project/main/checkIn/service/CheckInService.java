@@ -2,6 +2,7 @@ package com.project.main.checkIn.service;
 
 import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckOut1VO;
+import com.project.main.checkIn.vo.PayVO;
 
 public interface CheckInService {
 
@@ -12,6 +13,8 @@ public interface CheckInService {
 	public int makeSeq(int seq);
 
 	public int selectSeq();
+
+	public int payInsert(PayVO pvo);
 
 
 }

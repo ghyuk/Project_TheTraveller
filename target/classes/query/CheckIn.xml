@@ -42,4 +42,19 @@
 		set no = (#{seq}+1) where no = #{seq}
 	</update>
 	
+	<insert id="payInsert" >
+		INSERT INTO payment (
+		    p_code,
+		    u_code,
+		    p_amount,
+		    p_date,
+		    p_card
+		) VALUES (
+			#{p_code},#{u_code},#{p_amount},sysdate,#{p_card}
+		)
+	
+	
+	
+	</insert>
+	
 </mapper>

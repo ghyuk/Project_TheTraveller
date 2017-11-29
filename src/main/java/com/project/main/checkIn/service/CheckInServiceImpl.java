@@ -11,6 +11,7 @@ import com.project.main.checkIn.dao.CheckInDao;
 import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckInVO;
 import com.project.main.checkIn.vo.CheckOut1VO;
+import com.project.main.checkIn.vo.PayVO;
 import com.project.main.main.vo.MainVO;
 
 
@@ -40,6 +41,11 @@ public class CheckInServiceImpl implements CheckInService{
 	@Override
 	public int selectSeq() {
 		return checkInDao.selectSeq();
+	}
+
+	@Override
+	public int payInsert(PayVO pvo) {
+		return checkInDao.payInsert(pvo);
 	}
 
 	

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckOut1VO;
+import com.project.main.checkIn.vo.PayVO;
 
 @Repository 
 public class CheckInDaoImpl implements CheckInDao{
@@ -39,6 +40,11 @@ public class CheckInDaoImpl implements CheckInDao{
 		int seq = session.selectOne("selectSeq");
 		
 		return seq;
+	}
+
+	@Override
+	public int payInsert(PayVO pvo) {
+		return session.insert("payInsert",pvo);
 	}
 	
 	
