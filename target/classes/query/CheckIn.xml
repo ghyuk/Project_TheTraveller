@@ -3,7 +3,18 @@
 <mapper namespace="com.project.main.checkIn.dao.CheckInDao">
 
 	<insert id="bookInsert" parameterType="bvo">
-		insert into book
+		INSERT INTO book (
+    b_code,
+    u_code,
+    b_price,
+    b_state,
+    b_date,
+    b_num,
+    finfo,
+    hinfo ) VALUES (
+    #{b_code,jdbcType=VARCHAR },#{u_code,jdbcType=VARCHAR },#{b_price,jdbcType=VARCHAR },#{b_state,jdbcType=VARCHAR },#{b_date,jdbcType=VARCHAR },
+    #{b_num,jdbcType=VARCHAR },#{finfo,jdbcType=VARCHAR },#{hinfo,jdbcType=VARCHAR }
+    )
 	
 	</insert>
 	
@@ -18,10 +29,17 @@
     u_email,
     u_passport,
     u_agreement) VALUES (
-    iu_seq.nextval,#{u_lname,jdbcType=VARCHAR },#{u_fname,jdbcType=VARCHAR },#{u_birth,jdbcType=DATE },#{u_edate,jdbcType=DATE },
+    #{u_code},#{u_lname,jdbcType=VARCHAR },#{u_fname,jdbcType=VARCHAR },#{u_birth,jdbcType=DATE },#{u_edate,jdbcType=DATE },
     #{u_phone,jdbcType=VARCHAR },#{u_email,jdbcType=VARCHAR },#{u_passport,jdbcType=VARCHAR },#{u_agreement,jdbcType=VARCHAR }
 	)
 	</insert>
 	
+	<select id="selectSeq" resultType="Integer">
+		select no from common_seq
+	</select>
+	<update id="makeSeq" parameterType="Integer">
+		update common_seq
+		set no = (#{seq}+1) where no = #{seq}
+	</update>
 	
 </mapper>

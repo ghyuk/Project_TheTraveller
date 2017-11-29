@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -115,13 +117,6 @@ public class CheckInController {
 
 		return mav;
 	}
-	@RequestMapping(value="/test.do",method=RequestMethod.GET)
-	public ModelAndView test(HttpSession session){
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("template/checkIn/insertForm");
-
-		return mav;
-	}
 	@ResponseBody
 	@RequestMapping(value="/fbook.do",method=RequestMethod.POST)
 	public CheckOut1VO fbook(@ModelAttribute CheckOut1VO vo,HttpSession session){
@@ -132,34 +127,32 @@ public class CheckInController {
 	public ModelAndView pay(@ModelAttribute CheckOut2VO vo,HttpSession session){
 		ModelAndView mav = new ModelAndView();
 		int result = 0;
+		List<Object> list = new ArrayList<>();
 		session.setAttribute("scvo", vo);
-
+		int seq = checkInService.selectSeq();
+		checkInService.makeSeq(seq);
 		FlightVO fvo = (FlightVO)session.getAttribute("sfvo");
 		HotelVO hvo = (HotelVO)session.getAttribute("shvo");
 		CheckOut1VO cvo1 = (CheckOut1VO)session.getAttribute("spvo");
 		CheckOut2VO cvo2 = (CheckOut2VO)session.getAttribute("scvo");
-		
-		PayVO pvo = new PayVO();
+		/*PayVO pvo = new PayVO();
 		pvo.setCvo1(cvo1);
 		pvo.setCvo2(cvo2);
 		pvo.setHvo(hvo);
-		pvo.setFvo(fvo);
-		
+		pvo.setFvo(fvo);*/
+		//비회원 입력
+		cvo1.setU_code("iu_"+seq);
 		result = checkInService.iuInsert(cvo1);
-		
-		
-		
-		
-		
+		//예약 입력
 		BookVO fbvo = new BookVO();
-		fbvo.setB_code("book_");
+		fbvo.setB_code("book_"+seq);
 		fbvo.setU_code(cvo1.getU_code());
-		fbvo.setB_price(Integer.parseInt(fvo.getPrice().trim())+"");
-		fbvo.setB_date(fvo.getOut_day()+","+fvo.getIn_day());
+		fbvo.setB_price(fvo.getPrice().trim()+"^"+hvo.getH_price().trim());
+		fbvo.setB_date(fvo.getOut_day()+"^"+fvo.getIn_day());
 		fbvo.setB_state("결제완료");
 		fbvo.setFinfo(fvo.toString());
 		fbvo.setHinfo(hvo.toString());
-		//result = checkInService.bookInsert(fbvo);
+		result = checkInService.bookInsert(fbvo);
 		
 		
 		
@@ -170,4 +163,13 @@ public class CheckInController {
 		return mav;
 	}
 
+	@RequestMapping(value="/test.do",method=RequestMethod.GET)
+	public ModelAndView test(HttpSession session){
+		ModelAndView mav = new ModelAndView();
+		int seq = checkInService.selectSeq();
+		checkInService.makeSeq(seq);
+		mav.addObject("seq",seq);
+		mav.setViewName("test");
+		return mav;
+	}
 }

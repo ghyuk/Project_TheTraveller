@@ -27,6 +27,19 @@ public class CheckInDaoImpl implements CheckInDao{
 	public int iuInsert(CheckOut1VO cvo1) {
 		return session.insert("iuInsert",cvo1);
 	}
+
+	@Override
+	public int makeSeq(int seq) {
+		return session.update("makeSeq",seq);
+		
+	}
+
+	@Override
+	public int selectSeq() {
+		int seq = session.selectOne("selectSeq");
+		
+		return seq;
+	}
 	
 	
 }

@@ -32,6 +32,16 @@ public class CheckInServiceImpl implements CheckInService{
 		return checkInDao.iuInsert(cvo1);
 	}
 
+	@Override
+	public int makeSeq(int seq) {
+		return checkInDao.makeSeq(seq);
+	}
+
+	@Override
+	public int selectSeq() {
+		return checkInDao.selectSeq();
+	}
+
 	
 	
 }

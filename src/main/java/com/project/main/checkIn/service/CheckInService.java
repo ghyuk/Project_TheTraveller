@@ -9,5 +9,9 @@ public interface CheckInService {
 
 	public int iuInsert(CheckOut1VO cvo1);
 
+	public int makeSeq(int seq);
+
+	public int selectSeq();
+
 
 }
