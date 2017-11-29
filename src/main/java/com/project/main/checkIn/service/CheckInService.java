@@ -1,5 +1,7 @@
 package com.project.main.checkIn.service;
 
+import java.util.List;
+
 import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckOut1VO;
 import com.project.main.checkIn.vo.PayVO;
@@ -15,6 +17,8 @@ public interface CheckInService {
 	public int selectSeq();
 
 	public int payInsert(PayVO pvo);
+
+	public List<BookVO> checkList(CheckOut1VO cvo);
 
 
 }

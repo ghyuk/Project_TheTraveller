@@ -143,7 +143,6 @@ public class CheckInController {
 		fbvo.setB_code("book_"+seq);
 		fbvo.setU_code(cvo1.getU_code());
 		fbvo.setB_price(fvo.getPrice().trim()+"^"+hvo.getH_price().trim());
-		fbvo.setB_date(fvo.getOut_day()+"^"+fvo.getHout_day());
 		fbvo.setB_state("결제완료");
 		fbvo.setFinfo(fvo.toString());
 		fbvo.setHinfo(hvo.toString());
@@ -157,20 +156,40 @@ public class CheckInController {
 		pvo.setP_card(cvo2.toString());
 		
 		result = checkInService.payInsert(pvo);
-		
-		
-		
-		mav.setViewName("template/checkIn/checkInfoList");
+		session.invalidate();
+		mav.addObject("passport",cvo1.getU_passport());
+		mav.addObject("phone",cvo1.getU_phone());
+		mav.setViewName("redirect:checkList.do");
 		return mav;
 	}
 
-	@RequestMapping(value="/test.do",method=RequestMethod.GET)
-	public ModelAndView test(HttpSession session){
+	@RequestMapping(value="/checkList.do",method=RequestMethod.GET)
+	public ModelAndView checkList(@RequestParam("passport") String passport,@RequestParam("phone") String phone){
 		ModelAndView mav = new ModelAndView();
-		int seq = checkInService.selectSeq();
-		checkInService.makeSeq(seq);
-		mav.addObject("seq",seq);
-		mav.setViewName("test");
+		mav.setViewName("template/checkIn/checkInfoList");
+		CheckOut1VO cvo = new CheckOut1VO();
+		cvo.setU_passport(passport);
+		cvo.setU_phone(phone);
+		List<BookVO> list = checkInService.checkList(cvo);
+		mav.addObject("list",list);
+		mav.addObject("passport",passport);
+		
 		return mav;
 	}
+	@RequestMapping(value="/test.do",method=RequestMethod.GET)
+	public ModelAndView test(){
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("template/checkIn/checkInfoList");
+		
+		String passport="1",phone="1";
+		CheckOut1VO cvo = new CheckOut1VO();
+		cvo.setU_passport(passport);
+		cvo.setU_phone(phone);
+		List<BookVO> list = checkInService.checkList(cvo);
+		mav.addObject("list",list);
+		mav.addObject("passport",passport);
+		
+		return mav;
+	}
+	
 }

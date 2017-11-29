@@ -1,5 +1,7 @@
 package com.project.main.checkIn.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -45,6 +47,12 @@ public class CheckInDaoImpl implements CheckInDao{
 	@Override
 	public int payInsert(PayVO pvo) {
 		return session.insert("payInsert",pvo);
+	}
+
+	@Override
+	public List<BookVO> checkList(CheckOut1VO cvo1) {
+		return session.selectList("checkList",cvo1);
+		
 	}
 	
 	

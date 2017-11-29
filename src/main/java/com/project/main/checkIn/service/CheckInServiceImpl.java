@@ -48,6 +48,11 @@ public class CheckInServiceImpl implements CheckInService{
 		return checkInDao.payInsert(pvo);
 	}
 
+	@Override
+	public List<BookVO> checkList(CheckOut1VO cvo) {
+		return checkInDao.checkList(cvo);
+	}
+
 	
 	
 }
