@@ -39,6 +39,9 @@
 	<logger name="com.project.main.checkIn.dao">
 		<level value="TRACE" />
 	</logger>
+	<logger name="com.project.main.admin.dao">
+		<level value="TRACE"/>
+	</logger>
 	
 	
 	<!-- Root Logger -->

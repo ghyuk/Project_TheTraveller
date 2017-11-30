@@ -58,15 +58,18 @@
               <c:forEach var="list" items="${contactList}">
               	<tr class="table-new">
 	                <td >${ list.contactnum}</td>
-	                <td class="goDetail">${list.contactname }</td>
+	                <td>${list.contactname }</td>
 	                <td>${list.contactdate }</td>
 	                <td>${list.c_status }</td>
               	</tr>
               </c:forEach>
               </c:when >
              <c:otherwise>
-              <tr>
+              <tr class="table-new">
+                <td >There's</td>
                 <td>No Data</td>
+                <td>Here</td>
+                <td>dude</td>
               </tr>
               </c:otherwise>
               </c:choose>

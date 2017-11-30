@@ -20,7 +20,7 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	@RequestMapping(value="/contactList")
+	@RequestMapping(value="/contactList.do")
 	public String contactList(@ModelAttribute ContactVO cvo, Model model) {
 		logger.info("contactList Call Success");
 		List<ContactVO> list = adminService.contactList(cvo);

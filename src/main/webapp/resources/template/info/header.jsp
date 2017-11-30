@@ -34,7 +34,7 @@
 	font-size: 15px;
 }
 /* modal css */
-.modal-content{
+.login-modal-content{
 		width: 300px;
  		 height: 500px;
 		background-image: url("/resources/image/loginbg.png") ;
@@ -73,6 +73,20 @@
 	$(function(){
 		/* 관리자 메뉴 숨김 */
 		$(".admin-menu").hide();
+		
+		$("#loginBtn").click(function(){
+			console.log("gd");
+			$("#f_login").attr({
+				"method":"get",
+				"action":"/checkIn/checkList.do"
+			})
+			$("#f_login").submit();
+			
+			
+		})
+		
+		
+		
 	})
 </script>
 
@@ -124,7 +138,7 @@
 <!--Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog  modal-sm">
-    <div class="modal-content">
+    <div class="login-modal-content">
       <!-- <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h3 class="modal-title" id="loginModalLabel">Log - In</h3>
@@ -134,7 +148,7 @@
       	<span class="up-title">CHECK - UP</span>
       </div>
       <div class="modal-body">
-        	<form id="f_login">
+        <form id="f_login">
 		  <div class="form-group">
 		    <label class="login-label"for="u_passport">PASSPORT</label>
 		    <input type="text" class="form-control" id="u_passport" name="u_passport" placeholder="여권번호를 입력하세요">
@@ -144,8 +158,8 @@
 		    <input type="text" class="form-control" id="u_phone" name="u_phone" placeholder="핸드폰번호를 입력하세요">
 		  </div>
 		  <div class="modal-btn">
-			<button type="button" class="btn btn-primary btn-block">Log-In</button>
-        		<button type="button" class="btn btn-default btn-block" data-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-primary btn-block" id="loginBtn" >Log-In</button>
+        	<button type="button" class="btn btn-default btn-block" data-dismiss="modal">Cancel</button>
         </div>
 		</form>
 		
