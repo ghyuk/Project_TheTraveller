@@ -71,7 +71,7 @@ body {
 		<tiles:insertAttribute name="header" />
 	</header>
 
-	<section class="section">
+	<section>
 		<tiles:insertAttribute name="body" />
 	</section>
 

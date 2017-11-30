@@ -7,7 +7,7 @@
 			border: 1px solid black;
 			border-spacing: 0px;}
 			
-			.checkInTable{
+			.contactBoard{
 			padding-top: 80px;
 			z-index: 1;
 			}
@@ -65,12 +65,9 @@
               </c:forEach>
               </c:when >
              <c:otherwise>
-              <tr class="table-new">
-                <td >There's</td>
-                <td>No Data</td>
-                <td>Here</td>
-                <td>dude</td>
-              </tr>
+              <tr>
+                <td colspan="4" align="center">No Data</td>
+             </tr>
               </c:otherwise>
               </c:choose>
             </tbody>

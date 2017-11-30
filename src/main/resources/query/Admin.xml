@@ -14,4 +14,27 @@
 		FROM CONTACT
 	</select>
 
+	<select id="checkInList" parameterType="dvo" resultType="dvo">
+		SELECT
+					    b_code,
+					    b.u_code,
+					    b_price,
+					    b_state,
+					    b_date,
+					    b_num,
+					    finfo,
+					    hinfo,
+					    i.u_code,
+					    u_lname,
+					    u_fname,
+					    u_birth,
+					    u_edate,
+					    u_phone,
+					    u_email,
+					    u_passport,
+					    u_agreement
+			FROM
+			    book b , INSTANT_USER i
+					
+	</select>
 </mapper>

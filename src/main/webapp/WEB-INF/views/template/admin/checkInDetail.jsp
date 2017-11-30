@@ -56,9 +56,11 @@
             <thead>
               <tr>
                 <th class="table-title">예약번호</th>
-                <td><input type="text" id="b_code" name="b_code" value="예약번호" readonly/></td>
-                <th class="table-title">예약일</th>
-                	<td><input type="text" id="b_date" name="b_date" value="예약일" readonly/></td>
+						<td><input type="text" id="b_code" name="b_code"
+							value="${dvo.b_code }" readonly /></td>
+						<th class="table-title">예약일</th>
+						<td><input type="text" id="b_date" name="b_date"
+							value="${dvo.b_date }" readonly /></td>
               </tr>
             </thead>
             <tbody>
@@ -90,59 +92,73 @@
             		</c:forEach>
             </c:if> --%>
               <tr>
-                <th class="table-title">예약자 명</th>
-                <td>
-                		<input type="text" id="u_lname" name="u_lname" value="성" readonly/>
-                		<input type="text" id="u_fname" name="u_fname" value="이름" readonly/>
-                	</td>
-                	<th class="table-title">여권번호</th>
-              	<td><input type="text" id="u_passport" name="u_passport" value="여권번호" readonly/></td>
-              </tr>
-              
-              <tr>
-              	<th class="table-title">생년월일</th>
-              	<td><input type="text" id="u_birth" name="u_birth" value="생년월일" readonly/></td>
-              	<th class="table-title">여권 만료일</th>
-              	<td><input type="text" id="u_edate" name="u_edate" value="여권 만료일" readonly/></td>
-              </tr>
-              <tr>
-              	<th class="table-title">전화번호</th>
-              	<td><input type="text" id="u_phone" name="u_phone" value="010-0000-0000" readonly/></td>
-              	<th class="table-title">이메일</th>
-              	<td><input type="text" id="u_email" name="u_email"	 value="aaa@aaa.com" readonly/></td>
-              </tr>
-              <tr>
-              	<th class="table-title">도시 명</th>
-              	<td><input type="text" id="c_code" name="c_code" value="도시명" readonly/></td>
-              	<th class="table-title">좌석 등급</th>
-              	<td><input type="text" id="class" name="class" value="일반석" readonly/></td>
-              </tr>
-              <tr>
-              	<th class="table-title">출국일</th>
-              	<td><input type="text" id="d_date" name="d_date" value="2017-11-25" readonly/></td>
-              	<th class="table-title">귀국일</th>
-              	<td><input type="text" id="a_date" name="a_date" value="2017-12-25" readonly/></td>
-              </tr>
-              <tr>
-              	<th class="table-title">출국 편명</th>
-              	<td><input type="text" id="f_code" name="f_code" value="출국편명" readonly/></td>
-              	<th class="table-title">출국편 발권 번호</th>
-              	<td><input type="text" id="b_num" name="b_num" value="발권번호" /></td>
-              </tr>
-              <tr>
-              	<th class="table-title">귀국 편명</th>
-              	<td><input type="text" id="f_code" name="f_code" value="귀국편명" readonly/></td>
-              	<th class="table-title">귀국편 발권 번호</th>
-              	<td><input type="text" id="b_num" name="b_num" value="발권번호" /></td>
-              </tr>
-              <tr>
-              	<th class="table-title">호텔 명</th>
-              	<td><input type="text" id="h_name" name="h_name" value="호텔명" readonly/></td>
-              	<th class="table-title">호텔 발권 번호</th>
-              	<td><input type="text" id="b_num" name="b_num" value="발권번호" /></td>
-              </tr>
-              	<tr>
-              	<th class="table-title">예약 현황</th>
+						<th class="table-title">예약자 명</th>
+						<td><input type="text" id="u_lname" name="u_lname"
+							value="${dvo.u_lname }" readonly /> <input type="text"
+							id="u_fname" name="u_fname" value="${dvo.u_fname }" readonly /></td>
+						<th class="table-title">여권번호</th>
+						<td><input type="text" id="u_passport" name="u_passport"
+							value="${dvo.u_passport }" readonly /></td>
+					</tr>
+					<tr>
+						<th class="table-title">생년월일</th>
+						<td><input type="text" id="u_birth" name="u_birth"
+							value="${dvo.u_birth }" readonly /></td>
+						<th class="table-title">여권 만료일</th>
+						<td><input type="text" id="u_edate" name="u_edate"
+							value="${dvo.u_edate }" readonly /></td>
+					</tr>
+					<tr>
+						<th class="table-title">전화번호</th>
+						<td><input type="text" id="u_phone" name="u_phone"
+							value="${dvo.u_phone }" readonly /></td>
+						<th class="table-title">이메일</th>
+						<td><input type="text" id="u_email" name="u_email"
+							value="${dvo.u_email }" readonly /></td>
+					</tr>
+					<tr>
+						<th class="table-title">도시 명</th>
+						<td><input type="text" id="c_code" name="c_code" value="${fvo.out_airport }"
+							readonly /></td>
+						<th class="table-title">좌석 등급</th>
+						<td><input type="text" id="class" name="class" value="${fvo.sittype }"
+							readonly /></td>
+					</tr>
+					<tr>
+						<th class="table-title">출국일</th>
+						<td><input type="text" id="d_date" name="d_date" value="${fvo.out_day } / ${fvo.out_time}"
+							readonly /></td>
+						<th class="table-title">귀국일</th>
+						<td><input type="text" id="a_date" name="a_date" value="${fvo.hout_day} / ${fvo.hout_time}"
+							readonly /></td>
+					</tr>
+					<tr>
+						<th class="table-title">출국 편명</th>
+						<td><input type="text" id="f_code" name="f_code" value="${fvo.airline }"
+							readonly /></td>
+						<th class="table-title">출국편 발권 번호</th>
+						<td><input type="text" id="b_num" name="b_num" value=""
+							 /></td>
+					</tr>
+					<tr>
+						<th class="table-title">귀국 편명</th>
+						<td><input type="text" id="f_code" name="f_code" value="${fvo.airline }"
+							readonly /></td>
+						<th class="table-title">귀국편 발권 번호</th>
+						<td><input type="text" id="b_num" name="b_num" value=""
+							 /></td>
+					</tr>
+					<tr>
+						<th class="table-title">호텔 명</th>
+						<td><input type="text" id="h_name" name="h_name" value="${hvo.h_name }"
+							readonly /></td>
+						<th class="table-title">호텔 발권 번호</th>
+						<td><input type="text" id="b_num" name="b_num"
+							value="" /></td>
+					</tr>
+					<tr>
+						<th class="table-title">예약 현황</th>
+						
               		<!-- 관리자일경우 -->
               	<td><select id="b_status" name="b_status">
               				<option value="1" selected>wait</option>		<!-- 결제 완료 단계 -->

@@ -71,23 +71,26 @@
 </style>
 <script type="text/javascript">
 	$(function(){
-		/* 관리자 메뉴 숨김 */
-		$(".admin-menu").hide();
-		
 		$("#loginBtn").click(function(){
+			if($("#u_passport").val() == "traveller" && $("#u_phone").val() == "oracle"){
+				console.log($("#u_passport").val());
+				$("#f_login").attr({
+					"method":"get",
+					"action":"/admin/checkInList.do"
+				});
+				$("#f_login").submit();
+			}else{
 			console.log("gd");
 			$("#f_login").attr({
 				"method":"get",
 				"action":"/client/checkList.do"
 			})
 			$("#f_login").submit();
-			
-			
-		})
+			}
 		
 		
-		
-	})
+		});
+	});
 </script>
 
 <nav class="navbar navbar-inverse">
@@ -123,10 +126,6 @@
 				<li class="nav-menu"><a href="#play">Play</a></li>
 				<li class="nav-menu"><a href="#contact">Contact</a></li>
 				<li class="nav-menu"><a href="#myinfo" data-toggle="modal" data-target="#loginModal">My Info</a></li>
-				<!-- 관리자 모드 -->
-				<li class="admin-menu"><a href="#checkInList">Check-In List</a></li>
-				<li class="admin-menu"><a href="#contactList">Contact List</a></li>
-				<li class="admin-menu"><a href="#logOut">Log - Out</a></li>
 				<li class="nav-menu"><a href="/checkIn/check.do" style="color: #c21616">Check-In</a></li>
 			</ul>
 		</div>

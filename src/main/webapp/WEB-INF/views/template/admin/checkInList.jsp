@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<style type="text/css">
 		
 			table, th, tr, td{
@@ -29,7 +30,15 @@
 			text-align: right;
 			}
 	</style>
+<script type="text/javascript">
+	$(function() {
+		$(".trBtn").click(function(){
+			console.log($(this).attr("data-num"));
+			location.href="/admin/checkDetail.do?data="+$(this).attr("data-num");
+		});
 
+	});
+</script>
 
 <div class="checkInTable">
 <div class="row">
@@ -48,59 +57,28 @@
                 <th>예약번호</th>
                 <th>예약자 명</th>
                 <th>예약일</th>
-                <th>예약여부</th>
+                <th>예약상태</th>
               </tr>
             </thead>
             <tbody>
             <!-- 예약입력 시 아래 tr태그에 addClass("info") -->
-              <tr class="table-new">
-                <td >1</td>
-                <td>Mark</td>
-                <td>2017-11-25</td>
-                <td>wait</td>
+             <c:choose>
+              <c:when  test="${not empty checkInList }">
+              <c:forEach var="list" items="${checkInList}">
+              	<tr data-num="${list.u_code }" class="trBtn">
+	                <td >${ list.u_code}</td>
+	                <td>${list.u_lname } &nbsp; ${list.u_fname }</td>
+	                <td>${list.b_date }</td>
+	                <td>${list.b_state }</td>
+              	</tr>
+              </c:forEach>
+              </c:when >
+             <c:otherwise>
+              <tr>
+                <td colspan="4" align="center">No Data</td>
               </tr>
-              <tr class="table-new">
-              	<td>2</td>
-                <td>Mark</td>
-                <td>2017-11-25</td>
-                <td>wait</td>
-            </tr>
-            <tr class="table-new">
-              	<td>3</td>
-                <td>Mark</td>
-                <td>2017-11-23</td>
-                <td>wait</td>
-            </tr>
-            <tr class="table-oper">
-              	<td>4</td>
-                <td>Mark</td>
-                <td>2017-11-22</td>
-                <td>operating</td>
-            </tr>
-            <tr class="table-done">
-              	<td>5</td>
-                <td>Mark</td>
-                <td>2017-11-22</td>
-                <td>done</td>
-            </tr>
-            <tr class="table-cancel">
-              	<td>6</td>
-                <td>Mark</td>
-                <td>2017-11-21</td>
-                <td>cancel</td>
-            </tr>
-            <tr class="table-done">
-              	<td>7</td>
-                <td>Mark</td>
-                <td>2017-11-21</td>
-                <td>done</td>
-            </tr>
-            <tr class="table-done">
-              	<td>8</td>
-                <td>Mark</td>
-                <td>2017-11-21</td>
-                <td>done</td>
-            </tr>
+              </c:otherwise>
+              </c:choose>
             </tbody>
             </table>
             <div class="boardBtn"><input type="button" class="btn btn-default" id="updateStatus" name="updateStatus" value="updateStatus"/></div>

@@ -56,6 +56,9 @@ table, th, tr, td {
 <script type="text/javascript">
 	$(function() {
 		console.log("${dvo}" + "55");
+		$("#checkInInfoList").click(function(){
+			location.href="/client/checkList.do?u_passport="+${dvo.u_passport }+"&u_phone="+${dvo.u_phone };
+		})
 	});
 </script>
 

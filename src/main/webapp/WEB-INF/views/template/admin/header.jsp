@@ -74,10 +74,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Check - In List</a></li>
-         <li><a href="#">Contact List</a></li>
+        <li><a href="/admin/checkInList.do">Check - In List</a></li>
+         <li><a href="/admin/contactList.do">Contact List</a></li>
          <li><a href="#">Sales Management</a></li>
-        <li><a href="#" style="color:#c21616">Sign - Out</a></li>
+        <li><a href="/" style="color:#c21616">Sign - Out</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

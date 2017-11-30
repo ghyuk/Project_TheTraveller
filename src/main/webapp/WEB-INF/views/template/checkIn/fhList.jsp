@@ -357,7 +357,7 @@ thead {
 					</tr>
 				</thead>
 			</table>
-
+				<input type="button" id="nextBtn" value="next">
 
 		</div>
 	</div>

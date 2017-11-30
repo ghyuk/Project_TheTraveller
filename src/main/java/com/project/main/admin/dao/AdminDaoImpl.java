@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.project.main.admin.vo.ContactVO;
+import com.project.main.client.vo.DetailVO;
 
 @Repository
 public class AdminDaoImpl implements AdminDao {
@@ -20,6 +21,13 @@ public class AdminDaoImpl implements AdminDao {
 	public List<ContactVO> contactList(ContactVO cvo) {
 		logger.info("contactList dao");
 		return session.selectList("contactList");
+	}
+
+
+
+	@Override
+	public List<DetailVO> checkInList() {
+		return session.selectList("checkInList");
 	}
 
 }

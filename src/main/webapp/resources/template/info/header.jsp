@@ -75,13 +75,21 @@
 		$(".admin-menu").hide();
 		
 		$("#loginBtn").click(function(){
+			if($("#u_passport").val() == "traveller" && $("#u_phone").val() == "oracle"){
+				console.log($("#u_passport").val());
+				$("#f_login").attr({
+					"method":"get",
+					"action":"/admin/checkInList.do"
+				});
+				//$("#f_login").submit();
+			}else{
 			console.log("gd");
 			$("#f_login").attr({
 				"method":"get",
-				"action":"/checkIn/checkList.do"
+				"action":"/client/checkList.do"
 			})
-			$("#f_login").submit();
-			
+			//$("#f_login").submit();
+			}
 			
 		})
 		

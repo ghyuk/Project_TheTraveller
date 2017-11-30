@@ -5,7 +5,7 @@
 	$(function() {
 		$(".trBtn").click(function(){
 			console.log($(this).attr("data-num"));
-			location.href="/checkIn/checkDetail.do?data="+$(this).attr("data-num");
+			location.href="/client/checkDetail.do?data="+$(this).attr("data-num");
 		});
 
 	});
