@@ -60,7 +60,20 @@
 <!--  jQuery UI 라이브러리 js파일 -->
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 <script type="text/javascript">
+var date = getDateFormat(new Date());
+function getDateFormat(dateValue){
+	var year = dateValue.getFullYear();
+	var month = dateValue.getMonth()+1;
+	month = (month<10) ? "0"+month : month;
+	var day = dateValue.getDate();
+	day = (day<10)? "0"+day : day;
+	var result = year+"-"+month+"-"+day;
+	return result;
+}
 	$(function() {
+		$("#d_date").val(date);
+		$("#a_date").val(date);
+		
 		$("#d_date").datepicker({
 			changeMonth : true,
 			minDate : 0,
@@ -73,18 +86,16 @@
 		});
 		$("#a_date").datepicker({
 			changeMonth : true,
+			minDate : 0,
 			dateFormat : "yy-mm-dd",
 			nextText : '다음 달',
 			prevText : '이전 달',
 			onClose : function(selectedDate) {
+
 				$("#d_date").datepicker("option", "maxDate", selectedDate);
 			}
 		});
 		$("#next").click(function() {
-			console.log($("#arrival").val());
-			console.log($("#d_date").val());
-			console.log($("#a_date").val());
-			console.log($("#sitclass").val());
 			$("#f_check").attr({
 				"method":"post",
 				"action":"/checkIn/fhList.do"
@@ -126,13 +137,13 @@
 					<tr>
 						<td>
 							<div class="form-group">
-								<label for="d_date">출국일</label> <input type="text"
+								<label for="d_date">출국일</label> <input type="text" readonly="readonly"
 									class="form-control" id="d_date" name="d_date" placeholder="출국일을 선택해주세요">
 							</div>
 						</td>
 						<td>
 							<div class="form-group">
-								<label for="a_date">귀국일</label> <input type="text"
+								<label for="a_date">귀국일</label> <input type="text" readonly="readonly"
 									class="form-control" id="a_date" name="a_date" placeholder="귀국일을 선택해주세요">
 							</div>
 						</td>
