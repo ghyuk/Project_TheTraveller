@@ -18,6 +18,7 @@
 			value="/WEB-INF/views/template/info/second_section_rp.jsp"></put-attribute>
 		<put-attribute name="third_section_lp"
 			value="/WEB-INF/views/template/info/third_section_lp.jsp"></put-attribute>
+			
 	</definition>
 	
 	<definition name="content" template="/WEB-INF/views/template/info/content_layout.jsp">
@@ -29,14 +30,19 @@
 			value="/WEB-INF/views/template/info/contact.jsp"></put-attribute>
 		<put-attribute name="footer"
 			value="/WEB-INF/views/template/info/footer.jsp"></put-attribute>
+			
 	</definition>
 
 	<definition name="template/checkIn/*" extends="content">
 		<put-attribute name="title" value="test" />
 		<put-attribute name="body" value="/WEB-INF/views/template/checkIn/{1}.jsp" />
 	</definition>
-
-
+	
+	<definition name="template/admin/*" extends="content">
+		<put-attribute name="title" value="Contact List"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/template/admin/{1}.jsp"></put-attribute>
+		
+	</definition>
 
 
 </tiles-definitions>

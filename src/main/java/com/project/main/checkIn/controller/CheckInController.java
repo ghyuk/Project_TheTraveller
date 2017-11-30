@@ -1,4 +1,4 @@
-package com.project.main.checkIn.controller;
+ package com.project.main.checkIn.controller;
 
 
 import java.io.BufferedReader;
