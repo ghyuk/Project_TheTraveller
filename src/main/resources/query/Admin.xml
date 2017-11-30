@@ -3,7 +3,11 @@
 <mapper namespace="com.project.main.admin.dao.AdminDao">
 	<select id="contactList" parameterType="cvo" resultType="cvo">
 		SELECT CONTACTNUM,
+<<<<<<< HEAD
 						CONTACTDATE,
+=======
+						TO_CHAR(CONTACTDATE, 'YYYY-MM-DD') AS CONTACTDATE,
+>>>>>>> branch 'master' of https://github.com/ghyuk/Project_TheTraveller.git
 						CONTACTNAME,
 						CONTACTEMAIL,
 						CONTACTCONTENT,
