@@ -13,4 +13,6 @@ public interface AdminService {
 
 	public DetailVO checkDetail(String u_code);
 
+	public ContactVO contactDetail(int contactnum);
+
 }

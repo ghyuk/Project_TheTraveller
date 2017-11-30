@@ -91,4 +91,18 @@ public class AdminController {
 		return "template/admin/contactBoard";
 	}
 	
+	@RequestMapping(value="/contactDetail.do")
+	public String contactDetail(@RequestParam("data") int contactnum, Model model){
+		logger.info("contactDetail Call Success");
+		ContactVO value = adminService.contactDetail(contactnum);
+		ContactVO cvo = new ContactVO();
+		cvo.setContactnum(value.getContactnum());
+		cvo.setContactdate(value.getContactdate());
+		cvo.setContactname(value.getContactname());
+		cvo.setContactemail(value.getContactemail());
+		cvo.setContactcontent(value.getContactcontent());
+		
+		model.addAttribute("cvo", cvo);
+		return "template/admin/contactDetail";
+	}
 }

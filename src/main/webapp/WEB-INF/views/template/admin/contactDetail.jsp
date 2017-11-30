@@ -31,6 +31,13 @@
 			background-color: #f0f0f0;
 			font-size: 18px;}
     </style>
+    <script type="text/javascript">
+    	$(function(){
+    		$("#contactList").click(function(){
+    			location.href="/admin/contactList.do";
+    		})
+    	})
+    </script>
     
     <div class="contactDetail">
 <div class="row">
@@ -47,9 +54,9 @@
             <thead>
               <tr>
                 <th class="table-title">상담번호</th>
-                <td><input type="text" id="contactnum" name="contactnum" value="상담번호" readonly/></td>
+                <td><input type="text" id="contactnum" name="contactnum" value="${cvo.contactnum }" readonly/></td>
                 <th class="table-title">상담일</th>
-                	<td><input type="text" id="contactdate" name="contactdate" value="상담신청일" readonly/></td>
+                	<td><input type="text" id="contactdate" name="contactdate" value="${cvo.contactdate }" readonly/></td>
               </tr>
             </thead>
             <tbody>
@@ -57,14 +64,14 @@
               <tr>
                 <th class="table-title">상담신청자 명</th>
                 <td>
-                		<input type="text" id="contactname" name="contactname" value="이름" readonly/>
+                		<input type="text" id="contactname" name="contactname" value="${cvo.contactname }" readonly/>
                 	</td>
                 	<th class="table-title">이메일</th>
-              	<td><input type="text" id="contactemail" name="contactemail"	 value="aaa@aaa.com" readonly/></td>
+              	<td><input type="text" id="contactemail" name="contactemail"	 value="${cvo.contactemail }" readonly/></td>
               </tr>
               <tr>
               	<th class="table-title">내용</th>
-              	<td colspan="3"><textarea id="contactcontent" name="contactcontent" class="form-control" rows="5"></textarea></td>
+              	<td colspan="3"><textarea id="contactcontent" name="contactcontent" class="form-control" rows="5">${cvo.contactcontent }</textarea></td>
               </tr>
                <tr>
               	<th class="table-title">답변</th>

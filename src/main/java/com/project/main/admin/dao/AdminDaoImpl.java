@@ -30,4 +30,11 @@ public class AdminDaoImpl implements AdminDao {
 		return session.selectList("checkInList");
 	}
 
+
+
+	@Override
+	public ContactVO contactDetail(int contactnum) {
+		return (ContactVO)session.selectOne("contactDetail");
+	}
+
 }

@@ -29,7 +29,15 @@
 			text-align: right;
 			}
 	</style>
+<script type="text/javascript">
+	$(function() {
+		$(".trBtn").click(function(){
+			console.log($(this).attr("data-num"));
+			location.href="/admin/contactDetail.do?data="+$(this).attr("data-num");
+		});
 
+	});
+</script>
 
 <div class="contactBoard">
 <div class="row">
@@ -56,7 +64,7 @@
               <c:choose>
               <c:when  test="${not empty contactList }">
               <c:forEach var="list" items="${contactList}">
-              	<tr class="table-new">
+              	<tr data-num="${list.contactnum }" class="trBtn">
 	                <td >${ list.contactnum}</td>
 	                <td>${list.contactname }</td>
 	                <td>${list.contactdate }</td>

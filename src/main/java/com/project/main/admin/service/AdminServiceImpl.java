@@ -38,4 +38,9 @@ public class AdminServiceImpl implements AdminService {
 		return adminDao.checkInList();
 	}
 
+	@Override
+	public ContactVO contactDetail(int contactnum) {
+		return adminDao.contactDetail(contactnum);
+	}
+
 }

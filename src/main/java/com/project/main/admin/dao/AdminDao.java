@@ -11,4 +11,6 @@ public interface AdminDao {
 
 	public List<DetailVO> checkInList();
 
+	public ContactVO contactDetail(int contactnum);
+
 }

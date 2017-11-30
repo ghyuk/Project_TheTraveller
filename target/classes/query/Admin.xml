@@ -37,4 +37,14 @@
 			    book b , INSTANT_USER i
 					
 	</select>
+	<select id="contactDetail" parameterType="int" resultType="cvo">
+		SELECT CONTACTNUM,
+						CONTACTDATE,
+						CONTACTNAME,
+						CONTACTEMAIL,
+						CONTACTCONTENT,
+						CONTACTREPLY,
+						C_STATUS
+		FROM	 CONTACT
+	</select>
 </mapper>
