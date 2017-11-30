@@ -1,29 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<script type="text/javascript" src="js/ie10-viewport-bug-workaround.js"></script>
+	
+<script type="text/javascript" src="/resources/include/js/common.js"></script>
 <script type="text/javascript">
 	$(function() {
-		console.log("${sfvo}");
-		console.log("${shvo}");
-		$("#f_payBtn").click(function() {
-			$.ajax({
-				url : "/checkIn/fbook.do",
-				type : "POST",
-				data : $("#f_form").serialize(),
-				error : function() {
-					alert("오류f");
-				},
-				success : function(result) {
-					console.log(result);
-					$("#s_payBtn").click(function() {
-						$("#s_form").attr({
-							"method" : "post",
-							"action" : "/checkIn/pay.do"
+		$("#u_birth").val("1990-01-01");
+		$("#u_edate").val(date);
+		$("#f_payBtn").hide();
+		$("#u_passport").val("1111");
+		$("#checkBtn").click(function() {
+			if(!checkForm($("#u_passport"),"여권번호를")){
+
+				console.log("실패");
+				return;
+			}
+			else{
+				console.log("성공");
+				$("#f_payBtn").click();
+				$.ajax({
+					url : "/checkIn/fbook.do",
+					type : "POST",
+					data : $("#f_form").serialize(),
+					error : function() {
+						alert("오류f");
+					},
+					success : function(result) {
+						console.log(result);
+						$("#s_payBtn").click(function() {
+							$("#s_form").attr({
+								"method" : "post",
+								"action" : "/checkIn/pay.do"
+							});
+							$("#s_form").submit();
 						});
-						$("#s_form").submit();
-					});
-				}
-			});
+					}
+				});
+			}
+			
 
 		});
 
@@ -218,8 +231,9 @@ table, th, tr, td, .nbsp {
 						</tr>
 						<tr>
 							<td colspan="2" align="right">
-								<button type="button" class="btn btn-primary"
-									data-toggle="modal" data-target="#payModal" id="f_payBtn">결제</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#payModal" 
+									id="f_payBtn"></button>
+								<button type="button" class="btn btn-primary"id="checkBtn">결제</button>
 							</td>
 						</tr>
 					</table>

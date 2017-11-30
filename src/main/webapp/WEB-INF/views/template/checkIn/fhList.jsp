@@ -74,10 +74,9 @@ thead {
 <script type="text/javascript">
 var f_form=null ,h_form=null,f_ck=0,h_ck=0;
 $(function(){
-	
-	console.log("${code}");
-	flight();
+
 	hotel();
+	flight();
 
 	$(document).on("click",".fchoice",function(){
 		if(f_ck==0){
@@ -89,7 +88,6 @@ $(function(){
 		}
 		var form = $(this).parents("form");
 		f_form = form;
-		console.log(f_form.html());
 	});
 	
 	$(document).on("click",".hchoice",function(){
@@ -106,18 +104,15 @@ $(function(){
 			"method":"post",
 			"action":"/checkIn/hotel.do"
 		});
-		console.log(h_form.html());
 	});
 	
-	console.log(h_form);
 	$("#nextBtn").click(function(){$
 		
 		if(h_form == null || h_form == ''){
 			alert("선택된 호텔이 없습니다 선택해주세요.");
 			return;
 		}
-		if(f_form == null || f
-				_form == ''){
+		if(f_form == null || f_form == ''){
 			alert("선택된 항공이 없습니다 선택해주세요.");
 			return;
 			
@@ -127,7 +122,7 @@ $(function(){
 				type : "POST",
 				data : f_form.serialize(),
 				error : function(){
-					alert("오류1");
+					location.reload(); 
 				},
 				success : function(result){
 				}
@@ -137,7 +132,7 @@ $(function(){
 				type : "POST",
 				data : h_form.serialize(),
 				error : function(){
-					alert("오류2");
+					location.reload(); 
 				},
 				success : function(result){
 				}
@@ -166,7 +161,7 @@ $(function(){
 	var departure_date="&departure_date="+start;
 	var return_date="&return_date="+end;
 	var adults="&adults="+adult;
-	var rest="&currency=KRW&number_of_results=4 HTTP/1.1";
+	var rest="&currency=KRW&number_of_results=4";
 	
 	var key="apikey=mXBxI1OLDAM84vgb0gWKYdHXp8rGUWAd"+origin+destination+departure_date+return_date+adults+rest;
 	var apiurl=uri+key;
@@ -228,7 +223,6 @@ $(function(){
 						body.append(f+s+t);
 				 } 
 			}).fail(function(){
-				alert("목록부르기에 실패하였습니다.");
 			});
 		}
 		function hotel(){
@@ -240,7 +234,7 @@ $(function(){
 		var check_in="&check_in="+start;
 		var check_out ="&check_out="+end;
 		var show_sold_out="&show_sold_out=true"
-		var rest="&currency=KRW&number_of_results=4 HTTP/1.1";
+		var rest="&currency=KRW&number_of_results=4";
 		
 	var key="apikey=mXBxI1OLDAM84vgb0gWKYdHXp8rGUWAd"+location+check_in+check_out+show_sold_out+rest;
 	var apiurl2=uri+key;
@@ -268,7 +262,6 @@ $(function(){
 		} 
 			
     }).fail(function(){
-        alert("목록부르기에 실패하였습니다.");
     });
 	
 }

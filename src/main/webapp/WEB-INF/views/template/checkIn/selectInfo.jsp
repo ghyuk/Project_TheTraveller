@@ -60,16 +60,7 @@
 <!--  jQuery UI 라이브러리 js파일 -->
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 <script type="text/javascript">
-var date = getDateFormat(new Date());
-function getDateFormat(dateValue){
-	var year = dateValue.getFullYear();
-	var month = dateValue.getMonth()+1;
-	month = (month<10) ? "0"+month : month;
-	var day = dateValue.getDate();
-	day = (day<10)? "0"+day : day;
-	var result = year+"-"+month+"-"+day;
-	return result;
-}
+
 	$(function() {
 		$("#d_date").val(date);
 		$("#a_date").val(date);

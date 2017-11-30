@@ -1,5 +1,3 @@
-
-
 var date = getDateFormat(new Date());
 function getDateFormat(dateValue){
 	var year = dateValue.getFullYear();
@@ -10,28 +8,17 @@ function getDateFormat(dateValue){
 	var result = year+"-"+month+"-"+day;
 	return result;
 }
-function checkData()
-
-
-
-
-
-function chkData(item, msg){
-	if($(item).val().replace(/\s/g,"") == ""){
-		alert(msg + " 입력해주세요");
-		$(item).val("");
-		$(item).focus();
-		return false;
-	}else{
-		return true;
-	}
 	
-}
+	
+
 function checkForm(item, msg){
 	var message = "";
+	console.log(item.val());
+	
 	if(item.val().replace(/\s/g,"")==""){
 		message = msg+" 입력해 주세요";
 		item.attr("placeholder", message);
+		item.focus();
 		return false;
 	}else{
 		return true;
@@ -40,7 +27,7 @@ function checkForm(item, msg){
 
 /* (?=pattern) or 연산으로 정의된 패턴과 일치하는 문자열 */
 var pattern = [
-	"((?=.*[a-zA-Z])(?=.*[0-9]).{6,10})",
+	"((?=.*[a-zA-Z])(?=.*[0-9]).{8,10})",
 	"((?=.*[a-zA-Z])(?=.*[0-9@#$%]).{8,12})",
 	"^\\d{3}-\\d{3,4}-\\d{4}$" //핸드폰 번호 유효성 체크(-포함)
 	/*"\d{3}-\d{3,4}-\d{4}"*/
