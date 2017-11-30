@@ -8,7 +8,7 @@
 		<!-- DataSource -->
 		<bean id="dataSource"
 			class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="java:comp/env/jdbc/traveller"/>
+		<property name="jndiName" value="java:comp/env/jdbc/traveller1"/>
 		<!-- <property name="jndiName" value="java:comp/env/jdbc/Oracle11g"/> -->
 		</bean>
 		

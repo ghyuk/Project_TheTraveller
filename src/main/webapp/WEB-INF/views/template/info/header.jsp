@@ -78,7 +78,7 @@
 			console.log("gd");
 			$("#f_login").attr({
 				"method":"get",
-				"action":"/checkIn/checkList.do"
+				"action":"/client/checkList.do"
 			})
 			$("#f_login").submit();
 			
