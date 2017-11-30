@@ -82,37 +82,6 @@ table, th, tr, td {
 							</tr>
 						</c:otherwise>
 					</c:choose>
-					<!-- 예약입력 시 아래 tr태그에 addClass("info") -->
-					<!-- <tr class="table-oper">
-						<td>5</td>
-						<td>Mark</td>
-						<td>2017-11-22</td>
-						<td>operating</td>
-					</tr>
-					<tr class="table-done">
-						<td>4</td>
-						<td>Mark</td>
-						<td>2017-11-22</td>
-						<td>done</td>
-					</tr>
-					<tr class="table-cancel">
-						<td>3</td>
-						<td>Mark</td>
-						<td>2017-11-21</td>
-						<td>cancel</td>
-					</tr>
-					<tr class="table-done">
-						<td>2</td>
-						<td>Mark</td>
-						<td>2017-11-21</td>
-						<td>done</td>
-					</tr>
-					<tr class="table-done">
-						<td>1</td>
-						<td>Mark</td>
-						<td>2017-11-21</td>
-						<td>done</td>
-					</tr> -->
 				</tbody>
 			</table>
 		</div>
