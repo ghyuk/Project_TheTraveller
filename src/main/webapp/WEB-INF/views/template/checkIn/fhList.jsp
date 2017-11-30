@@ -116,7 +116,8 @@ $(function(){
 			alert("선택된 호텔이 없습니다 선택해주세요.");
 			return;
 		}
-		if(f_form == null || f_form == ''){
+		if(f_form == null || f
+				_form == ''){
 			alert("선택된 항공이 없습니다 선택해주세요.");
 			return;
 			
