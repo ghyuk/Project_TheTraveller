@@ -20,11 +20,7 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-<<<<<<< HEAD
 	@RequestMapping(value="/contactList.do")
-=======
-	@RequestMapping(value="/contactList")
->>>>>>> branch 'master' of https://github.com/ghyuk/Project_TheTraveller.git
 	public String contactList(@ModelAttribute ContactVO cvo, Model model) {
 		logger.info("contactList Call Success");
 		List<ContactVO> list = adminService.contactList(cvo);
