@@ -143,7 +143,7 @@ public class CheckInController {
 		fbvo.setB_code("book_"+seq);
 		fbvo.setU_code(cvo1.getU_code());
 		fbvo.setB_price(fvo.getPrice().trim()+"^"+hvo.getH_price().trim());
-		fbvo.setB_state("결제완료");
+		fbvo.setB_state("1");
 		fbvo.setFinfo(fvo.toString());
 		fbvo.setHinfo(hvo.toString());
 		result = checkInService.bookInsert(fbvo);
@@ -159,7 +159,7 @@ public class CheckInController {
 		session.invalidate();
 		mav.addObject("u_passport",cvo1.getU_passport());
 		mav.addObject("u_phone",cvo1.getU_phone());
-		mav.setViewName("/client/checkList");
+		mav.setViewName("template/checkIn/checkInfoList");
 		return mav;
 	}
 

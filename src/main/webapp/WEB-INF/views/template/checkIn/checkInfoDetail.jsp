@@ -57,7 +57,7 @@ table, th, tr, td {
 	$(function() {
 		console.log("${dvo}" + "55");
 		$("#checkInInfoList").click(function(){
-			location.href="/client/checkList.do?u_passport="+${dvo.u_passport }+"&u_phone="+${dvo.u_phone };
+			location.href="/client/checkList.do?u_passport=${dvo.u_passport }&u_phone=${dvo.u_phone }";
 		})
 	});
 </script>
@@ -158,7 +158,7 @@ table, th, tr, td {
 						<td><input type="text" id="f_code" name="f_code" value="${fvo.airline }"
 							readonly /></td>
 						<th class="table-title">출국편 발권 번호</th>
-						<td><input type="text" id="b_num" name="b_num" value=""
+						<td><input type="text" id="f_num1" name="f_num1" value="${dvo.f_num1 }"
 							readonly /></td>
 					</tr>
 					<tr>
@@ -166,7 +166,7 @@ table, th, tr, td {
 						<td><input type="text" id="f_code" name="f_code" value="${fvo.airline }"
 							readonly /></td>
 						<th class="table-title">귀국편 발권 번호</th>
-						<td><input type="text" id="b_num" name="b_num" value=""
+						<td><input type="text" id="f_num2" name="f_num2" value="${dvo.f_num2 }"
 							readonly /></td>
 					</tr>
 					<tr>
@@ -174,12 +174,12 @@ table, th, tr, td {
 						<td><input type="text" id="h_name" name="h_name" value="${hvo.h_name }"
 							readonly /></td>
 						<th class="table-title">호텔 발권 번호</th>
-						<td><input type="text" id="b_num" name="b_num"
-							value="" readonly /></td>
+						<td><input type="text" id="h_num" name="h_num"
+							value="${dvo.h_num }" readonly /></td>
 					</tr>
 					<tr>
 						<th class="table-title">예약 현황</th>
-						<td><label id="b_status" >${dvo.b_state }</label></td>
+						<td><label id="b_statu" >${dvo.b_state }</label></td>
 						<th class="table-title">총 가격</th>
 						<td><input type="text" id="b_price" name="b_price"
 							value="${dvo.b_price }" readonly /></td>

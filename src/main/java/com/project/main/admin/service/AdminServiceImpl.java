@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.main.admin.dao.AdminDao;
 import com.project.main.admin.vo.ContactVO;
+import com.project.main.checkIn.vo.BookVO;
 import com.project.main.client.dao.ClientDao;
 import com.project.main.client.vo.DetailVO;
 
@@ -41,6 +42,11 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public ContactVO contactDetail(int contactnum) {
 		return adminDao.contactDetail(contactnum);
+	}
+
+	@Override
+	public int checkInDetailUpdate(BookVO bvo) {
+		return adminDao.checkInDetailUpdate(bvo);
 	}
 
 }

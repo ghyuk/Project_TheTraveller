@@ -15,7 +15,14 @@
 
   
 </head>
-
+<script type="text/javascript">
+	$(function(){
+		$(".nav-elem").click(function(){
+			var str = $(this).find("span").html().toLowerCase();
+			location.href="/intro.do?intro="+str;
+		});
+	});
+</script>
 <body>
   <div class="main">
   <div class="sidebar-hover">
@@ -25,10 +32,10 @@
   </div>
   <div class="sidebar-real">
     <div data-page="1" class="nav-elem nav-1 active"><span id="nav-text">main</span></div>
-    <div data-page="2" class="nav-elem nav-2"><span id="nav-text">Newyork</span></div>
-    <div data-page="3" class="nav-elem nav-3"><span id="nav-text">Melbourne</span></div>
-    <div data-page="4" class="nav-elem nav-4"><span id="nav-text">Osaka</span></div>
-    <div data-page="5" class="nav-elem nav-5"><span id="nav-text">Madrid</span></div>
+    <div data-page="2" class="nav-elem nav-2"><span id="nav-text" class="introc">Newyork</span></div>
+    <div data-page="3" class="nav-elem nav-3"><span id="nav-text" class="introc">Melbourne</span></div>
+    <div data-page="4" class="nav-elem nav-4"><span id="nav-text" class="introc">Osaka</span></div>
+    <div data-page="5" class="nav-elem nav-5"><span id="nav-text" class="introc">Madrid</span></div>
   </div>
   <div class="sections">
     <div class="section section-1">    

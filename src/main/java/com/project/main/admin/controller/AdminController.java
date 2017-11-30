@@ -34,9 +34,6 @@ public class AdminController {
 		model.addAttribute("checkInList", list);
 		return "template/admin/checkInList";
 	}
-	
-	
-
 	@RequestMapping(value="/checkDetail.do",method=RequestMethod.GET)
 	public ModelAndView checkDetail(@RequestParam("data") String u_code){
 		ModelAndView mav = new ModelAndView();
@@ -104,5 +101,25 @@ public class AdminController {
 		
 		model.addAttribute("cvo", cvo);
 		return "template/admin/contactDetail";
+	}
+	@RequestMapping(value="/checkInDetailUpdate.do", method=RequestMethod.POST)
+	public ModelAndView checkInDetailUpdate(@ModelAttribute BookVO bvo){
+		ModelAndView mav = new ModelAndView();
+		
+		if(bvo.getF_num1().trim().equals("")){
+			bvo.setF_num1(null);
+		}
+		if(bvo.getF_num2().trim().equals("")){
+			bvo.setF_num2(null);
+		}
+		if(bvo.getH_num().trim().equals("")){
+			bvo.setH_num(null);
+		}
+		int result = adminService.checkInDetailUpdate(bvo);
+		mav.addObject("code",3); // 수정완료 코드 3
+		
+		mav.setViewName("redirect:/admin/checkInList.do");
+		
+		return mav;
 	}
 }

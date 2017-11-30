@@ -7,26 +7,48 @@
 		$("#u_birth").val("1990-01-01");
 		$("#u_edate").val(date);
 		$("#f_payBtn").hide();
-		$("#u_passport").val("1111");
 		$("#checkBtn").click(function() {
-			if(!checkForm($("#u_passport"),"여권번호를")){
-
-				console.log("실패");
+			if(!checkForm($("#u_lname"),"성을")){
 				return;
-			}
-			else{
-				console.log("성공");
-				$("#f_payBtn").click();
+			}else if(!inputVerify(0, $("#u_lname"))){
+				return;
+			}else if(!checkForm($("#u_fname"),"이름을")){
+				return;
+			}else if(!inputVerify(0, $("#u_fname"))){
+				return;
+			}else if(!checkForm($("#u_birth"),"생년월일을")){
+				return;
+			}else if(!checkForm($("#i_passport"),"여권번호를")){
+				return;
+			}else if(!checkForm($("#u_edate"),"여권번호 만료일을")){
+				return;
+			}else if(!checkForm($("#i_phone"),"전화번호를")){
+				return;
+			}else if(!inputVerify(3, $("#i_phone"))){
+				return;
+			}else{
 				$.ajax({
 					url : "/checkIn/fbook.do",
 					type : "POST",
 					data : $("#f_form").serialize(),
 					error : function() {
-						alert("오류f");
+						alert("gd");
 					},
 					success : function(result) {
+						$("#f_payBtn").click();
 						console.log(result);
 						$("#s_payBtn").click(function() {
+							if(!checkForm($("#u_lname"),"성을")){
+								return;
+							}else if(!inputVerify(0, $("#u_lname"))){
+								return;
+							}else if(!checkForm($("#u_fname"),"이름을")){
+								return;
+							}
+							
+							
+							
+							
 							$("#s_form").attr({
 								"method" : "post",
 								"action" : "/checkIn/pay.do"
@@ -168,7 +190,7 @@ table, th, tr, td, .nbsp {
 					<table>
 						<tr>
 							<td>
-								<div class="form-group">
+								<div class="form-group" data-n="1">
 									<label for="u_lname">영문 성</label> <input type="text"
 										class="form-control" id="u_lname" name="u_lname"
 										placeholder="여권상의 정보와 동일해야 합니다.">
@@ -177,16 +199,16 @@ table, th, tr, td, .nbsp {
 						</tr>
 						<tr>
 							<td>
-								<div class="form-group">
+								<div class="form-group" data-n="2">
 									<label for="u_fname">영문 이름</label> <input type="text"
-										class="form-control" id="u_fname" name="u_fname"
+										class="form-control" id="u_fname" name="u_fname" pattern="[a-zA-Z]{1,15}"
 										placeholder="여권상의 정보와 동일해야 합니다.">
 								</div>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<div class="form-group">
+								<div class="form-group" data-n="3">
 									<label for="u_birth">생년월일</label> <input type="date"
 										class="form-control" id="u_birth" name="u_birth"
 										placeholder="YYYY-MM-DD 형식으로 입력해주세요">
@@ -195,16 +217,16 @@ table, th, tr, td, .nbsp {
 						</tr>
 						<tr>
 							<td>
-								<div class="form-group">
+								<div class="form-group" data-n="4">
 									<label for="u_passport">여권 번호</label> <input type="text"
-										class="form-control" id="u_passport" name="u_passport"
+										class="form-control" id="i_passport" name="u_passport"
 										placeholder="여권상의 정보와 동일해야 합니다.">
 								</div>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<div class="form-group">
+								<div class="form-group" data-n="5">
 									<label for="u_edate">여권 만료일</label> <input type="date"
 										class="form-control" id="u_edate" name="u_edate"
 										placeholder="여권상의 정보와 동일해야 합니다.">
@@ -213,16 +235,16 @@ table, th, tr, td, .nbsp {
 						</tr>
 						<tr>
 							<td>
-								<div class="form-group">
+								<div class="form-group" data-n="6">
 									<label for="u_phone">전화번호</label> <input type="text"
-										class="form-control" id="u_phone" name="u_phone"
+										class="form-control" id="i_phone" name="u_phone"
 										placeholder="010-0000-0000  형식으로 입력해주세요">
 								</div>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<div class="form-group">
+								<div class="form-group" data-n="7">
 									<label for="u_email">E-Mail</label> <input type="text"
 										class="form-control" id="u_email" name="u_email"
 										placeholder="E-Ticket 등의 예약관련 정보가 발송이됩니다.">

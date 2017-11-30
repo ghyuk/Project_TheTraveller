@@ -15,7 +15,9 @@ public class DetailVO {
 	private String b_price;
 	private String b_state;
 	private String b_date;
-	private String b_num;
+	private String f_num1;
+	private String f_num2;
+	private String h_num;
 	private String finfo;
 	private String hinfo;
 	public String getU_code() {
@@ -96,11 +98,23 @@ public class DetailVO {
 	public void setB_date(String b_date) {
 		this.b_date = b_date;
 	}
-	public String getB_num() {
-		return b_num;
+	public String getF_num1() {
+		return f_num1;
 	}
-	public void setB_num(String b_num) {
-		this.b_num = b_num;
+	public void setF_num1(String f_num1) {
+		this.f_num1 = f_num1;
+	}
+	public String getF_num2() {
+		return f_num2;
+	}
+	public void setF_num2(String f_num2) {
+		this.f_num2 = f_num2;
+	}
+	public String getH_num() {
+		return h_num;
+	}
+	public void setH_num(String h_num) {
+		this.h_num = h_num;
 	}
 	public String getFinfo() {
 		return finfo;
@@ -119,9 +133,13 @@ public class DetailVO {
 		return "DetailVO [u_code=" + u_code + ", u_lname=" + u_lname + ", u_fname=" + u_fname + ", u_birth=" + u_birth
 				+ ", u_edate=" + u_edate + ", u_phone=" + u_phone + ", u_email=" + u_email + ", u_passport="
 				+ u_passport + ", u_agreement=" + u_agreement + ", b_code=" + b_code + ", b_price=" + b_price
-				+ ", b_state=" + b_state + ", b_date=" + b_date + ", b_num=" + b_num + ", finfo=" + finfo + ", hinfo="
-				+ hinfo + "]";
+				+ ", b_state=" + b_state + ", b_date=" + b_date + ", f_num1=" + f_num1 + ", f_num2=" + f_num2
+				+ ", h_num=" + h_num + ", finfo=" + finfo + ", hinfo=" + hinfo + "]";
 	}
+
+	
+	
+	
 	
 	
 }

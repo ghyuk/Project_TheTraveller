@@ -8,7 +8,9 @@
 		    b_price,
 		    b_state,
 		    b_date,
-		    b_num,
+		    f_num1,
+		    f_num2,
+		    h_num,
 		    finfo,
 		    hinfo
 		FROM
@@ -22,7 +24,9 @@
 		    b_price,
 		    b_state,
 		    b_date,
-		    b_num,
+		    f_num1,
+		    f_num2,
+		    h_num,
 		    finfo,
 		    hinfo,
 		    i.u_code,

@@ -5,7 +5,8 @@
 		SELECT
 		CONTACTNUM,
 		CONTACTDATE,
-		TO_CHAR(CONTACTDATE, 'YYYY-MM-DD') AS CONTACTDATE,
+		TO_CHAR(CONTACTDATE, 'YYYY-MM-DD') AS
+		CONTACTDATE,
 		CONTACTNAME,
 		CONTACTEMAIL,
 		CONTACTCONTENT,
@@ -16,36 +17,50 @@
 
 	<select id="checkInList" parameterType="dvo" resultType="dvo">
 		SELECT
-					    b_code,
-					    b.u_code,
-					    b_price,
-					    b_state,
-					    b_date,
-					    b_num,
-					    finfo,
-					    hinfo,
-					    i.u_code,
-					    u_lname,
-					    u_fname,
-					    u_birth,
-					    u_edate,
-					    u_phone,
-					    u_email,
-					    u_passport,
-					    u_agreement
-			FROM
-			    book b , INSTANT_USER i
-					
+		b_code,
+		b.u_code,
+		b_price,
+		b_state,
+		b_date,
+		h_num,
+		f_num1,
+		f_num2,
+		finfo,
+		hinfo,
+		i.u_code,
+		u_lname,
+		u_fname,
+		u_birth,
+		u_edate,
+		u_phone,
+		u_email,
+		u_passport,
+		u_agreement
+		FROM
+		book b , INSTANT_USER i
+		where b.u_code = i.u_code
+
 	</select>
 	<select id="contactDetail" parameterType="int" resultType="cvo">
 		SELECT CONTACTNUM,
-						CONTACTDATE,
-						CONTACTNAME,
-						CONTACTEMAIL,
-						CONTACTCONTENT,
-						CONTACTREPLY,
-						C_STATUS
-		FROM	 CONTACT
+		CONTACTDATE,
+		CONTACTNAME,
+		CONTACTEMAIL,
+		CONTACTCONTENT,
+		CONTACTREPLY,
+		C_STATUS
+		FROM CONTACT
 		WHERE CONTACTNUM = #{contactnum}
 	</select>
+	<update id="checkInDetailUpdate" parameterType="bvo">
+		update book
+		set
+		b_state = #{b_state}, f_num1 = ${f_num1}, f_num2 = ${f_num2}, h_num =
+		${h_num}
+		where b_code = #{b_code}
+	</update>
+
+
+
+
 </mapper>

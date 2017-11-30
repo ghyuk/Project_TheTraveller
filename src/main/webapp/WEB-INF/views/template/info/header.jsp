@@ -121,9 +121,9 @@
 						<li><a href="/intro.do?intro=madrid">Madrid</a></li>
 						<li><a href="/intro.do?intro=osaka">Osaka</a></li>
 					</ul></li>
-				<li class="nav-menu"><a href="#place">Place</a></li>
-				<li class="nav-menu"><a href="#food">Food</a></li>
-				<li class="nav-menu"><a href="#play">Play</a></li>
+				<li class="nav-menu"><a href="/intro.do?intro=newyork#place">Place</a></li>
+				<li class="nav-menu"><a href="/intro.do?intro=newyork#food">Food</a></li>
+				<li class="nav-menu"><a href="/intro.do?intro=newyork#play">Play</a></li>
 				<li class="nav-menu"><a href="#contact">Contact</a></li>
 				<li class="nav-menu"><a href="#myinfo" data-toggle="modal" data-target="#loginModal">My Info</a></li>
 				<li class="nav-menu"><a href="/checkIn/check.do" style="color: #c21616">Check-In</a></li>

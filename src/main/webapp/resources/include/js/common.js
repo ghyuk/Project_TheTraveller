@@ -13,8 +13,6 @@ function getDateFormat(dateValue){
 
 function checkForm(item, msg){
 	var message = "";
-	console.log(item.val());
-	
 	if(item.val().replace(/\s/g,"")==""){
 		message = msg+" 입력해 주세요";
 		item.attr("placeholder", message);
@@ -27,19 +25,25 @@ function checkForm(item, msg){
 
 /* (?=pattern) or 연산으로 정의된 패턴과 일치하는 문자열 */
 var pattern = [
-	"((?=.*[a-zA-Z])(?=.*[0-9]).{8,10})",
+	"((?=.*[a-zA-Z]).{1,15})",
+	"((?=.*[a-zA-Z])(?=.*[0-9]).{1,15})",
 	"((?=.*[a-zA-Z])(?=.*[0-9@#$%]).{8,12})",
-	"^\\d{3}-\\d{3,4}-\\d{4}$" //핸드폰 번호 유효성 체크(-포함)
+	"^\\d{3}-\\d{3,4}-\\d{4}$", //핸드폰 번호 유효성 체크(-포함)
+	"^\\d{4}-\\d{4}-\\d{4}-\\d{4}$",//카드 번호 유효성 체크(-포함)
+	"^\\d{2}$",
+	"^\\d{3}$",
+	"^\\d{4}$",
 	/*"\d{3}-\d{3,4}-\d{4}"*/
 	/*"^[가-힣]*$"*/
 ];
 
-function inputVerify(index, data, printarea){
+function inputVerify(index, item){
 	var data_regExp = new RegExp(pattern[index]);
-	var match = data_regExp.exec($(data).val());
+	var match = data_regExp.exec(item.val());
 	if(match==null){
-		$(printarea).html("입력값이 형식에 맞지 않습니다.");
-		$(data).val("");
+		item.val("");
+		item.attr("placeholder","입력값이 형식에 맞지 않습니다.");
+		item.focus();
 		return false;
 	}else {
 		return true;

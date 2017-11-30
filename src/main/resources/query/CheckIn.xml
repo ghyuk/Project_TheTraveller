@@ -9,11 +9,11 @@
     b_price,
     b_state,
     b_date,
-    b_num,
+    
     finfo,
     hinfo ) VALUES (
     #{b_code,jdbcType=VARCHAR },#{u_code,jdbcType=VARCHAR },#{b_price,jdbcType=VARCHAR },#{b_state,jdbcType=VARCHAR },sysdate,
-    #{b_num,jdbcType=VARCHAR },#{finfo,jdbcType=VARCHAR },#{hinfo,jdbcType=VARCHAR }
+    #{finfo,jdbcType=VARCHAR },#{hinfo,jdbcType=VARCHAR }
     )
 	
 	</insert>
