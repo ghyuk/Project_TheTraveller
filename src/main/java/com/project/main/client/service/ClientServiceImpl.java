@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.project.main.admin.vo.ContactVO;
 import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckOut1VO;
 import com.project.main.client.dao.ClientDao;
@@ -24,6 +25,11 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public DetailVO checkDetail(String u_code) {
 		return clientDao.checkDetail(u_code);
+	}
+
+	@Override
+	public int sendMessage(ContactVO cvo) {
+		return clientDao.sendMessage(cvo);
 	}
 
 }

@@ -5,11 +5,29 @@
 <script type="text/javascript">
 	$(function(){
 		$("#sendMsg").click(function(){
-			$("#f_contact").attr({
+			/* $("#f_contact").attr({
 				"method":"get",
 				"action":"/client/sendMessage.do"
 			});
-			$("#f_contact").submit();
+			$("#f_contact").submit(); */
+			$.ajax({
+				url:"/client/sendMessage.do",
+				type: "get",
+				data:$("#f_contact").serialize(),
+				error:function(){
+					alert("시스템 오류입니다. 관리자에게 문의하세요");
+				},
+				success:function(resultData){
+					var goUrl = "";
+					if(resultData == 0){	//노 입력
+						alert("메세지 전송에 실패하였습니다. 잠시 후 다시 시도해주세요.");
+					}else{
+						alert("메세지가 성공적으로 전송되었습니다.");
+						/* goUrl = "/intro.do?intro=newyork";
+						$("#f_contact") */
+					}
+				}
+			})
 		})
 		
 	})
@@ -36,7 +54,7 @@
                 </div>
                 <div class="col-sm-6">
                   <label for="email">Your Email:</label>
-                  <input class="form-control" type="email" id="contactemail" name="contactname" />
+                  <input class="form-control" type="email" id="contactemail" name="contactemail" />
                 </div>
               </div>
               <div class="form-group row">
