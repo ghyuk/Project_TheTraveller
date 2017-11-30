@@ -24,7 +24,7 @@ import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckInVO2;
 import com.project.main.checkIn.vo.CheckOut1VO;
 import com.project.main.checkIn.vo.CheckOut2VO;
-import com.project.main.checkIn.vo.DetailVO;
+import com.project.main.client.vo.DetailVO;
 import com.project.main.checkIn.vo.FlightVO;
 import com.project.main.checkIn.vo.HotelVO;
 import com.project.main.checkIn.vo.PayVO;
@@ -163,6 +163,7 @@ public class CheckInController {
 		return mav;
 	}
 
+	/*
 	@RequestMapping(value="/checkList.do",method=RequestMethod.GET)
 	public ModelAndView checkList(@RequestParam("u_passport") String passport,@RequestParam("u_phone") String phone){
 		ModelAndView mav = new ModelAndView();
@@ -218,23 +219,23 @@ public class CheckInController {
 		
 		return mav;
 	}
+	*/
 	
 	
-	
-	@RequestMapping(value="/test.do",method=RequestMethod.GET)
-	public ModelAndView test(){
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("template/checkIn/checkInfoList");
-		
-		String passport="1",phone="1";
-		CheckOut1VO cvo = new CheckOut1VO();
-		cvo.setU_passport(passport);
-		cvo.setU_phone(phone);
-		List<BookVO> list = checkInService.checkList(cvo);
-		mav.addObject("list",list);
-		mav.addObject("passport",passport);
-		
-		return mav;
-	}
+//	@RequestMapping(value="/test.do",method=RequestMethod.GET)
+//	public ModelAndView test(){
+//		ModelAndView mav = new ModelAndView();
+//		mav.setViewName("template/checkIn/checkInfoList");
+//		
+//		String passport="1",phone="1";
+//		CheckOut1VO cvo = new CheckOut1VO();
+//		cvo.setU_passport(passport);
+//		cvo.setU_phone(phone);
+//		List<BookVO> list = checkInService.checkList(cvo);
+//		mav.addObject("list",list);
+//		mav.addObject("passport",passport);
+//		
+//		return mav;
+//	}
 	
 }

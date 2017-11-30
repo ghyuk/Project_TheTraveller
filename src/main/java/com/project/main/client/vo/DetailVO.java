@@ -1,4 +1,4 @@
-package com.project.main.checkIn.vo;
+package com.project.main.client.vo;
 
 public class DetailVO {
 	

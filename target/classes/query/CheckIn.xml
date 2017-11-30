@@ -54,7 +54,7 @@
 		)
 	</insert>
 	
-	<select id="checkList" parameterType="cvo1" resultType="bvo">
+	<!-- <select id="checkList" parameterType="cvo1" resultType="bvo">
 		SELECT
 		    b_code,
 		    u_code,
@@ -90,6 +90,6 @@
 		FROM
 		    book b , INSTANT_USER i
 		    where b.u_code = i.u_code and b.u_code=#{u_code}
-	</select>
+	</select> -->
 	
 </mapper>

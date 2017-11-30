@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckOut1VO;
-import com.project.main.checkIn.vo.DetailVO;
+import com.project.main.client.vo.DetailVO;
 import com.project.main.checkIn.vo.PayVO;
 
 @Repository 
@@ -50,7 +50,7 @@ public class CheckInDaoImpl implements CheckInDao{
 		return session.insert("payInsert",pvo);
 	}
 
-	@Override
+	/*@Override
 	public List<BookVO> checkList(CheckOut1VO cvo1) {
 		return session.selectList("checkList",cvo1);
 		
@@ -60,6 +60,6 @@ public class CheckInDaoImpl implements CheckInDao{
 	public DetailVO checkDetail(String u_code) {
 		return (DetailVO)session.selectOne("checkDetail",u_code);
 	}
-	
+*/	
 	
 }

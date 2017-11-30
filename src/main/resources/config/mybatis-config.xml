@@ -11,7 +11,7 @@
 			<typeAlias type="com.project.main.checkIn.vo.FlightVO" alias="fvo"/>
 			<typeAlias type="com.project.main.checkIn.vo.HotelVO" alias="hvo"/>
 			<typeAlias type="com.project.main.checkIn.vo.BookVO" alias="bvo"/>
-			<typeAlias type="com.project.main.checkIn.vo.DetailVO" alias="dvo"/>
+			<typeAlias type="com.project.main.client.vo.DetailVO" alias="dvo"/>
 			<typeAlias type="com.project.main.admin.vo.ContactVO" alias="cvo"/>
 	</typeAliases>
 </configuration>
