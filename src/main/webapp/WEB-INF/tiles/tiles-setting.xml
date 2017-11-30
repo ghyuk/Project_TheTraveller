@@ -36,6 +36,11 @@
 		<put-attribute name="body" value="/WEB-INF/views/template/checkIn/{1}.jsp" />
 	</definition>
 
+<definition name="template/admin/*" extends="content">
+		<put-attribute name="title" value="Contact List"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/template/admin/{1}.jsp"></put-attribute>
+		
+	</definition>
 
 
 
