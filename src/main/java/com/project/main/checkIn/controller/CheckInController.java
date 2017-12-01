@@ -159,7 +159,7 @@ public class CheckInController {
 		session.invalidate();
 		mav.addObject("u_passport",cvo1.getU_passport());
 		mav.addObject("u_phone",cvo1.getU_phone());
-		mav.setViewName("template/checkIn/checkInfoList");
+		mav.setViewName("redirect:/client/checkList.do");
 		return mav;
 	}
 

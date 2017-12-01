@@ -68,7 +68,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">The Traveller</a>
+      <a class="navbar-brand" href="/">The Traveller</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
