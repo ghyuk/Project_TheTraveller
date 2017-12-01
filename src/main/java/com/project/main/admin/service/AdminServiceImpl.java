@@ -49,4 +49,10 @@ public class AdminServiceImpl implements AdminService {
 		return adminDao.checkInDetailUpdate(bvo);
 	}
 
+	@Override
+	public int contactUpdate(ContactVO cvo) {
+		return adminDao.contactUpdate(cvo);
+		
+	}
+
 }

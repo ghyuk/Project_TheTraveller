@@ -16,4 +16,6 @@ public interface AdminDao {
 
 	public int checkInDetailUpdate(BookVO bvo);
 
+	public int contactUpdate(ContactVO cvo);
+
 }

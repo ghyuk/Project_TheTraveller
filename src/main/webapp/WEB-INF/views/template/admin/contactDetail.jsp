@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form"  uri="http://www.springframework.org/tags/form" %>
     <style>
     table, th, tr, td{
 			border: 1px solid black;
@@ -36,12 +37,22 @@
     		$("#contactList").click(function(){
     			location.href="/admin/contactList.do";
     		})
+    		$("#reply").click(function(){
+    			
+    			$("#cForm").submit();
+    			
+    			
+    			
+    			
+    		})
     	})
     </script>
     
     <div class="contactDetail">
 <div class="row">
-        <div class="col-md-6">
+   <div class="col-md-6">
+      <form id="cForm" action="/admin/mailSending.do" method="post">
+      
        	<h1>Contact Detail</h1>
        	<hr>
           <table class="table table-bordered">
@@ -56,7 +67,7 @@
                 <th class="table-title">상담번호</th>
                 <td><input type="text" id="contactnum" name="contactnum" value="${cvo.contactnum }" readonly/></td>
                 <th class="table-title">상담일</th>
-                	<td><input type="text" id="contactdate" name="contactdate" value="${cvo.contactdate }" readonly/></td>
+                <td><input type="text" id="contactdate" name="contactdate" value="${cvo.contactdate }" readonly/></td>
               </tr>
             </thead>
             <tbody>
@@ -64,10 +75,10 @@
               <tr>
                 <th class="table-title">상담신청자 명</th>
                 <td>
-                		<input type="text" id="contactname" name="contactname" value="${cvo.contactname }" readonly/>
-                	</td>
-                	<th class="table-title">이메일</th>
-              	<td><input type="text" id="contactemail" name="contactemail"	 value="${cvo.contactemail }" readonly/></td>
+                	<input type="text" id="contactname" name="contactname" value="${cvo.contactname }" readonly/>
+                </td>
+                <th class="table-title">이메일</th>
+              	<td><input type="text" id="contactemail" name="contactemail" value="${cvo.contactemail }" readonly/></td>
               </tr>
               <tr>
               	<th class="table-title">내용</th>
@@ -93,7 +104,8 @@
               	</td>
               </tr>
              </tbody>
-             </table>
-             </div>
-             </div>
-             </div>
+          </table>
+        </form>
+     </div>
+    </div>
+  </div>

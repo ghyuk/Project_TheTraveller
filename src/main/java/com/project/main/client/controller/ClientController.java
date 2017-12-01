@@ -85,11 +85,11 @@ public class ClientController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="/sendMessage.do")
+	@RequestMapping(value="/sendMessage.do",method = RequestMethod.POST)
 	public String sendMessage(@ModelAttribute ContactVO cvo) {
 		int result = 0;
 		result = clientService.sendMessage(cvo);
-		return result+"";
+		return "1";
 	}
 	
 	

@@ -4,7 +4,7 @@
 
 <script type="text/javascript">
 	$(function(){
-		$("#sendMsg").click(function(){
+		$("#sendMsg1").click(function(){
 			/* $("#f_contact").attr({
 				"method":"get",
 				"action":"/client/sendMessage.do"
@@ -12,10 +12,10 @@
 			$("#f_contact").submit(); */
 			$.ajax({
 				url:"/client/sendMessage.do",
-				type: "get",
+				type: "post",
 				data:$("#f_contact").serialize(),
 				error:function(){
-					alert("시스템 오류입니다. 관리자에게 문의하세요");
+					
 				},
 				success:function(resultData){
 					var goUrl = "";
@@ -23,8 +23,7 @@
 						alert("메세지 전송에 실패하였습니다. 잠시 후 다시 시도해주세요.");
 					}else{
 						alert("메세지가 성공적으로 전송되었습니다.");
-						/* goUrl = "/intro.do?intro=newyork";
-						$("#f_contact") */
+					location.href="/";
 					}
 				}
 			})
@@ -68,7 +67,7 @@
                   
                 </div>
                 <div class="col-sm-4 col-sm-offset-4 text-center-xs" align="right">
-                  <button type="submit" class="btn btn-submit-line" id="sendMsg" name="sendMsg">Send Message</button>
+                  <button type="submit" class="btn btn-submit-line" id="sendMsg1" name="sendMsg">Send Message</button>
                   
                 </div>
               </div>

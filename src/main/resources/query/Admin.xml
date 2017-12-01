@@ -60,7 +60,13 @@
 		where b_code = #{b_code}
 	</update>
 
-
+	<update id="contactUpdate" parameterType="cvo" >
+		update contact
+		set
+		contactreply = #{contactreply},
+		c_status = #{c_status}
+		where contactnum = #{contactnum}
+	</update>
 
 
 </mapper>

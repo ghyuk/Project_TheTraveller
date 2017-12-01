@@ -28,18 +28,18 @@ public class AdminDaoImpl implements AdminDao {
 		return session.selectList("checkInList");
 	}
 
-
-
 	@Override
 	public ContactVO contactDetail(int contactnum) {
 		return (ContactVO)session.selectOne("contactDetail");
 	}
 
-
-
 	@Override
 	public int checkInDetailUpdate(BookVO bvo) {
 		return session.update("checkInDetailUpdate",bvo);
+	}
+	@Override
+	public int contactUpdate(ContactVO cvo) {
+		return session.update("contactUpdate",cvo);
 	}
 
 }
