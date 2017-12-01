@@ -14,6 +14,18 @@
 	<logger name="com.project.main">
 		<level value="info" />
 	</logger>
+	<logger name="com.project.main.admin">
+		<level value="info" />
+	</logger>
+	<logger name="com.project.main.checkIn">
+		<level value="info" />
+	</logger>
+	<logger name="com.project.main.client">
+		<level value="info" />
+	</logger>
+	<logger name="com.project.main.test">
+		<level value="info" />
+	</logger>
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
@@ -40,6 +52,9 @@
 		<level value="TRACE" />
 	</logger>
 	<logger name="com.project.main.admin.dao">
+		<level value="TRACE"/>
+	</logger>
+	<logger name="com.project.main.client.dao">
 		<level value="TRACE"/>
 	</logger>
 	
