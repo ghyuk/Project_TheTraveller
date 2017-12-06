@@ -128,13 +128,13 @@
 					<tr>
 						<td>
 							<div class="form-group">
-								<label for="d_date">출국일</label> <input type="text" readonly="readonly"
+								<label for="d_date">출국일</label> <input type="text" maxlength="10"
 									class="form-control" id="d_date" name="d_date" placeholder="출국일을 선택해주세요">
 							</div>
 						</td>
 						<td>
 							<div class="form-group">
-								<label for="a_date">귀국일</label> <input type="text" readonly="readonly"
+								<label for="a_date">귀국일</label> <input type="text" maxlength="10"
 									class="form-control" id="a_date" name="a_date" placeholder="귀국일을 선택해주세요">
 							</div>
 						</td>

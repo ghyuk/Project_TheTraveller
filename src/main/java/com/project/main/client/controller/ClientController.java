@@ -89,7 +89,13 @@ public class ClientController {
 	public String sendMessage(@ModelAttribute ContactVO cvo) {
 		int result = 0;
 		result = clientService.sendMessage(cvo);
-		return "1";
+		
+		if(result == 1){
+			return "1";
+		}
+		else{
+			return "2";
+		}
 	}
 	
 	

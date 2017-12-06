@@ -108,9 +108,5 @@ body {
 		<tiles:insertAttribute name="contact" />
 	</section>
 
-
-	<footer class="footer" id="footer">
-		<tiles:insertAttribute name="footer" />
-	</footer>
 </body>
 </html>

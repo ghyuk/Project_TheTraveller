@@ -163,7 +163,7 @@ $(function(){
 	var adults="&adults="+adult;
 	var rest="&currency=KRW&number_of_results=4";
 	
-	var key="apikey=mXBxI1OLDAM84vgb0gWKYdHXp8rGUWAd"+origin+destination+departure_date+return_date+adults+rest;
+	var key="apikey=YSUHZA5dLVpvg4fAUgaCOA5kQgK9DAA7"+origin+destination+departure_date+return_date+adults+rest;
 	var apiurl=uri+key;
 	var url="/checkIn/fdata.do";
 		console.log("씨티:"+city+"시작일:"+start+"종료일:"+end);
@@ -236,7 +236,7 @@ $(function(){
 		var show_sold_out="&show_sold_out=true"
 		var rest="&currency=KRW&number_of_results=4";
 		
-	var key="apikey=mXBxI1OLDAM84vgb0gWKYdHXp8rGUWAd"+location+check_in+check_out+show_sold_out+rest;
+	var key="apikey=YSUHZA5dLVpvg4fAUgaCOA5kQgK9DAA7"+location+check_in+check_out+show_sold_out+rest;
 	var apiurl2=uri+key;
 	var url="/checkIn/fdata.do";
 	
