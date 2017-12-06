@@ -44,13 +44,15 @@
 		color: white;
 		text-shadow: 1px 1px black;
 		
+		padding-top: 100px;
+		padding-bottom: 20px;
 		}
-		#login-logo{
+	/* 	#login-logo{
 		width:80px;
 		margin-left: 110px;
 		padding-top: 40px;
 		padding-bottom: 20px;
-		}
+		} */
 		
 		.up-title{
 		font-size: 30px;
@@ -143,7 +145,7 @@
         <h3 class="modal-title" id="loginModalLabel">Log - In</h3>
       </div> -->
       <div class="login-header">
-      	<div><img id="login-logo" src="/resources/image/loginlogo.png"></div>
+      	
       	<span class="up-title">CHECK - UP</span>
       </div>
       <div class="modal-body">
