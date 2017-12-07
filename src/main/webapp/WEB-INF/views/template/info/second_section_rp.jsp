@@ -14,6 +14,10 @@
 	})
 </script>
 
+<style type="text/css">
+	#content{
+	text-align: left;}
+</style>
 
 <div class="main">
 	<div class="container tim-container">
