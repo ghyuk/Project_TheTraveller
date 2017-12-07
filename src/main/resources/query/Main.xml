@@ -7,6 +7,7 @@
 			(SELECT i.i_code,i.t_code,i.c_code,c.c_name,i.i_name,i.i_content,i.i_image,i.i_index 
 															FROM item i , city c where c.c_code = i.c_code) 
 			where c_name=#{main}
+			order by i_code asc
 	</select>
 	
 	
