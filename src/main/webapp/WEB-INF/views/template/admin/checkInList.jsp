@@ -93,10 +93,10 @@ table, th, tr, td {
 					</c:choose>
 				</tbody>
 			</table>
-			<div class="boardBtn">
+			<!-- <div class="boardBtn">
 				<input type="button" class="btn btn-default" id="updateStatus"
 					name="updateStatus" value="updateStatus" />
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>

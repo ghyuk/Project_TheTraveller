@@ -25,7 +25,7 @@
 						            
 						    -->
 							<div id="carousel-third-generic" class="carousel slide"
-								data-ride="carousel" data-interval="2000">
+								data-ride="carousel" data-interval=" 2000">
 								<!-- Indicators -->
 								<ol class="carousel-indicators">
 									<c:forEach var="eatlist" items="${dolist }" varStatus="status">

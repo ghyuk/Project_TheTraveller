@@ -19,7 +19,7 @@
 				},
 				success:function(resultData){
 					var goUrl = "";
-					if(resultData == 0){	//노 입력
+					if(resultData == "2"){	//노 입력
 						alert("메세지 전송에 실패하였습니다. 잠시 후 다시 시도해주세요.");
 					}else{
 						alert("메세지가 성공적으로 전송되었습니다.");
@@ -67,7 +67,7 @@
                   
                 </div>
                 <div class="col-sm-4 col-sm-offset-4 text-center-xs" align="right">
-                  <button type="submit" class="btn btn-submit-line" id="sendMsg1" name="sendMsg">Send Message</button>
+                  <button type="button" class="btn btn-submit-line" id="sendMsg1" name="sendMsg">Send Message</button>
                   
                 </div>
               </div>
