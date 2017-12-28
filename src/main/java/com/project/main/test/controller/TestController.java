@@ -6,22 +6,16 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.fasterxml.jackson.core.JsonParser;
-import com.project.main.test.service.TestService;
 @Controller
 @RequestMapping(value = "/test")
 public class TestController {
 	Logger logger = Logger.getLogger(TestController.class);
 
-	@Autowired
-	private TestService testervice;
 
 	@RequestMapping(value = "/check.do", method = RequestMethod.GET)
 	public String check(){ 

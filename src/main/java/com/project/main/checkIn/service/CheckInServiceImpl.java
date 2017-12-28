@@ -1,7 +1,5 @@
 package com.project.main.checkIn.service;
 
-import java.util.List;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.project.main.checkIn.dao.CheckInDao;
 import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckOut1VO;
-import com.project.main.client.vo.DetailVO;
 import com.project.main.checkIn.vo.PayVO;
 
 

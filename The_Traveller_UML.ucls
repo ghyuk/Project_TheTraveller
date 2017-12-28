@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <package id="1" language="java" name="com.project.main.admin.controller" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/admin/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="141" y="39"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="2" language="java" name="com.project.main.admin.controller.AdminController" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/admin/controller/AdminController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="196" y="204"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="3" language="java" name="com.project.main.admin.service" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/admin/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="529" y="36"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="4" language="java" name="com.project.main.admin.service.AdminServiceImpl" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/admin/service/AdminServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="537" y="206"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="5" language="java" name="com.project.main.admin.dao" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/admin/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="801" y="36"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="6" language="java" name="com.project.main.admin.dao.AdminDaoImpl" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/admin/dao/AdminDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="823" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="7" language="java" name="com.project.main.checkIn.controller" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/checkIn/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="152" y="449"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="8" language="java" name="com.project.main.checkIn.controller.CheckInController" 
+    project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/checkIn/controller/CheckInController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="167" y="627"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="9" language="java" name="com.project.main.checkIn.service" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/checkIn/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="468" y="446"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="10" language="java" name="com.project.main.checkIn.service.CheckInServiceImpl" 
+    project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/checkIn/service/CheckInServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="436" y="603"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="11" language="java" name="com.project.main.checkIn.dao" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/checkIn/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="731" y="448"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="12" language="java" name="com.project.main.checkIn.dao.CheckInDaoImpl" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/checkIn/dao/CheckInDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="702" y="592"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="13" language="java" name="com.project.main.client.controller" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/client/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1147" y="43"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="14" language="java" name="com.project.main.client.controller.ClientController" 
+    project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/client/controller/ClientController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1143" y="180"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="15" language="java" name="com.project.main.client.service" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/client/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1139" y="320"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="16" language="java" name="com.project.main.client.service.ClientServiceImpl" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/client/service/ClientServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1150" y="446"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="17" language="java" name="com.project.main.client.dao" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/client/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1121" y="570"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="18" language="java" name="com.project.main.client.dao.ClientDaoImpl" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/client/dao/ClientDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1146" y="693"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="19" language="java" name="com.project.main.main" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/main" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="101" y="827"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="20" language="java" name="com.project.main.main.controller.MainController" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/main/controller/MainController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="309" y="883"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="21" language="java" name="com.project.main.main.service" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/main/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="555" y="825"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="22" language="java" name="com.project.main.main.service.MainServiceImpl" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/main/service/MainServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="802" y="884"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="23" language="java" name="com.project.main.main.dao" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/main/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1032" y="827"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="24" language="java" name="com.project.main.main.dao.MainDaoImpl" project="Project_TheTraveller" 
+    file="/Project_TheTraveller/src/main/java/com/project/main/main/dao/MainDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1261" y="875"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

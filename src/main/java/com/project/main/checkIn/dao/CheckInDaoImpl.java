@@ -1,14 +1,11 @@
 package com.project.main.checkIn.dao;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckOut1VO;
-import com.project.main.client.vo.DetailVO;
 import com.project.main.checkIn.vo.PayVO;
 
 @Repository 

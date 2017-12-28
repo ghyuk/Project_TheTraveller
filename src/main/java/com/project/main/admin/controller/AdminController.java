@@ -123,7 +123,7 @@ public class AdminController {
 		if (bvo.getH_num().trim().equals("")) {
 			bvo.setH_num(null);
 		}
-		int result = adminService.checkInDetailUpdate(bvo);
+		adminService.checkInDetailUpdate(bvo);
 		mav.addObject("code", 3); // 수정완료 코드 3
 
 		mav.setViewName("redirect:/admin/checkInList.do");
@@ -142,7 +142,7 @@ public class AdminController {
 		// String title = request.getParameter("title"); // 제목
 		String contactreply = cvo.getContactreply(); // 내용
 		mav.setViewName("redirect:/admin/contactList.do");
-		int result = 0;
+		
 		// mav.addObject()
 		try {
 			MimeMessage message = mailSender.createMimeMessage();
@@ -155,7 +155,7 @@ public class AdminController {
 
 			mailSender.send(message);
 			cvo.setC_status("답변 완료");
-			result = adminService.contactUpdate(cvo);
+			adminService.contactUpdate(cvo);
 			
 			
 		} catch (Exception e) {

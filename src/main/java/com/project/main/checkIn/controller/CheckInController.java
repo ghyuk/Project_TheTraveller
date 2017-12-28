@@ -5,7 +5,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -24,7 +23,6 @@ import com.project.main.checkIn.vo.BookVO;
 import com.project.main.checkIn.vo.CheckInVO2;
 import com.project.main.checkIn.vo.CheckOut1VO;
 import com.project.main.checkIn.vo.CheckOut2VO;
-import com.project.main.client.vo.DetailVO;
 import com.project.main.checkIn.vo.FlightVO;
 import com.project.main.checkIn.vo.HotelVO;
 import com.project.main.checkIn.vo.PayVO;
@@ -126,7 +124,7 @@ public class CheckInController {
 	@RequestMapping(value="/pay.do",method=RequestMethod.POST)
 	public ModelAndView pay(@ModelAttribute CheckOut2VO vo,HttpSession session){
 		ModelAndView mav = new ModelAndView();
-		int result = 0;
+		
 		session.setAttribute("scvo", vo);
 		int seq = checkInService.selectSeq();
 		checkInService.makeSeq(seq);
@@ -137,7 +135,7 @@ public class CheckInController {
 	
 		//비회원 입력
 		cvo1.setU_code("iu_"+seq);
-		result = checkInService.iuInsert(cvo1);
+		checkInService.iuInsert(cvo1);
 		//예약 입력
 		BookVO fbvo = new BookVO();
 		fbvo.setB_code("book_"+seq);
@@ -146,7 +144,7 @@ public class CheckInController {
 		fbvo.setB_state("1");
 		fbvo.setFinfo(fvo.toString());
 		fbvo.setHinfo(hvo.toString());
-		result = checkInService.bookInsert(fbvo);
+		checkInService.bookInsert(fbvo);
 		
 		//결제입력
 		PayVO pvo = new PayVO();
@@ -155,7 +153,7 @@ public class CheckInController {
 		pvo.setP_amount(""+(Integer.parseInt(fvo.getPrice().trim())+Integer.parseInt(hvo.getH_price().trim())));
 		pvo.setP_card(cvo2.toString());
 		
-		result = checkInService.payInsert(pvo);
+		checkInService.payInsert(pvo);
 		session.invalidate();
 		mav.addObject("u_passport",cvo1.getU_passport());
 		mav.addObject("u_phone",cvo1.getU_phone());
