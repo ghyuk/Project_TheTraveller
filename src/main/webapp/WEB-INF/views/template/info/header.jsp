@@ -37,7 +37,7 @@
 .login-modal-content{
 		width: 300px;
  		 height: 500px;
-		background-image: url("/resources/image/loginbg.png") ;
+		/*background-image: url("/resources/image/loginbg.png")*/ ;
 		}
 		.login-header{
 		height: 230px;
@@ -156,7 +156,7 @@
 		  </div>
 		  <div class="form-group">
 		    <label class="login-label" for="u_phone">PHONE</label>
-		    <input type="text" class="form-control" id="u_phone" name="u_phone" placeholder="핸드폰번호를 입력하세요">
+		    <input type="text" class="form-control" id="u_phone" name="u_phone" placeholder="핸드폰번호를 -를 포함하여 입력하세요">
 		  </div>
 		  <div class="modal-btn">
 			<button type="button" class="btn btn-primary btn-block" id="loginBtn" >Log-In</button>

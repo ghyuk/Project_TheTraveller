@@ -37,6 +37,7 @@
     		$("#contactList").click(function(){
     			location.href="/admin/contactList.do";
     		})
+    		
     		$("#reply").click(function(){
     			
     			$("#cForm").submit();
@@ -86,14 +87,15 @@
               </tr>
                <tr>
               	<th class="table-title">답변</th>
-              	<td colspan="3"><textarea id="contactreply" name="contactreply" class="form-control" rows="5"></textarea></td>
+              	<td colspan="3"><textarea id="contactreply" name="contactreply" class="form-control" rows="5">${cvo.contactreply }
+              	</textarea></td>
               </tr>
               	<tr>
               	<th class="table-title">답변 현황</th>
               	<td>
               		<div class="radio">
 					  <label>
-					    <input type="radio" name="c_status" id="c_status" value="replied" >	<!-- 답변	완료일경우 checked 옵션 추가 -->
+					    <input type="radio" name="c_status" id="c_status" <c:if test='${cvo.c_status == "답변 완료" }'>checked</c:if>> <!-- 답변	완료일경우 checked 옵션 추가 -->
 					   		답변 완료
 					  </label>
 					</div>

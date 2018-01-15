@@ -105,6 +105,9 @@ public class AdminController {
 		cvo.setContactname(value.getContactname());
 		cvo.setContactemail(value.getContactemail());
 		cvo.setContactcontent(value.getContactcontent());
+		cvo.setContactreply(value.getContactreply());
+		cvo.setC_status(value.getC_status());
+		
 
 		model.addAttribute("cvo", cvo);
 		return "template/admin/contactDetail";
@@ -156,7 +159,6 @@ public class AdminController {
 			mailSender.send(message);
 			cvo.setC_status("답변 완료");
 			adminService.contactUpdate(cvo);
-			
 			
 		} catch (Exception e) {
 			System.out.println(e);
